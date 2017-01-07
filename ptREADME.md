@@ -160,7 +160,7 @@ selecionando texto. Logo em seguida você especifíca a região do texto onde a
 ação deve ocorrer usando um _movimento_. Para mudar tudo entre os parênteses,
 ese `ci(` (leia como "mudar dentro dos parênteses", em inglês: _change inner
 parentheses_). Para remover todo um parágrafo de texto de uma vez, use `dap`
-(leia como "deletar em volta do parágrafo", em inglês: _delete aroung
+(leia como "deletar em volta do parágrafo", em inglês: _delete around
 paragraph_).
 
 Se você ver usuárias avançadas do Vim trabalhando, você irá reparar que elas
@@ -209,67 +209,74 @@ Próximos passos:
 Um último conselho: por favor aprenda a usar o Vim apropriadamente antes de
 começar a adicionar tudo quanto é tipo de [plugins](#managing-plugins) extravagantes que apenas implementam funcionalidades que o Vim já suporta nativamente.
 
-## Vimrc minimalista
+## Vimrc mínimo
 
-The user vimrc can be put into `~/.vimrc` or for the sake of better separation
-into `~/.vim/vimrc`. The latter makes it easy to put the entire configuration
-under version control and upload it to, let's say Github.
+O vimrc do usuário pode ser colocado em `~/.vimrc` ou só para melhor
+separar/organizar as coisas em `~/.vim/vimrc`. A última opção deixa fácil
+colocar toda a configuração sob controle de versão e enviar ela para onde
+esteja, por exemplo no Github.
 
-You find many "minimal vimrcs" all over the net, and maybe my version isn't as
-minimal as it should be, but it provides a good set of sane settings that I deem
-to be useful for starting out.
+Você encontra muitos "vimrcs mínimos" por toda a rede, e talvez a minha versão
+não seja tão mínima quanto deveria, mas ela provem um bom conjunto de
+configurações sãs que julgo serem úteis para começar.
 
-Eventually you have to read up on all the mentioned settings anyway and decide
-for yourself. :-)
+De qualquer forma, eventualmente você terá que ler cada uma das configurações
+mencionadas e decidir por conta própria. :-)
 
-So here it is: [minimal-vimrc](contents/minimal-vimrc.vim)
+Então, aqui vai: [vimrc-minimo](contents/minimal-vimrc.vim)
 
-In case you're interested, here's
-[my vimrc][https://github.com/mhinz/dotfiles/blob/master/.vim/vimrc].
+Caso você esteja interessado, aqui está o [meu vimrc][https://github.com/mhinz/dotfiles/blob/master/.vim/vimrc].
 
-**TIP**: Most plugin authors maintain several plugins and also publish their
-vimrc on Github (often in a repository called "vim-config" or "dotfiles"), so
-whenever you find a plugin you like, look up its maintainer's Github page and
-look through the repositories.
+**DICA**: A maioria dos autores de plugins mantêm vários plugins e também
+publicam seus próprios vimrc no Github (com frequência em um repositório chamado
+de "vim-config" ou "dotfiles"), então quando quer você entre um plugin que você
+gosta, dê uma olhada na página do Github do mantenedor e olhe através dos
+repositórios.
 
-## What kind of Vim am I running?
+## Que tipo de Vim eu estou rodando?
 
-Looking at `:version` will give you all the information you need to know about
-how the currently running Vim binary was compiled.
+Olhar em `:version` irá te dar toda a informação que você precisa saber sobre
+como que a versão binária que está rodando atualmente foi compilada.
 
-The first line tells you when the binary was compiled and the version, e.g. 7.4.
-One of the next lines states `Included patches: 1-1051`, which is the patch
-level. Thus, your exact Vim version is 7.4.1051.
+A primeira linha te diz quando que o binário foi compilado e qual a versão, por
+exemplo 7.4. Uma das linhas seguintes irá dizer `Included patches: 1-1051`, que
+é o nível do remendo (patch). Portanto, sua versão exata do Vim é 7.4.1051.
 
-Another line states something like `Tiny version without GUI` or `Huge version
-with GUI`. The obvious information from that is whether your Vim includes GUI
-support, e.g. for starting `gvim` from the shell or running `:gui` from Vim
-within a terminal emulator. The other important information is the `Tiny` and
-`Huge`. Vim distinguishes between feature sets called `tiny`, `small`, `normal`,
-`big`, and `huge`, all enabling different subsets of features.
+Uma outra linha irá colocar algo como `Tiny version without GUI` ("_versão
+minúscula sem interface gráfica_") ou `Huge version with GUI` ("_versão enorme com
+interface gráfica_"). A informação que tiramos disso é se o seu Vim inclui
+interface gráfica ("GUI"), como por exemplo iniciar o `gvim` do shell ou rodar
+`:gui` dentro do Vim em um emulador de terminal. A outra informação importante é
+o `Tiny` ("_minúscula_") e `Huge` ("_enorme_"). O Vim distingue entre conjuntos 
+de funções/características chamados de `tiny` ("_minúcula_"), `small`
+("_pequna_"), `normal`, `big` ("_grande_"), e `huge` ("_enorme_"), todas
+ativando diferentes subconjuntos de funções/características.
 
-The majority of `:version` output is consumed by the feature list itself.
-`+clipboard` means the clipboard feature was compiled in, `-clipboard` means it
-wasn't compiled in.
+A maioria do resultado que aparece com o `:version` é consumida pela própria
+função de listagem mesma. `+clipboard` significa que a função da área de
+transferência foi compilada junto, e `-clipboard` significa que não foi compilada.
 
-A few Vim features need to be compiled in for them to work. E.g. for `:prof` to
-work, you need a Vim with a huge feature set, because that set enables the
-`+profile` feature.
+São poucas as funções que precisam ser compiladas juntamente para funcionar. Por
+exemplo, para que `:prof` funcione, você precisa de um Vim com um conjunto
+enorme ("_huge_") de funções/características, porque esse conjunto ativa a
+função `+profile`.
 
-If that's not the case and you installed Vim from a package manager, make sure
-to install a package called `vim-x`, `vim-x11`, `vim-gtk`, `vim-gnome` or
-similar, since these packages usually come with the huge feature set.
+Se esse não for o caso e você instalou o Vim por um gerenciador de pacotes,
+tenha certeza de instalar um pacote chamado `vim-x`, `vim-x11, `vim-gtk`,
+`vim-gnome` ou algo parecido, já que esses pacotes normalmente vêm com o
+conjunto enorme ("_huge_") de funções.
 
-You can also test for the version or features programmatically:
+Você também pode testar programavelmente a versão ou as funcionalidades:
 
 ```vim
-" Do something if running at least Vim 7.4.42 with +profile enabled.
+" Fazer alguma coisa se rodando pelo menos a versão 7.4.42 do Vim com +profile
+ativado. 
 if (v:version > 704 || v:version == 704 && has('patch42')) && has('profile')
-  " do stuff
+  " fazer algo
 endif
 ```
 
-Help:
+Ajuda:
 
 ```
 :h :version
@@ -278,7 +285,7 @@ Help:
 :h has-patch
 ```
 
-## Cheatsheets
+## Planilhas de cola
 
 - http://people.csail.mit.edu/vgod/vim/vim-cheat-sheet-en.png
 - https://cdn.shopify.com/s/files/1/0165/4168/files/preview.png
@@ -286,9 +293,9 @@ Help:
 - http://michael.peopleofhonoronly.com/vim/vim_cheat_sheet_for_programmers_screen.png
 - http://www.rosipov.com/images/posts/vim-movement-commands-cheatsheet.png
 
-Or quickly open a cheatsheet from within Vim: [vim-cheat40](https://github.com/lifepillar/vim-cheat40).
+Ou abra rapidamente uma planilha com cola de dentro do Vim: [vim-cheat40](https://github.com/lifepillar/vim-cheat40).
 
-# Basics
+# O básico
 
 ## Buffers, windows, tabs
 
