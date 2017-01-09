@@ -325,25 +325,29 @@ partir de qualquer aba.
 
 ## Buffer ativos, carregados, listados e nomeados
 
-Run Vim like this `vim file1`. The file's content will be loaded into a buffer.
-You have a **loaded buffer** now. The content of the buffer is only synchronized
-to disk (written back to the file) if you save it within Vim.
+Inicie o Vim como `vim arquivo1`. O conteúdo do arquivo será carregado dentro do
+buffer. Agora você tem um **buffer carregado** ("_loaded buffer_"). O conteúdo do buffer só será
+sincronizado ao disco rígido (salvo no arquivo original) se você salvar de 
+dentro do Vim.
 
-Since the buffer is also shown in a window, it's also an **active buffer**. Now
-if you load another file via `:e file2`, `file1` will become a **hidden buffer**
-and `file2` the active one.
+Já que o buffer também é mostrado em uma janela, ele também é um **buffer
+ativo** ("_active buffer_"). Agora, se você abrir um outro arquivo com 
+`e: arquivo2`, o `arquivo1` vai se tornar um **buffer escondido** 
+("_hidden buffer_") e o `arquivo2` será o buffer ativo.
 
-Both buffers are also **listed**, thus they will get listed in the output of
-`:ls`. Plugin buffers or help buffers are often marked as unlisted, since
-they're not regular files you usually edit with a text editor. Listed and
-unlisted buffers can be shown via `:ls!`.
+Ambos buffers estão também **listados** ("_listed_"), portanto eles serão
+listados com a saída do comando `:ls`. Os buffers dos plugins, ou os buffers de
+ajuda, normalmente são marcados como não-listados ("_unlisted_"), já que eles
+não arquivos regulares, que você normalmente edita com um editor de texto. Tanto
+os buffers listados quanto os não-listados são mostrados pelo comando `:ls!`.
 
-**Unnamed buffers**, also often used by plugins, are buffers that don't have an
-associated filename. E.g. `:enew` will create an unnamed scratch buffer. Add
-some text and write it to disk via `:w /tmp/foo`, and it will become a named
-buffer.
+**Buffers não-nomeados** ("_unnamed buffers_"), geralmente usados por plugins,
+são buffers que não tem um nome de arquivo associado a si. Por exemplo, `:enew`
+irá criar um buffer não-nomeado para ser usado como rascunho. Adicione algum
+texto e salve o buffer no disco com `:w /tmp/foo`, e ele irá se tornar um buffer
+nomeado.
 
-## Argument list
+## Lista de argumentos
 
 The [global buffer list](#buffers-windows-tabs) is a Vim thing. Before that, in
 vi, there only used to be the argument list, which is also available in Vim.
