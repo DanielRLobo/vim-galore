@@ -220,12 +220,10 @@ Você encontra muitos "vimrcs mínimos" por toda a rede, e talvez a minha versã
 não seja tão mínima quanto deveria, mas ela provem um bom conjunto de
 configurações sãs que julgo serem úteis para começar.
 
-De qualquer forma, eventualmente você terá que ler cada uma das configurações
-mencionadas e decidir por conta própria. :-)
 
 Então, aqui vai: [vimrc-minimo](contents/minimal-vimrc.vim)
 
-Caso você esteja interessado, aqui está o [meu vimrc][https://github.com/mhinz/dotfiles/blob/master/.vim/vimrc].
+Caso você esteja interessado, aqui está o [meu vimrc](https://github.com/mhinz/dotfiles/blob/master/.vim/vimrc).
 
 **DICA**: A maioria dos autores de plugins mantêm vários plugins e também
 publicam seus próprios vimrc no Github (com frequência em um repositório chamado
