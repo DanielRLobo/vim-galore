@@ -349,36 +349,38 @@ nomeado.
 
 ## Lista de argumentos
 
-The [global buffer list](#buffers-windows-tabs) is a Vim thing. Before that, in
-vi, there only used to be the argument list, which is also available in Vim.
+A [lista de buffers global](#) é uma coisa do Vim. Antes disso, no Vi, costumava
+ter apenas a lista de argumentos, que também está disponível no Vim.
 
-Every filename given to Vim on the shell command-line, is remembered in the
-argument list. There can be multiple argument lists: by default all arguments
-are put into the global argument list, but you can use `:arglocal` to create a
-new argument list that is local to the window.
+Todo nome de arquivo fornecido ao Vim na linha de comando do Shell, é lembrado
+na lista de argumentos. Podem existir múltiplas listas de argumentos: por padrão
+todos os argumentos são colocados na lista global de argumentos, mas você pode
+usar `:arglocal` para criar uma nova lista de argumentos que é local a janela.
 
-List the current arguments with `:args`. Switch between files from the argument
-list with `:next`, `:previous`, `:first`, `:last` and friends. Alter it with
-`:argadd`, `:argdelete` or `:args` with a list of files.
+Liste os argumentos atuais com `:args`. Alterne entre os arquivos da lista de
+argumentos com `:next` ("_próximo_", `:previous` ("_anterior_"), `:first`
+("_primeiro_"), `:last` ("_último_") e companhia. Altere  com `:argadd` (para 
+"_ad(d)_icionar"), `:argdelete` (para "_delet_ar") ou `args` uma lista de 
+arquivos.
 
-If you should prefer using the buffer or argument list for working with files is
-a matter of taste. My impression is that most people use the buffer list
-exclusively.
+Se você deve usar a lista de buffers ou a lista de argumentos, é só uma questão
+de preferência. Minha impressão é a maioria das pessoas usa exclusivamente a
+lista de buffers.
 
-Nevertheless, there is one huge use case for the argument list: batch processing
-via `:argdo`! A simple refactoring example:
+Mesmo assim, existem uma forte razão para usar a lista de argumentos:
+processamento em batch por meio do `:argdo`! Um exemplo simples de
+reestruturamento:
 
 ```vim
 :args **/*.[ch]
 :argdo %s/foo/bar/ge | update
 ```
+Isso irá substituir todas as ocorrências de "foo" por "bar" em todas as fontes e
+cabeçalhos de todos os arquivos em C do diretório atual e abaixo.
 
-This replaces all occurrences of "foo" by "bar" in all C source and header files
-from the current directory and below.
+Ajuda: `:h argument-list`
 
-Help: `:h argument-list`
-
-## Mappings
+## Mapeamentos
 
 You can define your own mappings with the `:map` family of commands. Each
 command of that family defines a mapping for a certain set of modes. Technically
