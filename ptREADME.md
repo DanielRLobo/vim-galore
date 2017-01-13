@@ -382,76 +382,77 @@ Ajuda: `:h argument-list`
 
 ## Mapeamentos
 
-You can define your own mappings with the `:map` family of commands. Each
-command of that family defines a mapping for a certain set of modes. Technically
-Vim comes with a whopping 12 modes, 6 of them can be mapped. Additionally, some
-commands act on multiple modes at once.
+Você pode definir os seus próprios mapas de teclado com a família de comandos `:map`. Cada comando dessa família define o mapeamentos para um conjunto 
+específico de modos. Tecnicamente o Vim vem com a enorme quantidade de 12 modos,
+e 6 deles podem ser mapeados. Adicionalmente, existem alguns comandos que agem 
+em múltiplos modos ao tempo.
 
-| Recursive | Non-recursive | Unmap     | Modes                            |
-|-----------|---------------|-----------|----------------------------------|
-| `:map`    | `:noremap`    | `:unmap`  | normal, visual, operator-pending |
-| `:nmap`   | `:nnoremap`   | `:nunmap` | normal                           |
-| `:xmap`   | `:xnoremap`   | `:xunmap` | visual                           |
-| `:cmap`   | `:cnoremap`   | `:cunmap` | command-line                     |
-| `:omap`   | `:onoremap`   | `:ounmap` | operator-pending                 |
-| `:imap`   | `:inoremap`   | `:iunmap` | insert                           |
+| Recursivo | Não-recursivo | Desmapear | Modos                             |
+|-----------|---------------|-----------|---------------------------------- |
+| `:map`    | `:noremap`    | `:unmap`  | normal, visual, operador-pendendo |
+| `:nmap`   | `:nnoremap`   | `:nunmap` | normal                            |
+| `:xmap`   | `:xnoremap`   | `:xunmap` | visual                            |
+| `:cmap`   | `:cnoremap`   | `:cunmap` | linha de comando                  |
+| `:omap`   | `:onoremap`   | `:ounmap` | operador-pendendo                 |
+| `:imap`   | `:inoremap`   | `:iunmap` | inserção                          |
 
-E.g. this defines the mapping for normal mode only:
+Por exemplo, isso aqui irá definir um mapeamento apenas para o modo normal:
 
 ```vim
 :nmap <space> :echo "foo"<cr>
 ```
 
-Unmap it again by using `:nunmap <space>`.
+Desmapei novamente usando `:nunmap <space>`.
 
-For a few more but rather uncommon modes (or combinations of them), see `:h
-map-modes`.
+Para conferir alguns outros modos mais incomuns (ou uma combinação deles), veja
+`h map-modes`.
 
-So far, so good. There's only one problem that can be pretty confusing to
-beginners: `:nmap` is _recursive_! That is, the right-hand side takes other
-mappings into account.
+Até agora, tudo sob controle. Mas tem um detalhe que pode ser bem confuso para
+iniciantes: `:nmap` é _recursivo_! Ou seja, o lado direito (que é remapeado) 
+vai levar outros mapeamentos em conta também.
 
-So you defined a mapping that simply echoes "Foo":
+Então, você definiu um mapeamento que simplesmente ecoa "Foo" ao apertar a tecla
+"b":
 
 ```vim
 :nmap b :echo "Foo"<cr>
 ```
 
-But what if you want to map the default behavior of `b` (going one word back) to
-another key?
+Mas e se você quiser mapear o comportamento padrão de `b` (voltar uma palavra)
+para uma outra tecla?
 
 ```vim
 :nmap a b
 ```
 
-If you hit <kbd>a</kbd>, we expect the cursor to go back a word, but instead
-"Foo" is printed in the command-line! Because the right-hand side, `b`, was
-mapped to another action already, namely `:echo "Foo"<cr>`.
+Se você apertar <kbd>a</kbd>, esperamos que o cursor volte à uma palavra atrás,
+mas ao contrário, "Foo" vai ser impresso de novo na linha de comando! Isso
+acontece devido ao fato que a tecla `b`, que fica no lado direito do mapeamento,já tinha sido remapeada para fazer ou ação, que no caso foi a ação de ecoar 
+"foo" com `:echo "Foo"<cr>`.
 
-The proper way to resolve this problem is to use a _non-recursive_ mapping
-instead:
+Para resolver esse problema de forma adequada, é preciso usar um mapeamento
+_não-recursivo_:
 
 ```vim
 :nnoremap a b
 ```
+Regra de ouro: Sempre use mapeamentos não-recursivos, a não ser que realmente se
+deseje um mapeamento recursivo.
 
-Rule of thumb: Always use non-recursive mappings unless recursing is actually
-desired.
+Olhe os seus mapeamentos sem fornecer o lado direito do comando. Por exemplo,
+`:nmap` mostra todos os mapeamentos para o modo normal, e `:nmap <leader>`
+mostra todos os mapeamentos (para o modo normal) que começam com a tecla-líder.
 
-Look up your mappings by not giving a right-hand side. E.g. `:nmap` shows all
-normal mappings and `:nmap <leader>` shows all normal mappings that start with
-the mapleader.
+Se você quiser desativar um mapeamento padrão, o mapei para o caractére especial
+`<nop>`, como por exemplo `:noremap <left> <nop>`.
 
-If you want to disable a standard mapping, map them to the special `<nop>`
-character, e.g. `:noremap <left> <nop>`.
-
-Help:
+Ajuda:
 
     :h key-notation
     :h mapping
     :h 05.3
 
-## Mapleader
+## A tecla-líder
 
 The mapleader is simply a placeholder than can be used with custom mappings and
 is set to `\` by default.
