@@ -454,30 +454,31 @@ Ajuda:
 
 ## A tecla-líder
 
-The mapleader is simply a placeholder than can be used with custom mappings and
-is set to `\` by default.
+A tecla-líder é uma base de suporte usada com mapeamentos personalizados e por
+padrão é configurada para a tecla `\`.
 
 ```vim
 nnoremap <leader>h :helpgrep<space>
 ```
 
-This mapping is triggered by `\h`. If you want to use `<space>h` instead:
+Esse mapa é acionado por `\h`. Se você quiser usar a tecla de espaço ao invés da
+barra invertida (que é o padrão)
 
 ```vim
 let mapleader = ' '
 nnoremap <leader>h :helpgrep<space>
 ```
 
-Moreover, there is `<localleader>` that is the local counterpart to `<leader>`
-and is supposed to be used for mappings that are local to the buffer, eg.
-filetype-specific plugins. It also defaults to `\`.
+Além disse, existe a `<localleader>` que é a contraparte local de `<leader>` e é
+para ser supostamente usada para mapas que são locais ao buffer, como por exemplo plugins para tipos específicos de arquivos. Ela também é por padrão a tecla `\`.
 
-**Note**: Set the mapleaders before mappings! All leader mappings that are in
-effect already, won't change just because the mapleader was changed. `:nmap
-<leader>` will show all normal mode leader mappings with the mapleader resolved
-already, so use it to double-check your mappings.
+**Nota**: Configure as teclas-líder antes de fazer algum mapeamento! Todos os
+mapeamentos que já foram efetuados não mudarão só porquê a tecla-líder foi
+alterada. `:nmap <leader>` irá mostrar todos os mapeamentos com a tecla líder
+para o modo normal que já estão acionados, então use-o para rechecar os seus
+mapeamentos.
 
-See `:h mapleader` and `:h maplocalleader` for more.
+Veja `:h mapleader` e `:h maplocalleader` para saber mais.
 
 ## Registers
 
