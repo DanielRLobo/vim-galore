@@ -480,37 +480,38 @@ mapeamentos.
 
 Veja `:h mapleader` e `:h maplocalleader` para saber mais.
 
-## Registers
+## Registradores
 
-Registers are slots that save text. Copying text into a register is called
-**yanking** and extracting text from a register is called **pasting**.
+Registradores (inglês: "_registers_") são lugares que o Vim usa para registrar texto.
+Copiar texto para um registrador é chamado de **yanking** e extrair texto de um
+registradoro é chamado de **pasting** ("_colar_"). 
 
-Vim provides the following registers:
+O Vim provem os seguintes registradores:
 
-| Type                | Character              | Filled by? | Readonly? | Contains text from? |
+| Tipo                | Charactére             | preenchido por? | Apenas de leitura? | Contém texto de? |
 |---------------------|------------------------|------------|-----------|---------------------|
-| Unnamed             | `"`                    | vim        | [ ]       | Last yank or deletion. (`d`, `c`, `s`, `x`, `y`) |
-| Numbered            | `0` to `9`             | vim        | [ ]       | Register `0`: Last yank. Register `1`: Last deletion. Register `2`: Second last deletion. And so on. Think of registers `1`-`9` as a read-only [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) with 9 elements. |
-| Small delete        | `-`                    | vim        | [ ]       | Last deletion that was less than one line. |
-| Named               | `a` to `z`, `A` to `Z` | user       | [ ]       | If you yank to register `a`, you replace its text. If you yank to register `A`, you append to the text in register `a`. |
-| Read-only           | `:`, `.`, `%`          | vim        | [x]       | `:`: Last command, `.`: Last inserted text, `%`: Current filename. |
-| Alternate buffer    | `#`                    | vim        | [ ]       | Most of the time the previously visited buffer of the current window. See `:h alternate-file` |
-| Expression          | `=`                    | user       | [ ]       | Evaluation of the VimL expression that was yanked. E.g. do this in insert mode: `<c-r>=5+5<cr>` and "10" will be inserted in the buffer. |
-| Selection           | `+`, `*`               | vim        | [ ]       | `*` and `+` are the [clipboard](#clipboard) registers. |
-| Drop                | `~`                    | vim        | [x]       | From last drag'n'drop. |
-| Black hole          | `_`                    | vim        | [ ]       | If you don't want any other registers implicitly affected. E.g. `"_dd` deletes the current line without affecting registers `"`, `1`, `+`, `*`. |
-| Last search pattern | `/`                    | vim        | [ ]       | Last pattern used with `/`, `?`, `:global`, etc. |
+| Não nomeado             | `"`                    | vim        | [ ]       | Último puxão ou remoção. (`d`, `c`, `s`, `x`, `y`) |
+| Numerado            | `0` to `9`             | vim        | [ ]       | Registrador `0`: último puxão. Registrador `1`: Última remoção. Registrador `2`: Seunda remoção. E assim por diante. Pense nos registradores `1`-`9` como uma [file](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) com 9 elementos apenas de leitura. |
+| Pequena remoção        | `-`                    | vim        | [ ]       | Última remoção que for menor que uma linha.|
+| Nomeado               | `a` até `z`, `A` até `Z` | usuário       | [ ]       | Se você empurrar para o registrador `a`, você substitui o texto dele. Se você empurrar para o registrador `A`, você acrescenta ao texto no registrador `a`. |
+| apenas leitura           | `:`, `.`, `%`          | vim        | [x]       | `:`: Último comando `.`: Último texto inserido, `%`: Nome do arqivo atual. |
+| Buffer alternativo    | `#`                    | vim        | [ ]       | Na maioria das vezes é o último buffer visitado na janela atual. Veja `:h alternate-file` |
+| Expressão          | `=`                    | usuário       | [ ]       | Avaliação da expressão em VimL que foi puxada ("yanked"). Por exemplo, faça isso em modo de inserção: `<c-r>=5+5<cr>` e "10" será inserido no buffer. |
+| Seleção           | `+`, `*`               | vim        | [ ]       | `*` e `+` são os registradores da área de transferência. [clipboard](#clipboard). |
+| Soltar                | `~`                    | vim        | [x]       | Do último arrastas e soltar. |
+| Buraco negro          | `_`                    | vim        | [ ]       | Se você não quiser que nenhum outro registrador seja implicitamente afetado. Por exemplo, `"_dd` deleta a linha tual sem afetar os registradores `"`, `1`, `+`, `*`. |
+| Último padrão de busca | `/`                    | vim        | [ ]       | Último padrão usado com `/`, `?`, `:global`, etc. |
 
-Each register that is not readonly can be set by the user:
+Cada registrador que não é apenas de leitura pod ser determinado com:
 
 ```vim
-:let @/ = 'register'
+:let @/ = 'registro'
 ```
 
-Afterwards <kbd>n</kbd> would jump to the next occurrence of "register".
+Em seguida <kbd>n</kbd> iria pular para a próxima ocorrência de "registro".
 
-There are numerous exceptions when registers get implicitly filled, so be sure
-to read `:h registers`.
+Há várias exceções onde os registradores são implicitamente preenchidos, então
+só para ter certeza, confira `:h registers`.
 
 Yank with `y` and paste with `p`/`P`, but mind that Vim distinguishes between
 characterwise and linewise visual selections. See `:h linewise`.
