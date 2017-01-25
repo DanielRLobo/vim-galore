@@ -539,35 +539,35 @@ registradores.
 
 **Caso engraçado**: No Emacs, `yaking` quer dizer colar [ou _reinserir texto que anteriormente morto_("_reinserting previously killed text_")] e não copiar.
 
-## Ranges
+## Alcances (ranges)
 
-Ranges are pretty easy to understand, but many Vimmers don't know about their
-full potential.
+Os alcances são bem fáceis de entender, mas muitos (Vimmers) não sabem sobre o
+potencial que eles possuem.
 
-- Many commands take ranges.
-- An address denotes a certain line.
-- A range is either a single address or a pair of addresses separated by either
-  `,` or `;`.
-- Ranges tell commands which lines to act on.
-- Most commands act only on the current line by default.
-- Only `:write` and `:global` act on all lines by default.
+- Muitos comandos aceitam alcances.
+- Um endereço denota uma certa linha.
+- Um alcance pode ser tanto um único endereço quanto um par de endereços
+  separados tanto por `,` quanto por `;`.
+- Os alcances informam os comandos em quais linhas eles devem agir.
+- Muitos comandos agem por padrão apenas na linha atual.
+- Somente `:write` e `:global` agem em todas as linhas por padrão.
 
-The usage of ranges is pretty intuitive, so here are some examples (using `:d`
-as short form of `:delete`):
+A utilização dos alcances é bem intuitiva, portanto aqui seguem alguns exemplos
+(usando `:d` como uma abreviação de `:delete`):
 
-| Command | Lines acted on |
+| Comando | Linhas em que age |
 |---------|----------------|
-| `:d` | Current line. |
-| `:.d` | Current line. |
-| `:1d` | First line. |
-| `:$d` | Last line. |
-| `:1,$d` | All lines. |
-| `:%d` | All lines (syntactic sugar for `1,$`). |
-| `:.,5d` | Current line to line 5. |
-| `:,5d` | Also current line to line 5. |
-| `:,+3d` | Current line and the next 3 lines. |
-| `:1,+3d` | First line to current line + 3. |
-| `:,-3d` | Current line and the last 3 lines. (Vim will prompt you, since this is a reversed range.) |
+| `:d` | Linha atual. |
+| `:.d` | Linha atual |
+| `:1d` | Primeira linha. |
+| `:$d` | Última linha. |
+| `:1,$d` | Todas as linhas. |
+| `:%d` | Todas as linhas (alívio sintático para `1,$`). |
+| `:.,5d` | Da linha atual até a linha 5. |
+| `:,5d` | Também a linha atual e até a linha 5. |
+| `:,+3d` | Linha atual e as próximas 3 linhas. |
+| `:1,+3d` | Da primeira linha até a linha atual + 3. |
+| `:,-3d` | Linha atual e as últimas 3 linhas. (O Vim irá lhe perguntar, já que esse é um alcance reverso.) |
 | `:3,'xdelete` | Lines 3 to the line marked by [mark](#marks) x. |
 | `:/^foo/,$delete` | From the next line that starts with "foo" to the end. |
 | `:/^foo/+1,$delete` | From the line after the line that starts with "foo" to the end. |
