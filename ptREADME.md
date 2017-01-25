@@ -513,29 +513,31 @@ Em seguida <kbd>n</kbd> iria pular para a próxima ocorrência de "registro".
 Há várias exceções onde os registradores são implicitamente preenchidos, então
 só para ter certeza, confira `:h registers`.
 
-Yank with `y` and paste with `p`/`P`, but mind that Vim distinguishes between
-characterwise and linewise visual selections. See `:h linewise`.
+Copie com `y` e cole com `p`/`P`, mas lembre-se que o Vim distingue entre
+seleções visuais de caracteres e de linha. Veja `:h linewise`.
 
-**Example: linewise**
 
-`yy` (or just `Y`) yanks the current line, move the cursor somewhere else, use
-`p` to paste below the current line `P` for pasting above it.
+**Exemplo: com atenção lineal**
 
-**Example: charwise**
+`yy` (ou apenas `Y`) copia a linha atual, mova o cursor para algum outro lugar,
+use `p` para colar abaixo da linha em que esteja ou `P` para colar na linha
+acima.
 
-Yank the first word with `0yw`, move somewhere else, paste after the cursor on
-the current line with `p` and before the cursor with `P`.
+**Exemplo: com atenção focada em caracteres**
 
-**Example: explicit naming of register**
+Copie a primeira palavra com `0yw`, mova para algum outro lugar, cole na linha
+em que esteja e após o cursor com `p` e antes do cursor com `P`.
 
-`"aY` yanks the current line into register `a`. Move to another line. `"AY`
-appends the current line to register `a`.
+**Exemplo: nomeação explícita de registrador**
 
-I suggest playing around with all these registers a bit and constantly checking
-`:reg`, so you can see what's actually happening.
+`"aY` copia a linha atual para o registrador `a`. Vá para alguma outra linha.
+Use `"AY` para acrescentar a linha atual ao registrador `a`.
 
-**Fun fact**: In Emacs "yanking" stands for pasting (or _reinserting previously
-killed text_) not copying.
+Sugiro que você dê uma brincada com esses registradores e constantemente olhe em
+`:reg`, para que você veja em primeira mão o quê está acontecendo com os
+registradores.
+
+**Caso engraçado**: No Emacs, `yaking` quer dizer colar [ou _reinserir texto que anteriormente morto_("_reinserting previously killed text_")] e não copiar.
 
 ## Ranges
 
