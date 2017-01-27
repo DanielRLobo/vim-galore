@@ -569,39 +569,39 @@ A utilização dos alcances é bem intuitiva, portanto aqui seguem alguns exempl
 | `:1,+3d` | Da primeira linha até a linha atual + 3. |
 | `:,-3d` | Linha atual e as últimas 3 linhas. (O Vim irá lhe perguntar, já que esse é um alcance reverso.) |
 | `:3,'xdelete` | Lines 3 to the line marked by [mark](#marks) x. |
-| `:/^foo/,$delete` | From the next line that starts with "foo" to the end. |
-| `:/^foo/+1,$delete` | From the line after the line that starts with "foo" to the end. |
+| `:/^foo/,$delete` | Da próxima linha que começa com "foo" até o final. |
+| `:/^foo/+1,$delete` | Da linha após a linha que começa com "foo" até o final. |
 
-Note that instead of `,`, `;` can be used as a separator. The difference is that
-in the case of `from,to`, the _to_ is relative to the current line, but when
-using `from;to`, the _to_ is relative to the address of _from_! Assuming you're
-on line 5, `:1,+1d` would delete lines 1 to 6, whereas `:1;+1d` would only
-delete lines 1 and 2.
+Repare que ao invés de `,`, o `;` também pode ser usado como separador. A
+diferença é como `de,para` o _para_ é relativo a linha atual, mas ao usar
+`de;para`, o _para_ é relativo ao endereço do _de_! Assumindo que você está na
+linha 5, `:1,+1d` deletaria as linhas de 1 a 6, ao mesmo tempo que `:1;+1d`
+deletaria apenas as linhas 1 e 2.
 
-The `/` address can be preceded with another address. This allows you to _stack_
-patterns, e.g.:
+O endereço `/` pode ser precedido com outro endereço. Isso permite que você
+_empilhe_ padrões, por exemplo:
 
 ```vim
 :/foo//bar//quux/d
 ```
+Isso iria deletar a primeira linha contendo "quux" após a primeira linha
+contendo "bar" depois da primeira linha contendo "foo" depois da linha atual.
 
-This would delete the first line containing "quux" after the first line
-containing "bar" after the first line containing "foo" after the current line.
+As vezes o Vim automaticamente antecipa com um alcance na linha de comando. Por
+exemplo, comece uma seleção visual de linha com o `V`, selecione algumas linhas
+e digite `:`. A linha linha de comando será povoada com o alcance `'<,'>`, que
+significa que o próximo comando irá usar as linhas previamente selecionadas como
+um alcance. (Essa também é a razão pela qual as vezes você vê mapeamentos como
+`:vnoremap foo :<c-u>command`. Neste caso, `<c-u>` é usado para remover o
+alcance, porque o Vim irá jogar um erro quando der um alcance a um comando que
+não suporta o tal alcance.).
 
-Sometimes Vim automatically prepends the command-line with a range. E.g. start a
-visual line selection with `V`, select some lines and type `:`. The command-line
-will be populated with the range `'<,'>`, which means the following command will
-use the previously selected lines as a range. (This is also why you sometimes
-see mappings like `:vnoremap foo :<c-u>command`. Here `<c-u>` is used to remove
-the range, because Vim will throw an error when giving a range to a command that
-doesn't support it.)
+Outro exemplo é ao usar `!!` em modo normal. Isso irá povoar a linha de comando
+com `:.!`. Se seguido por um programa externo, a saída do programa iria
+substituir a linha atual. Portanto, você substituiria o parágrafo atual com a
+saída do comando ls usando: `:?^$?+1,/^$/-1!ls`. Chique!
 
-Another example is using `!!` in normal mode. This will populate the
-command-line with `:.!`. If followed by an external program, that program's
-output would replace the current line. So you could replace the current
-paragraph with the output of ls by using `:?^$?+1,/^$/-1!ls`. Fancy!
-
-Help:
+Ajuda:
 
 ```
 :h cmdline-ranges
