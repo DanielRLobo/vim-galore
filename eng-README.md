@@ -119,162 +119,153 @@
 
 ---
 
-# Introdução
+# Intro
 
-## O que é o Vim?
+## What is Vim?
 
-[Vim](http://www.vim.org) é um editor de texto com uma longa linha de ancestrais
-que vem desde o [qed](https://en.wikipedia.org/wiki/QED_(text_editor)). [Bram
-Moolenaar](https://en.wikipedia.org/wiki/Bram_Moolenaar) lançou o Vim em 1991.
+[Vim](http://www.vim.org) is a text editor with a long line of ancestors that
+goes back to [qed](https://en.wikipedia.org/wiki/QED_(text_editor)). [Bram
+Moolenaar](https://en.wikipedia.org/wiki/Bram_Moolenaar) released it in 1991.
 
-O projeto está hospedado na rede em [vim.org](http://www.vim.org/index.php).
+The project is hosted online at [vim.org](http://www.vim.org/index.php).
 
-Para o Vim: use o seu gerenciador de pacotes preferido ou visite a [página para baixar](http://www.vim.org/download.php) direto da vim.org.
+Getting Vim: Use your favourite package manager or visit the [download
+page](http://www.vim.org/download.php) from vim.org.
 
-Discussões e questões da usuária são melhores se feitas na lista de correio
-eletrônico [vim_use](https://groups.google.com/forum/#!forum/vim_use) (*em inglês*) ou usando o IRC ([Freenode](https://freenode.net)) no canal `#vim` (*em inglês*).
+Discussions and user questions are best done on the
+[vim_use](https://groups.google.com/forum/#!forum/vim_use) mailing list or using
+IRC ([Freenode](https://freenode.net)) in the `#vim` channel.
 
-O desenvolvimento acontece no [Github](https://github.com/vim/vim), discussões
-na lista de correio eletrônico [vim_dev](https://groups.google.com/forum/#!forum/vim_dev).
+Development happens on [Github](https://github.com/vim/vim), discussions on the
+[vim_dev](https://groups.google.com/forum/#!forum/vim_dev) mailing list.
 
-Leia [Why, oh WHY, do those #?@! nutheads use
-vi?](http://www.viemu.com/a-why-vi-vim.html) (*em inglês*) para ver equívocos
-comuns sobre o Vim explicados.
+Read [Why, oh WHY, do those #?@! nutheads use
+vi?](http://www.viemu.com/a-why-vi-vim.html) to see common misconceptions about
+Vim explained.
 
-## A filosofia do Vim
+## The Vim Philosophy
 
-O Vim adere a filosofia de de edição modal. Isso quer dizer que ele provem
-múltiplos modos e a função/significado das teclas muda de acordo com o modo.
-Você navega pelos arquivos no _modo normal_, você insere texto no _modo de
-inserção_, você seleciona linhas no _modo visual_, você acessa comando no _modo
-de linha de comando_ e assim por diante. Isso pode até parecer complicado à
-primeira vista, mas tem uma grande vantagem: você não precisa entortar os dedos
-segurando várias teclas ao mesmo tempo, na maioria das vezes você
-simplesmente pressiona uma tecla após a outra. Quanto mais comum for a tarefa
-menos teclas são necessárias.
+Vim adheres to the modal editing philosophy. This means that it provides
+multiple modes and the meaning of keys changes according to the mode. You
+navigate files in _normal mode_, you insert text in _insert mode_, you select
+lines in _visual mode_, you access commands in _command-line mode_ and so on.
+This might sound complicated at first, but has a huge advantage: you don't have
+to break your fingers by holding several keys at once, most of the time you
+simply press them one after the other. The more common the task, the fewer keys
+are needed.
 
-Um conceito relacionado que funciona bem com a edição modal são operadores e
-movimentos.
-_Operadores_ começam uma certa ação, por exemplo mudando, removendo ou
-selecionando texto. Logo em seguida você especifíca a região do texto onde a
-ação deve ocorrer usando um _movimento_. Para mudar tudo entre os parênteses,
-ese `ci(` (leia como "mudar dentro dos parênteses", em inglês: _change inner
-parentheses_). Para remover todo um parágrafo de texto de uma vez, use `dap`
-(leia como "deletar em volta do parágrafo", em inglês: _delete around
-paragraph_).
+A related concept that works well with modal editing are operators and motions.
+_Operators_ start a certain action, e.g. changing, removing, or selecting text.
+Afterwards you specify the region of text you want to act on using a _motion_.
+To change everything between parentheses, use `ci(` (read _change inner
+parentheses_). To remove an entire paragraph of text, use `dap` (read _delete
+around paragraph_).
 
-Se você ver usuárias avançadas do Vim trabalhando, você irá reparar que elas
-falam a _língua do Vim_ da mesma forma que pianistas tratam seus instrumentos.
-Operações complexas são feitas usando apenas alguns pressionamentos de teclas.
-Elas nem sequer pensam mais sobre isso já que a [memória muscular](https://en.wikipedia.org/wiki/Muscle_memory) tomou conta. Isso reduz o [esforço cognitivo
-](https://en.wikipedia.org/wiki/Cognitive_load) e ajuda a focar na tarefa atual.
+If you see advanced Vim users working, you'll notice that they speak the
+_language of Vim_ as well as pianists handle their instruments. Complex
+operations are done using only a few key presses. They don't even think about it
+anymore as [muscle memory](https://en.wikipedia.org/wiki/Muscle_memory) took
+over already. This reduces [cognitive
+load](https://en.wikipedia.org/wiki/Cognitive_load) and helps to focus on the
+actual task.
 
-## Primeiros passos
+## First steps
 
-O pacote do Vim inclui um tutorial interativo que ensina as coisas mais básicas
-que você precisa saber a respeito. Você pode iniciar o tutorial direto do
-shell:
+Vim comes bundled with an interactive tutorial that teaches the most basic
+things you need to know about. You can start it from the shell:
 
 ```
 $ vimtutor
 ```
 
-Não fique adiando o tutorial só porque parece chato, vá e trabalhe através dos
-exercícios. Os editores ou IDEs que você já usou antes eram todos provavelmente
-não-modais, então trabalhar mudando de modo vai ser um pouco esquisito a
-princípio, mas quanto mais você usar o Vim, mais isso vai virar [memória muscular](https://en.wikipedia.org/wiki/Muscle_memory).
+Don't be put off by how boring it looks like and work through the exercises. The
+editors or IDEs you used before were most probably all non-modal, so working by
+switching modes will seem awkward at first, but the more you use Vim, the more
+it becomes [muscle memory](https://en.wikipedia.org/wiki/Muscle_memory).
 
-O Vim partiu do [Stevie](https://en.wikipedia.org/wiki/Stevie_(text_editor)), 
-um clone do [vi](https://pt.wikipedia.org/wiki/Vi), e suporta dois modos
-"compatível" e "não-compatível". Usar o Vim em modo compatível quer dizer usar
-os padrões do vi para todas as opções, ao contrário dos padrões do Vim. O modo
-compátivel é assumido enquanto você ainda não tiver criado um vimrc do usuário 
-ou começado o Vim com `vim -N`! Não use o Vim em modo compatível. Simplesmente
-não use.
+Vim was bolted on [Stevie](https://en.wikipedia.org/wiki/Stevie_(text_editor)), a
+[vi](https://en.wikipedia.org/wiki/Vi) clone, and supports two operating modes:
+"compatible" and "nocompatible". Using Vim in compatible mode means using vi
+defaults for all options, opposed to Vim defaults. As long as you didn't create
+a user vimrc yet or started Vim with `vim -N`, compatible mode is assumed! Don't
+use Vim in compatible mode. Just don't.
 
+Next steps:
 
-Próximos passos:
+1. Create your own [vimrc](#minimal-vimrc).
+2. Have some [cheatsheets](#cheatsheets) ready for the first weeks.
+3. Read through the [basics](#basics-1) section to learn what is even possible.
+4. Learn on demand! You never finish learning Vim. If you encounter any
+   problems, just look for it on the internet. Your problem was solved already.
+   Vim comes with great documentation and knowing how to navigate it is a must:
+   [Getting help offline](#getting-help-offline).
+5. Have a look at the [additional resources](#additional-resources).
 
-1. Crie o seu próprio [vimrc](#vimrc-minimo).
-2. Tenha alguma [planilha de cola](#cheatsheets) pronta para as primeiras
-   semanas.
-3. Leia através da seção [basico](#basics-1) para ter uma ideia do que é
-   possível. 
-4. Aprenda de acordo com a necessidade! Você nunca termina de aprender o Vim. Se
-   você encontrar problemas, basta procurar por ele pela rede. Seu problema já
-   foi resolvido antes. O Vim vem com uma documentação ótima e saber como
-   navegar por ela é uma obrigação: [conseguindo ajuda desconectado](#getting-help-offline).
-5. Dê uma olhada nos [Recursos adicionais](#additional-resources).
+One last advice: Please learn how to use Vim properly before starting to add all
+kinds of hyped [plugins](#managing-plugins) that only implement features that
+Vim already supports natively.
 
-Um último conselho: por favor aprenda a usar o Vim apropriadamente antes de
-começar a adicionar tudo quanto é tipo de [plugins](#managing-plugins) extravagantes que apenas implementam funcionalidades que o Vim já suporta nativamente.
+## Minimal vimrc
 
-## Vimrc mínimo
+The user vimrc can be put into `~/.vimrc` or for the sake of better separation
+into `~/.vim/vimrc`. The latter makes it easy to put the entire configuration
+under version control and upload it to, let's say Github.
 
-O vimrc do usuário pode ser colocado em `~/.vimrc` ou só para melhor
-separar/organizar as coisas em `~/.vim/vimrc`. A última opção deixa fácil
-colocar toda a configuração sob controle de versão e enviar ela para onde
-esteja, por exemplo no Github.
+You find many "minimal vimrcs" all over the net, and maybe my version isn't as
+minimal as it should be, but it provides a good set of sane settings that I deem
+to be useful for starting out.
 
-Você encontra muitos "vimrcs mínimos" por toda a rede, e talvez a minha versão
-não seja tão mínima quanto deveria, mas ela provem um bom conjunto de
-configurações sãs que julgo serem úteis para começar.
+Eventually you have to read up on all the mentioned settings anyway and decide
+for yourself. :-)
 
+So here it is: [minimal-vimrc](contents/minimal-vimrc.vim)
 
-Então, aqui vai: [vimrc-minimo](contents/minimal-vimrc.vim)
+In case you're interested, here's
+[my vimrc][https://github.com/mhinz/dotfiles/blob/master/.vim/vimrc].
 
-Caso você esteja interessado, aqui está o [meu vimrc](https://github.com/mhinz/dotfiles/blob/master/.vim/vimrc).
+**TIP**: Most plugin authors maintain several plugins and also publish their
+vimrc on Github (often in a repository called "vim-config" or "dotfiles"), so
+whenever you find a plugin you like, look up its maintainer's Github page and
+look through the repositories.
 
-**DICA**: A maioria dos autores de plugins mantêm vários plugins e também
-publicam seus próprios vimrc no Github (com frequência em um repositório chamado
-de "vim-config" ou "dotfiles"), então quando quer você entre um plugin que você
-gosta, dê uma olhada na página do Github do mantenedor e olhe através dos
-repositórios.
+## What kind of Vim am I running?
 
-## Que tipo de Vim eu estou rodando?
+Looking at `:version` will give you all the information you need to know about
+how the currently running Vim binary was compiled.
 
-Olhar em `:version` irá te dar toda a informação que você precisa saber sobre
-como que a versão binária que está rodando atualmente foi compilada.
+The first line tells you when the binary was compiled and the version, e.g. 7.4.
+One of the next lines states `Included patches: 1-1051`, which is the patch
+level. Thus, your exact Vim version is 7.4.1051.
 
-A primeira linha te diz quando que o binário foi compilado e qual a versão, por
-exemplo 7.4. Uma das linhas seguintes irá dizer `Included patches: 1-1051`, que
-é o nível do remendo (patch). Portanto, sua versão exata do Vim é 7.4.1051.
+Another line states something like `Tiny version without GUI` or `Huge version
+with GUI`. The obvious information from that is whether your Vim includes GUI
+support, e.g. for starting `gvim` from the shell or running `:gui` from Vim
+within a terminal emulator. The other important information is the `Tiny` and
+`Huge`. Vim distinguishes between feature sets called `tiny`, `small`, `normal`,
+`big`, and `huge`, all enabling different subsets of features.
 
-Uma outra linha irá colocar algo como `Tiny version without GUI` ("_versão
-minúscula sem interface gráfica_") ou `Huge version with GUI` ("_versão enorme com
-interface gráfica_"). A informação que tiramos disso é se o seu Vim inclui
-interface gráfica ("GUI"), como por exemplo iniciar o `gvim` do shell ou rodar
-`:gui` dentro do Vim em um emulador de terminal. A outra informação importante é
-o `Tiny` ("_minúscula_") e `Huge` ("_enorme_"). O Vim distingue entre conjuntos 
-de funções/características chamados de `tiny` ("_minúcula_"), `small`
-("_pequna_"), `normal`, `big` ("_grande_"), e `huge` ("_enorme_"), todas
-ativando diferentes subconjuntos de funções/características.
+The majority of `:version` output is consumed by the feature list itself.
+`+clipboard` means the clipboard feature was compiled in, `-clipboard` means it
+wasn't compiled in.
 
-A maioria do resultado que aparece com o `:version` é consumida pela própria
-função de listagem mesma. `+clipboard` significa que a função da área de
-transferência foi compilada junto, e `-clipboard` significa que não foi compilada.
+A few Vim features need to be compiled in for them to work. E.g. for `:prof` to
+work, you need a Vim with a huge feature set, because that set enables the
+`+profile` feature.
 
-São poucas as funções que precisam ser compiladas juntamente para funcionar. Por
-exemplo, para que `:prof` funcione, você precisa de um Vim com um conjunto
-enorme ("_huge_") de funções/características, porque esse conjunto ativa a
-função `+profile`.
+If that's not the case and you installed Vim from a package manager, make sure
+to install a package called `vim-x`, `vim-x11`, `vim-gtk`, `vim-gnome` or
+similar, since these packages usually come with the huge feature set.
 
-Se esse não for o caso e você instalou o Vim por um gerenciador de pacotes,
-tenha certeza de instalar um pacote chamado `vim-x`, `vim-x11, `vim-gtk`,
-`vim-gnome` ou algo parecido, já que esses pacotes normalmente vêm com o
-conjunto enorme ("_huge_") de funções.
-
-Você também pode testar programavelmente a versão ou as funcionalidades:
+You can also test for the version or features programmatically:
 
 ```vim
-" Fazer alguma coisa se rodando pelo menos a versão 7.4.42 do Vim com +profile
-ativado. 
+" Do something if running at least Vim 7.4.42 with +profile enabled.
 if (v:version > 704 || v:version == 704 && has('patch42')) && has('profile')
-  " fazer algo
+  " do stuff
 endif
 ```
 
-Ajuda:
+Help:
 
 ```
 :h :version
@@ -283,7 +274,7 @@ Ajuda:
 :h has-patch
 ```
 
-## Planilhas de cola
+## Cheatsheets
 
 - http://people.csail.mit.edu/vgod/vim/vim-cheat-sheet-en.png
 - https://cdn.shopify.com/s/files/1/0165/4168/files/preview.png
@@ -291,370 +282,356 @@ Ajuda:
 - http://michael.peopleofhonoronly.com/vim/vim_cheat_sheet_for_programmers_screen.png
 - http://www.rosipov.com/images/posts/vim-movement-commands-cheatsheet.png
 
-Ou abra rapidamente uma planilha com cola de dentro do Vim: [vim-cheat40](https://github.com/lifepillar/vim-cheat40).
+Or quickly open a cheatsheet from within Vim: [vim-cheat40](https://github.com/lifepillar/vim-cheat40).
 
-# O básico
+# Basics
 
 ## Buffers, windows, tabs
 
-O Vim é um editor de texto. Toda vez que um texto é mostrado, o texto é parte de
-um **buffer**. Cada arquivo será aberto em seu próprio buffer. Plugins mostram
-as coisas também em seus próprios buffers e etc.
+Vim is a text editor. Every time text is shown, the text is part of a
+**buffer**. Each file will be opened in its own buffer. Plugins show stuff in
+their own buffers etc.
 
-Os buffers tem muito atributos, por exemplo se o texto que o buffer contém é
-modificável ou se o texto está associado com um outro arquivo e portanto precisa
-ser sincronizado ao disco na hora de salvar.
+Buffers have many attributes, e.g. whether the text it contains is modifiable,
+or whether it is associated with a file and thus needs to be synchronized to
+disk on saving.
 
-**Windows** ou **Janelas** são janelas de exibição _para_ o buffer. Se você
-quiser ver vários arquivos ao mesmo tempo ou até mesmo diferentes partes de um
-mesmo arquivo, você usa janelas.
+**Windows** are viewports _onto_ buffers. If you want to view several files at
+the same time or even different locations of the same file, you use windows.
 
-E por favor, não as chame de _splits_ ("_divisões_" ou "_partes_"). Você pode
-dividir uma janela em duas partes (dois "_splits_"), mas isso não
-necessáriamente as transforma em divisões ("_splits_").
+And please, please don't call them _splits_. You can split a window in two, but
+that doesn't make them _splits_.
 
-Janelas podem ser divididas vertical ou horizontalmente, e as alturas e larguras
-das janelas existentes também podem ser alteradas. E é por isso que você pode
-rearranjar as janelas como preferir.
+Windows can be split vertically or horizontally and the heights and widths of
+existing windows can be altered, too. Therefore, you can use whatever window
+layout you prefer.
 
-Uma **tab page** ou (ou simplesmente "aba") é uma coleção/coletânea de janelas.
-Por tanto se você quiser ter múltiplos arranjos de janelas, use as abas.
+A **tab page** (or just tab) is a collection of windows. Thus, if you want to
+use multiple window layouts, use tabs.
 
-A propósito, a lista de buffers é global e você pode acessar qualquer buffer a
-partir de qualquer aba.
+Putting it in a nutshell, if you start Vim without arguments, you'll have one
+tab page that holds one window that shows one buffer.
 
-## Buffer ativos, carregados, listados e nomeados
+By the way, the buffer list is global and you can access any buffer from any
+tab.
 
-Inicie o Vim como `vim arquivo1`. O conteúdo do arquivo será carregado dentro do
-buffer. Agora você tem um **buffer carregado** ("_loaded buffer_"). O conteúdo do buffer só será
-sincronizado ao disco rígido (salvo no arquivo original) se você salvar de 
-dentro do Vim.
+## Active, loaded, listed, named buffers
 
-Já que o buffer também é mostrado em uma janela, ele também é um **buffer
-ativo** ("_active buffer_"). Agora, se você abrir um outro arquivo com 
-`e: arquivo2`, o `arquivo1` vai se tornar um **buffer escondido** 
-("_hidden buffer_") e o `arquivo2` será o buffer ativo.
+Run Vim like this `vim file1`. The file's content will be loaded into a buffer.
+You have a **loaded buffer** now. The content of the buffer is only synchronized
+to disk (written back to the file) if you save it within Vim.
 
-Ambos buffers estão também **listados** ("_listed_"), portanto eles serão
-listados com a saída do comando `:ls`. Os buffers dos plugins, ou os buffers de
-ajuda, normalmente são marcados como não-listados ("_unlisted_"), já que eles
-não arquivos regulares, que você normalmente edita com um editor de texto. Tanto
-os buffers listados quanto os não-listados são mostrados pelo comando `:ls!`.
+Since the buffer is also shown in a window, it's also an **active buffer**. Now
+if you load another file via `:e file2`, `file1` will become a **hidden buffer**
+and `file2` the active one.
 
-**Buffers não-nomeados** ("_unnamed buffers_"), geralmente usados por plugins,
-são buffers que não tem um nome de arquivo associado a si. Por exemplo, `:enew`
-irá criar um buffer não-nomeado para ser usado como rascunho. Adicione algum
-texto e salve o buffer no disco com `:w /tmp/foo`, e ele irá se tornar um buffer
-nomeado.
+Both buffers are also **listed**, thus they will get listed in the output of
+`:ls`. Plugin buffers or help buffers are often marked as unlisted, since
+they're not regular files you usually edit with a text editor. Listed and
+unlisted buffers can be shown via `:ls!`.
 
-## Lista de argumentos
+**Unnamed buffers**, also often used by plugins, are buffers that don't have an
+associated filename. E.g. `:enew` will create an unnamed scratch buffer. Add
+some text and write it to disk via `:w /tmp/foo`, and it will become a named
+buffer.
 
-A [lista de buffers global](#) é uma coisa do Vim. Antes disso, no Vi, costumava
-ter apenas a lista de argumentos, que também está disponível no Vim.
+## Argument list
 
-Todo nome de arquivo fornecido ao Vim na linha de comando do Shell, é lembrado
-na lista de argumentos. Podem existir múltiplas listas de argumentos: por padrão
-todos os argumentos são colocados na lista global de argumentos, mas você pode
-usar `:arglocal` para criar uma nova lista de argumentos que é local a janela.
+The [global buffer list](#buffers-windows-tabs) is a Vim thing. Before that, in
+vi, there only used to be the argument list, which is also available in Vim.
 
-Liste os argumentos atuais com `:args`. Alterne entre os arquivos da lista de
-argumentos com `:next` ("_próximo_", `:previous` ("_anterior_"), `:first`
-("_primeiro_"), `:last` ("_último_") e companhia. Altere  com `:argadd` (para 
-"_ad(d)_icionar"), `:argdelete` (para "_delet_ar") ou `args` uma lista de 
-arquivos.
+Every filename given to Vim on the shell command-line, is remembered in the
+argument list. There can be multiple argument lists: by default all arguments
+are put into the global argument list, but you can use `:arglocal` to create a
+new argument list that is local to the window.
 
-Se você deve usar a lista de buffers ou a lista de argumentos, é só uma questão
-de preferência. Minha impressão é a maioria das pessoas usa exclusivamente a
-lista de buffers.
+List the current arguments with `:args`. Switch between files from the argument
+list with `:next`, `:previous`, `:first`, `:last` and friends. Alter it with
+`:argadd`, `:argdelete` or `:args` with a list of files.
 
-Mesmo assim, existem uma forte razão para usar a lista de argumentos:
-processamento em batch por meio do `:argdo`! Um exemplo simples de
-reestruturamento:
+If you should prefer using the buffer or argument list for working with files is
+a matter of taste. My impression is that most people use the buffer list
+exclusively.
+
+Nevertheless, there is one huge use case for the argument list: batch processing
+via `:argdo`! A simple refactoring example:
 
 ```vim
 :args **/*.[ch]
 :argdo %s/foo/bar/ge | update
 ```
-Isso irá substituir todas as ocorrências de "foo" por "bar" em todas as fontes e
-cabeçalhos de todos os arquivos em C do diretório atual e abaixo.
 
-Ajuda: `:h argument-list`
+This replaces all occurrences of "foo" by "bar" in all C source and header files
+from the current directory and below.
 
-## Mapeamentos
+Help: `:h argument-list`
 
-Você pode definir os seus próprios mapas de teclado com a família de comandos `:map`. Cada comando dessa família define o mapeamentos para um conjunto 
-específico de modos. Tecnicamente o Vim vem com a enorme quantidade de 12 modos,
-e 6 deles podem ser mapeados. Adicionalmente, existem alguns comandos que agem 
-em múltiplos modos ao tempo.
+## Mappings
 
-| Recursivo | Não-recursivo | Desmapear | Modos                             |
-|-----------|---------------|-----------|---------------------------------- |
-| `:map`    | `:noremap`    | `:unmap`  | normal, visual, operador-pendendo |
-| `:nmap`   | `:nnoremap`   | `:nunmap` | normal                            |
-| `:xmap`   | `:xnoremap`   | `:xunmap` | visual                            |
-| `:cmap`   | `:cnoremap`   | `:cunmap` | linha de comando                  |
-| `:omap`   | `:onoremap`   | `:ounmap` | operador-pendendo                 |
-| `:imap`   | `:inoremap`   | `:iunmap` | inserção                          |
+You can define your own mappings with the `:map` family of commands. Each
+command of that family defines a mapping for a certain set of modes. Technically
+Vim comes with a whopping 12 modes, 6 of them can be mapped. Additionally, some
+commands act on multiple modes at once.
 
-Por exemplo, isso aqui irá definir um mapeamento apenas para o modo normal:
+| Recursive | Non-recursive | Unmap     | Modes                            |
+|-----------|---------------|-----------|----------------------------------|
+| `:map`    | `:noremap`    | `:unmap`  | normal, visual, operator-pending |
+| `:nmap`   | `:nnoremap`   | `:nunmap` | normal                           |
+| `:xmap`   | `:xnoremap`   | `:xunmap` | visual                           |
+| `:cmap`   | `:cnoremap`   | `:cunmap` | command-line                     |
+| `:omap`   | `:onoremap`   | `:ounmap` | operator-pending                 |
+| `:imap`   | `:inoremap`   | `:iunmap` | insert                           |
+
+E.g. this defines the mapping for normal mode only:
 
 ```vim
 :nmap <space> :echo "foo"<cr>
 ```
 
-Desmapei novamente usando `:nunmap <space>`.
+Unmap it again by using `:nunmap <space>`.
 
-Para conferir alguns outros modos mais incomuns (ou uma combinação deles), veja
-`h map-modes`.
+For a few more but rather uncommon modes (or combinations of them), see `:h
+map-modes`.
 
-Até agora, tudo sob controle. Mas tem um detalhe que pode ser bem confuso para
-iniciantes: `:nmap` é _recursivo_! Ou seja, o lado direito (que é remapeado) 
-vai levar outros mapeamentos em conta também.
+So far, so good. There's only one problem that can be pretty confusing to
+beginners: `:nmap` is _recursive_! That is, the right-hand side takes other
+mappings into account.
 
-Então, você definiu um mapeamento que simplesmente ecoa "Foo" ao apertar a tecla
-"b":
+So you defined a mapping that simply echoes "Foo":
 
 ```vim
 :nmap b :echo "Foo"<cr>
 ```
 
-Mas e se você quiser mapear o comportamento padrão de `b` (voltar uma palavra)
-para uma outra tecla?
+But what if you want to map the default behavior of `b` (going one word back) to
+another key?
 
 ```vim
 :nmap a b
 ```
 
-Se você apertar <kbd>a</kbd>, esperamos que o cursor volte à uma palavra atrás,
-mas ao contrário, "Foo" vai ser impresso de novo na linha de comando! Isso
-acontece devido ao fato que a tecla `b`, que fica no lado direito do mapeamento,já tinha sido remapeada para fazer ou ação, que no caso foi a ação de ecoar 
-"foo" com `:echo "Foo"<cr>`.
+If you hit <kbd>a</kbd>, we expect the cursor to go back a word, but instead
+"Foo" is printed in the command-line! Because the right-hand side, `b`, was
+mapped to another action already, namely `:echo "Foo"<cr>`.
 
-Para resolver esse problema de forma adequada, é preciso usar um mapeamento
-_não-recursivo_:
+The proper way to resolve this problem is to use a _non-recursive_ mapping
+instead:
 
 ```vim
 :nnoremap a b
 ```
-Regra de ouro: Sempre use mapeamentos não-recursivos, a não ser que realmente se
-deseje um mapeamento recursivo.
 
-Olhe os seus mapeamentos sem fornecer o lado direito do comando. Por exemplo,
-`:nmap` mostra todos os mapeamentos para o modo normal, e `:nmap <leader>`
-mostra todos os mapeamentos (para o modo normal) que começam com a tecla-líder.
+Rule of thumb: Always use non-recursive mappings unless recursing is actually
+desired.
 
-Se você quiser desativar um mapeamento padrão, o mapei para o caractére especial
-`<nop>`, como por exemplo `:noremap <left> <nop>`.
+Look up your mappings by not giving a right-hand side. E.g. `:nmap` shows all
+normal mappings and `:nmap <leader>` shows all normal mappings that start with
+the mapleader.
 
-Ajuda:
+If you want to disable a standard mapping, map them to the special `<nop>`
+character, e.g. `:noremap <left> <nop>`.
+
+Help:
 
     :h key-notation
     :h mapping
     :h 05.3
 
-## A tecla-líder
+## Mapleader
 
-A tecla-líder é uma base de suporte usada com mapeamentos personalizados e por
-padrão é configurada para a tecla `\`.
+The mapleader is simply a placeholder than can be used with custom mappings and
+is set to `\` by default.
 
 ```vim
 nnoremap <leader>h :helpgrep<space>
 ```
 
-Esse mapa é acionado por `\h`. Se você quiser usar a tecla de espaço ao invés da
-barra invertida (que é o padrão)
+This mapping is triggered by `\h`. If you want to use `<space>h` instead:
 
 ```vim
 let mapleader = ' '
 nnoremap <leader>h :helpgrep<space>
 ```
 
-Além disse, existe a `<localleader>` que é a contraparte local de `<leader>` e é
-para ser supostamente usada para mapas que são locais ao buffer, como por exemplo plugins para tipos específicos de arquivos. Ela também é por padrão a tecla `\`.
+Moreover, there is `<localleader>` that is the local counterpart to `<leader>`
+and is supposed to be used for mappings that are local to the buffer, eg.
+filetype-specific plugins. It also defaults to `\`.
 
-**Nota**: Configure as teclas-líder antes de fazer algum mapeamento! Todos os
-mapeamentos que já foram efetuados não mudarão só porquê a tecla-líder foi
-alterada. `:nmap <leader>` irá mostrar todos os mapeamentos com a tecla líder
-para o modo normal que já estão acionados, então use-o para rechecar os seus
-mapeamentos.
+**Note**: Set the mapleaders before mappings! All leader mappings that are in
+effect already, won't change just because the mapleader was changed. `:nmap
+<leader>` will show all normal mode leader mappings with the mapleader resolved
+already, so use it to double-check your mappings.
 
-Veja `:h mapleader` e `:h maplocalleader` para saber mais.
+See `:h mapleader` and `:h maplocalleader` for more.
 
-## Registradores
+## Registers
 
-Registradores (inglês: "_registers_") são lugares que o Vim usa para registrar texto.
-Copiar texto para um registrador é chamado de **yanking** e extrair texto de um
-registradoro é chamado de **pasting** ("_colar_"). 
+Registers are slots that save text. Copying text into a register is called
+**yanking** and extracting text from a register is called **pasting**.
 
-O Vim provem os seguintes registradores:
+Vim provides the following registers:
 
-| Tipo                | Charactére             | preenchido por? | Apenas de leitura? | Contém texto de? |
+| Type                | Character              | Filled by? | Readonly? | Contains text from? |
 |---------------------|------------------------|------------|-----------|---------------------|
-| Não nomeado             | `"`                    | vim        | [ ]       | Último puxão ou remoção. (`d`, `c`, `s`, `x`, `y`) |
-| Numerado            | `0` to `9`             | vim        | [ ]       | Registrador `0`: último puxão. Registrador `1`: Última remoção. Registrador `2`: Seunda remoção. E assim por diante. Pense nos registradores `1`-`9` como uma [file](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) com 9 elementos apenas de leitura. |
-| Pequena remoção        | `-`                    | vim        | [ ]       | Última remoção que for menor que uma linha.|
-| Nomeado               | `a` até `z`, `A` até `Z` | usuário       | [ ]       | Se você empurrar para o registrador `a`, você substitui o texto dele. Se você empurrar para o registrador `A`, você acrescenta ao texto no registrador `a`. |
-| apenas leitura           | `:`, `.`, `%`          | vim        | [x]       | `:`: Último comando `.`: Último texto inserido, `%`: Nome do arquivo atual. |
-| Buffer alternativo    | `#`                    | vim        | [ ]       | Na maioria das vezes é o último buffer visitado na janela atual. Veja `:h alternate-file` |
-| Expressão          | `=`                    | usuário       | [ ]       | Avaliação da expressão em VimL que foi puxada ("yanked"). Por exemplo, faça isso em modo de inserção: `<c-r>=5+5<cr>` e "10" será inserido no buffer. |
-| Seleção           | `+`, `*`               | vim        | [ ]       | `*` e `+` são os registradores da área de transferência. [clipboard](#clipboard). |
-| Soltar                | `~`                    | vim        | [x]       | Do último arrastas e soltar. |
-| Buraco negro          | `_`                    | vim        | [ ]       | Se você não quiser que nenhum outro registrador seja implicitamente afetado. Por exemplo, `"_dd` deleta a linha tual sem afetar os registradores `"`, `1`, `+`, `*`. |
-| Último padrão de busca | `/`                    | vim        | [ ]       | Último padrão usado com `/`, `?`, `:global`, etc. |
+| Unnamed             | `"`                    | vim        | [ ]       | Last yank or deletion. (`d`, `c`, `s`, `x`, `y`) |
+| Numbered            | `0` to `9`             | vim        | [ ]       | Register `0`: Last yank. Register `1`: Last deletion. Register `2`: Second last deletion. And so on. Think of registers `1`-`9` as a read-only [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) with 9 elements. |
+| Small delete        | `-`                    | vim        | [ ]       | Last deletion that was less than one line. |
+| Named               | `a` to `z`, `A` to `Z` | user       | [ ]       | If you yank to register `a`, you replace its text. If you yank to register `A`, you append to the text in register `a`. |
+| Read-only           | `:`, `.`, `%`          | vim        | [x]       | `:`: Last command, `.`: Last inserted text, `%`: Current filename. |
+| Alternate buffer    | `#`                    | vim        | [ ]       | Most of the time the previously visited buffer of the current window. See `:h alternate-file` |
+| Expression          | `=`                    | user       | [ ]       | Evaluation of the VimL expression that was yanked. E.g. do this in insert mode: `<c-r>=5+5<cr>` and "10" will be inserted in the buffer. |
+| Selection           | `+`, `*`               | vim        | [ ]       | `*` and `+` are the [clipboard](#clipboard) registers. |
+| Drop                | `~`                    | vim        | [x]       | From last drag'n'drop. |
+| Black hole          | `_`                    | vim        | [ ]       | If you don't want any other registers implicitly affected. E.g. `"_dd` deletes the current line without affecting registers `"`, `1`, `+`, `*`. |
+| Last search pattern | `/`                    | vim        | [ ]       | Last pattern used with `/`, `?`, `:global`, etc. |
 
-Cada registrador que não é apenas de leitura pod ser determinado com:
+Each register that is not readonly can be set by the user:
 
 ```vim
-:let @/ = 'registro'
+:let @/ = 'register'
 ```
 
-Em seguida <kbd>n</kbd> iria pular para a próxima ocorrência de "registro".
+Afterwards <kbd>n</kbd> would jump to the next occurrence of "register".
 
-Há várias exceções onde os registradores são implicitamente preenchidos, então
-só para ter certeza, confira `:h registers`.
+There are numerous exceptions when registers get implicitly filled, so be sure
+to read `:h registers`.
 
-Copie com `y` e cole com `p`/`P`, mas lembre-se que o Vim distingue entre
-seleções visuais de caracteres e de linha. Veja `:h linewise`.
+Yank with `y` and paste with `p`/`P`, but mind that Vim distinguishes between
+characterwise and linewise visual selections. See `:h linewise`.
 
+**Example: linewise**
 
-**Exemplo: com atenção lineal**
+`yy` (or just `Y`) yanks the current line, move the cursor somewhere else, use
+`p` to paste below the current line `P` for pasting above it.
 
-`yy` (ou apenas `Y`) copia a linha atual, mova o cursor para algum outro lugar,
-use `p` para colar abaixo da linha em que esteja ou `P` para colar na linha
-acima.
+**Example: charwise**
 
-**Exemplo: com atenção focada em caracteres**
+Yank the first word with `0yw`, move somewhere else, paste after the cursor on
+the current line with `p` and before the cursor with `P`.
 
-Copie a primeira palavra com `0yw`, mova para algum outro lugar, cole na linha
-em que esteja e após o cursor com `p` e antes do cursor com `P`.
+**Example: explicit naming of register**
 
-**Exemplo: nomeação explícita de registrador**
+`"aY` yanks the current line into register `a`. Move to another line. `"AY`
+appends the current line to register `a`.
 
-`"aY` copia a linha atual para o registrador `a`. Vá para alguma outra linha.
-Use `"AY` para acrescentar a linha atual ao registrador `a`.
+I suggest playing around with all these registers a bit and constantly checking
+`:reg`, so you can see what's actually happening.
 
-Sugiro que você dê uma brincada com esses registradores e constantemente olhe em
-`:reg`, para que você veja em primeira mão o quê está acontecendo com os
-registradores.
+**Fun fact**: In Emacs "yanking" stands for pasting (or _reinserting previously
+killed text_) not copying.
 
-**Caso engraçado**: No Emacs, `yaking` quer dizer colar [ou _reinserir texto que anteriormente morto_("_reinserting previously killed text_")] e não copiar.
+## Ranges
 
-## Alcances (ranges)
+Ranges are pretty easy to understand, but many Vimmers don't know about their
+full potential.
 
-Os alcances são bem fáceis de entender, mas muitos (Vimmers) não sabem sobre o
-potencial que eles possuem.
+- Many commands take ranges.
+- An address denotes a certain line.
+- A range is either a single address or a pair of addresses separated by either
+  `,` or `;`.
+- Ranges tell commands which lines to act on.
+- Most commands act only on the current line by default.
+- Only `:write` and `:global` act on all lines by default.
 
-- Muitos comandos aceitam alcances.
-- Um endereço denota uma certa linha.
-- Um alcance pode ser tanto um único endereço quanto um par de endereços
-  separados tanto por `,` quanto por `;`.
-- Os alcances informam os comandos em quais linhas eles devem agir.
-- Muitos comandos agem por padrão apenas na linha atual.
-- Somente `:write` e `:global` agem em todas as linhas por padrão.
+The usage of ranges is pretty intuitive, so here are some examples (using `:d`
+as short form of `:delete`):
 
-A utilização dos alcances é bem intuitiva, portanto aqui seguem alguns exemplos
-(usando `:d` como uma abreviação de `:delete`):
-
-| Comando | Linhas em que age |
+| Command | Lines acted on |
 |---------|----------------|
-| `:d` | Linha atual. |
-| `:.d` | Linha atual |
-| `:1d` | Primeira linha. |
-| `:$d` | Última linha. |
-| `:1,$d` | Todas as linhas. |
-| `:%d` | Todas as linhas (alívio sintático para `1,$`). |
-| `:.,5d` | Da linha atual até a linha 5. |
-| `:,5d` | Também a linha atual e até a linha 5. |
-| `:,+3d` | Linha atual e as próximas 3 linhas. |
-| `:1,+3d` | Da primeira linha até a linha atual + 3. |
-| `:,-3d` | Linha atual e as últimas 3 linhas. (O Vim irá lhe perguntar, já que esse é um alcance reverso.) |
+| `:d` | Current line. |
+| `:.d` | Current line. |
+| `:1d` | First line. |
+| `:$d` | Last line. |
+| `:1,$d` | All lines. |
+| `:%d` | All lines (syntactic sugar for `1,$`). |
+| `:.,5d` | Current line to line 5. |
+| `:,5d` | Also current line to line 5. |
+| `:,+3d` | Current line and the next 3 lines. |
+| `:1,+3d` | First line to current line + 3. |
+| `:,-3d` | Current line and the last 3 lines. (Vim will prompt you, since this is a reversed range.) |
 | `:3,'xdelete` | Lines 3 to the line marked by [mark](#marks) x. |
-| `:/^foo/,$delete` | Da próxima linha que começa com "foo" até o final. |
-| `:/^foo/+1,$delete` | Da linha após a linha que começa com "foo" até o final. |
+| `:/^foo/,$delete` | From the next line that starts with "foo" to the end. |
+| `:/^foo/+1,$delete` | From the line after the line that starts with "foo" to the end. |
 
-Repare que ao invés de `,`, o `;` também pode ser usado como separador. A
-diferença é como `de,para` o _para_ é relativo a linha atual, mas ao usar
-`de;para`, o _para_ é relativo ao endereço do _de_! Assumindo que você está na
-linha 5, `:1,+1d` deletaria as linhas de 1 a 6, ao mesmo tempo que `:1;+1d`
-deletaria apenas as linhas 1 e 2.
+Note that instead of `,`, `;` can be used as a separator. The difference is that
+in the case of `from,to`, the _to_ is relative to the current line, but when
+using `from;to`, the _to_ is relative to the address of _from_! Assuming you're
+on line 5, `:1,+1d` would delete lines 1 to 6, whereas `:1;+1d` would only
+delete lines 1 and 2.
 
-O endereço `/` pode ser precedido com outro endereço. Isso permite que você
-_empilhe_ padrões, por exemplo:
+The `/` address can be preceded with another address. This allows you to _stack_
+patterns, e.g.:
 
 ```vim
 :/foo//bar//quux/d
 ```
-Isso iria deletar a primeira linha contendo "quux" após a primeira linha
-contendo "bar" depois da primeira linha contendo "foo" depois da linha atual.
 
-As vezes o Vim automaticamente antecipa com um alcance na linha de comando. Por
-exemplo, comece uma seleção visual de linha com o `V`, selecione algumas linhas
-e digite `:`. A linha linha de comando será povoada com o alcance `'<,'>`, que
-significa que o próximo comando irá usar as linhas previamente selecionadas como
-um alcance. (Essa também é a razão pela qual as vezes você vê mapeamentos como
-`:vnoremap foo :<c-u>command`. Neste caso, `<c-u>` é usado para remover o
-alcance, porque o Vim irá jogar um erro quando der um alcance a um comando que
-não suporta o tal alcance.).
+This would delete the first line containing "quux" after the first line
+containing "bar" after the first line containing "foo" after the current line.
 
-Outro exemplo é ao usar `!!` em modo normal. Isso irá povoar a linha de comando
-com `:.!`. Se seguido por um programa externo, a saída do programa iria
-substituir a linha atual. Portanto, você substituiria o parágrafo atual com a
-saída do comando ls usando: `:?^$?+1,/^$/-1!ls`. Chique!
+Sometimes Vim automatically prepends the command-line with a range. E.g. start a
+visual line selection with `V`, select some lines and type `:`. The command-line
+will be populated with the range `'<,'>`, which means the following command will
+use the previously selected lines as a range. (This is also why you sometimes
+see mappings like `:vnoremap foo :<c-u>command`. Here `<c-u>` is used to remove
+the range, because Vim will throw an error when giving a range to a command that
+doesn't support it.)
 
-Ajuda:
+Another example is using `!!` in normal mode. This will populate the
+command-line with `:.!`. If followed by an external program, that program's
+output would replace the current line. So you could replace the current
+paragraph with the output of ls by using `:?^$?+1,/^$/-1!ls`. Fancy!
+
+Help:
 
 ```
 :h cmdline-ranges
 :h 10.3
 ```
 
-## Marcadores (marks)
+## Marks
 
-Você usa marcadores para lembrar uma posição em um arquivo, ou seja; número da linha e coluna.
+You use marks to remember a position, that is line number and column, in a file.
 
-| Marcadores | Determinado pelo... | Uso |
+| Marks | Set by.. | Usage |
 |-------|----------|-------|
-| `a` - `z` | Usuário | Local ao arquivo, portanto é apenas válido dentro de um arquivo. Jumping to a lowercase mark, means jumping within the current file. |
-| `A` - `Z` | Usuário | Global, portanto válido entre arquivos. Também chamado de _marcador de arquivo_ ("_file marks_"). Pular para um marcador de arquivo pode significar mudar para um outro buffer. |
-| `0` - `9` | viminfo | `0` É a posição onde o arquivo viminfo foi sobreescrito (salvo) pela última vez. Na prática, isso quer dizer quando o último processo do Vim foi encerrado. `1` é a posição de quando o penúltimo processo do Vim foi encerrado, e assim por diante. |
+| `a` - `z` | User | Local to file, thus only valid within one file. Jumping to a lowercase mark, means jumping within the current file. |
+| `A` - `Z` | User | Global, thus valid between files. Also called _file marks_. Jumping to a file mark may switch to another buffer. |
+| `0` - `9` | viminfo | `0` is the position when the viminfo file was written last. In practice this means when the last Vim process ended. `1` is the position of when the second last Vim process ended and so on. |
 
-Coloque `'`/`g'` ou `` ` ``/`` g` `` na frente de um marcador para formar um
-movimento ("_motion_").
+Put `'`/`g'` or `` ` ``/`` g` `` in front of a mark to form a motion.
 
-Use `mm` para lembrar a posição atual com o marcador "m". Movimente-se pelo
-arquivo e pule de volta via `'m` (para o primeiro caractere não-vazio), ou
-`` `m `` (para a coluna exata). Marcadores minúsculos serão lembrados após 
-sair do Vim apenas se você falar para o seu arquivo viminfo fazer isso, veja 
-`:h viminfo-'`. 
+Use `mm` to remember the current position with mark "m". Move around the file
+and then jump back via `'m` (first non-blank) or `` `m `` (exact column).
+Lowercase marks will be remembered after exiting Vim, if you tell your viminfo
+file to do so, see `:h viminfo-'`.
 
-Use `mM` para lembrar a posição atual com o marcador de arquivo "M". Mude para
-outro buffer e volte de novo com `'M' ou `` `M ``.
+Use `mM` to remember the current position with file mark "M". Switch to another
+buffer and switch back via `'M` or `` `M ``.
 
-Outros movimentos incluem:
+Other motions include:
 
-| Movimento           | Pular para... |
-|---------------------|-----------|
-| `'[`, `` `[ ``      | Primeira linha ou caractere do último texto mudado ("`c`") ou puxado/copiado ("`y`"). |
-| `']`, `` `] ``      | Última linha ou caractere do último texto mudado ("`c`") ou puxado/copiado ("`y`"). |
-| `'<`, `` `< ``      | Começo da linha ou caractere da última seleção visual. |
-| `'>`, `` `> ``      | Fim da linha ou caractere da última seleção visual. |
-| `''`, ``` `` ```    | Posição antes do último pulo ("_jump_"). |
-| `'"`, `` `" ``      | Posição de quando aconteceu a última saída do arquivo (buffer) atual. |
-| `'^`, `` `^ ``      | Posição de onde a última inserção parou. |
-| `'.`, `` `. ``      | Posição de onde a última mudança foi feita. |
-| `'(`, `` `( ``      | Começo da frase atual. |
-| `')`, `` `) ``      | Fim da frase atual. |
-| `'{`, `` `{ ``      | Começo do parágrafo atual.  |
-| `'}`, `` `} ``      | Fim do parágrafo atual. |
+| Motion           | Jump to.. |
+|------------------|-----------|
+| `'[`, `` `[ ``   | First line or character of previously changed or yanked text. |
+| `']`, `` `] ``   | Last line or character of previously changed or yanked text. |
+| `'<`, `` `< ``   | Beginning line or character of last visual selection. |
+| `'>`, `` `> ``   | Ending line or character of last visual selection. |
+| `''`, ``` `` ``` | Position before the latest jump. |
+| `'"`, `` `" ``   | Position when last exiting the current buffer. |
+| `'^`, `` `^ ``   | Position where last insertion stopped. |
+| `'.`, `` `. ``   | Position where last change was made. |
+| `'(`, `` `( ``   | Start of current sentence. |
+| `')`, `` `) ``   | End of current sentence. |
+| `'{`, `` `{ ``   | Start of current paragraph. |
+| `'}`, `` `} ``   | End of current paragraph. |
 
-Marcadores também podem ser usados em um [alcançador](#Alcançadores). Você
-provavelmente já viu isso antes e se perguntou o quê isso significa: Selecione
-algum texto em modo visual e aperte `:`, a linha de comando será "antecipada"
-com `:'<,'>`, o que significa que o comando que vier em seguida terá o alcance
-encoberto pela seleção visual.
+Marks can also be used in a [range](#ranges). You probably saw this before and
+wondered what it means: Select some text in visual mode and do `:`, the
+command-line will be prepended with `:'<,'>`, which means the following command
+would get a range that denotes the visual selection.
 
-Use `:marks` para listar todos os marcadores. Leia tudo que puder em `:h
-mark-motions`.
+Use `:marks` to list all marks. Read everything in `:h mark-motions`.
 
 ## Completion
 
