@@ -494,7 +494,7 @@ O Vim provem os seguintes registradores:
 | Numerado            | `0` to `9`             | vim        | [ ]       | Registrador `0`: último puxão. Registrador `1`: Última remoção. Registrador `2`: Seunda remoção. E assim por diante. Pense nos registradores `1`-`9` como uma [file](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) com 9 elementos apenas de leitura. |
 | Pequena remoção        | `-`                    | vim        | [ ]       | Última remoção que for menor que uma linha.|
 | Nomeado               | `a` até `z`, `A` até `Z` | usuário       | [ ]       | Se você empurrar para o registrador `a`, você substitui o texto dele. Se você empurrar para o registrador `A`, você acrescenta ao texto no registrador `a`. |
-| apenas leitura           | `:`, `.`, `%`          | vim        | [x]       | `:`: Último comando `.`: Último texto inserido, `%`: Nome do arqivo atual. |
+| apenas leitura           | `:`, `.`, `%`          | vim        | [x]       | `:`: Último comando `.`: Último texto inserido, `%`: Nome do arquivo atual. |
 | Buffer alternativo    | `#`                    | vim        | [ ]       | Na maioria das vezes é o último buffer visitado na janela atual. Veja `:h alternate-file` |
 | Expressão          | `=`                    | usuário       | [ ]       | Avaliação da expressão em VimL que foi puxada ("yanked"). Por exemplo, faça isso em modo de inserção: `<c-r>=5+5<cr>` e "10" será inserido no buffer. |
 | Seleção           | `+`, `*`               | vim        | [ ]       | `*` e `+` são os registradores da área de transferência. [clipboard](#clipboard). |
@@ -608,49 +608,53 @@ Ajuda:
 :h 10.3
 ```
 
-## Marks
+## Marcadores (marks)
 
-You use marks to remember a position, that is line number and column, in a file.
+Você usa marcadores para lembrar uma posição em um arquivo, ou seja; número da linha e coluna.
 
-| Marks | Set by.. | Usage |
+| Marcadores | Determinado pelo... | Uso |
 |-------|----------|-------|
-| `a` - `z` | User | Local to file, thus only valid within one file. Jumping to a lowercase mark, means jumping within the current file. |
-| `A` - `Z` | User | Global, thus valid between files. Also called _file marks_. Jumping to a file mark may switch to another buffer. |
-| `0` - `9` | viminfo | `0` is the position when the viminfo file was written last. In practice this means when the last Vim process ended. `1` is the position of when the second last Vim process ended and so on. |
+| `a` - `z` | Usuário | Local ao arquivo, portanto é apenas válido dentro de um arquivo. Jumping to a lowercase mark, means jumping within the current file. |
+| `A` - `Z` | Usuário | Global, portanto válido entre arquivos. Também chamado de _marcador de arquivo_ ("_file marks_"). Pular para um marcador de arquivo pode significar mudar para um outro buffer. |
+| `0` - `9` | viminfo | `0` É a posição onde o arquivo viminfo foi sobreescrito (salvo) pela última vez. Na prática, isso quer dizer quando o último processo do Vim foi encerrado. `1` é a posição de quando o penúltimo processo do Vim foi encerrado, e assim por diante. |
 
-Put `'`/`g'` or `` ` ``/`` g` `` in front of a mark to form a motion.
+Coloque `'`/`g'` ou `` ` ``/`` g` `` na frente de um marcador para formar um
+movimento ("_motion_").
 
-Use `mm` to remember the current position with mark "m". Move around the file
-and then jump back via `'m` (first non-blank) or `` `m `` (exact column).
-Lowercase marks will be remembered after exiting Vim, if you tell your viminfo
-file to do so, see `:h viminfo-'`.
+Use `mm` para lembrar a posição atual com o marcador "m". Movimente-se pelo
+arquivo e pule de volta via `'m` (para o primeiro caractere não-vazio), ou
+`` `m `` (para a coluna exata). Marcadores minúsculos serão lembrados após 
+sair do Vim apenas se você falar para o seu arquivo viminfo fazer isso, veja 
+`:h viminfo-'`. 
 
-Use `mM` to remember the current position with file mark "M". Switch to another
-buffer and switch back via `'M` or `` `M ``.
+Use `mM` para lembrar a posição atual com o marcador de arquivo "M". Mude para
+outro buffer e volte de novo com `'M' ou `` `M ``.
 
-Other motions include:
+Outros movimentos incluem:
 
-| Motion           | Jump to.. |
-|------------------|-----------|
-| `'[`, `` `[ ``   | First line or character of previously changed or yanked text. |
-| `']`, `` `] ``   | Last line or character of previously changed or yanked text. |
-| `'<`, `` `< ``   | Beginning line or character of last visual selection. |
-| `'>`, `` `> ``   | Ending line or character of last visual selection. |
-| `''`, ``` `` ``` | Position before the latest jump. |
-| `'"`, `` `" ``   | Position when last exiting the current buffer. |
-| `'^`, `` `^ ``   | Position where last insertion stopped. |
-| `'.`, `` `. ``   | Position where last change was made. |
-| `'(`, `` `( ``   | Start of current sentence. |
-| `')`, `` `) ``   | End of current sentence. |
-| `'{`, `` `{ ``   | Start of current paragraph. |
-| `'}`, `` `} ``   | End of current paragraph. |
+| Movimento           | Pular para... |
+|---------------------|-----------|
+| `'[`, `` `[ ``      | Primeira linha ou caractere do último texto mudado ("`c`") ou puxado/copiado ("`y`"). |
+| `']`, `` `] ``      | Última linha ou caractere do último texto mudado ("`c`") ou puxado/copiado ("`y`"). |
+| `'<`, `` `< ``      | Começo da linha ou caractere da última seleção visual. |
+| `'>`, `` `> ``      | Fim da linha ou caractere da última seleção visual. |
+| `''`, ``` `` ```    | Posição antes do último pulo ("_jump_"). |
+| `'"`, `` `" ``      | Posição de quando aconteceu a última saída do arquivo (buffer) atual. |
+| `'^`, `` `^ ``      | Posição de onde a última inserção parou. |
+| `'.`, `` `. ``      | Posição de onde a última mudança foi feita. |
+| `'(`, `` `( ``      | Começo da frase atual. |
+| `')`, `` `) ``      | Fim da frase atual. |
+| `'{`, `` `{ ``      | Começo do parágrafo atual.  |
+| `'}`, `` `} ``      | Fim do parágrafo atual. |
 
-Marks can also be used in a [range](#ranges). You probably saw this before and
-wondered what it means: Select some text in visual mode and do `:`, the
-command-line will be prepended with `:'<,'>`, which means the following command
-would get a range that denotes the visual selection.
+Marcadores também podem ser usados em um [alcançador](#Alcançadores). Você
+provavelmente já viu isso antes e se perguntou o quê isso significa: Selecione
+algum texto em modo visual e aperte `:`, a linha de comando será "antecipada"
+com `:'<,'>`, o que significa que o comando que vier em seguida terá o alcance
+encoberto pela seleção visual.
 
-Use `:marks` to list all marks. Read everything in `:h mark-motions`.
+Use `:marks` para listar todos os marcadores. Leia tudo que puder em `:h
+mark-motions`.
 
 ## Completion
 
