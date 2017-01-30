@@ -656,51 +656,55 @@ encoberto pela seleção visual.
 Use `:marks` para listar todos os marcadores. Leia tudo que puder em `:h
 mark-motions`.
 
-## Completion
+## Autocomplemento (completion)
 
-Vim provides many kinds of insert mode completions. If there are multiple
-matches, a popup menu will let you navigate to the match of your choice.
+O Vim possui vários tipos de autocomplemento em modo de inserção. Em caso de
+múltiplas possibilidades, um menu flutuante irá permitir que você navegue até a
+o complemento de sua escolha.
 
-Typical kinds of completion are tags, functions from imported modules or
-libraries, file names, dictionary or simply words from the current buffer.
+Tipos típicos de complementos são tags, funções de módulos importados ou
+bibliotecas, nome de arquivos, dicionários ou simplesmente palavras do buffer
+atual.
 
-Vim provides a mapping for each kind of completion and they all start with
-`<c-x>` (remember to use them in insert mode):
+O Vim também prover um mapeamento de teclado para cada tipo de complementação e
+todos eles começam com `<c-x>` (lembre-se de usá-los em modo de inserção).
 
-| Mapping | Kind | Help         |
+| Mapeamento | Tipo | Ajuda         |
 |---------|------|--------------|
-| `<c-x><c-l>` | whole lines | `:h i^x^l` |
-| `<c-x><c-n>` | keywords from current file | `:h i^x^n` |
-| `<c-x><c-k>` | keywords from `'dictionary'` option | `:h i^x^k` |
-| `<c-x><c-t>` | keywords from `'thesaurus'` option | `:h i^x^t` |
-| `<c-x><c-i>` | keywords from current and included files | `:h i^x^i` |
+| `<c-x><c-l>` | linhas inteiras | `:h i^x^l` |
+| `<c-x><c-n>` | palavras chave do arquivo atual | `:h i^x^n` |
+| `<c-x><c-k>` | palavras chave da opção de `dicionário` | `:h i^x^k` |
+| `<c-x><c-t>` | palavras chave da opção de `'thesaurus'` | `:h i^x^t` |
+| `<c-x><c-i>` | palavras chave do arquivo atual e arquivos incluídos | `:h i^x^i` |
 | `<c-x><c-]>` | tags | `:h i^x^]` |
-| `<c-x><c-f>` | file names | `:h i^x^f` |
-| `<c-x><c-d>` | definitions or macros | `:h i^x^d` |
-| `<c-x><c-v>` | Vim commands | `:h i^x^v` |
-| `<c-x><c-u>` | user defined (as specified in `'completefunc'`) | `:h i^x^u` |
-| `<c-x><c-o>` | omni completion (as specified in `'omnifunc'`) | `:h i^x^o` |
-| `<c-x>s`     | spelling suggestions | `:h i^Xs` |
+| `<c-x><c-f>` | nome de arquivos | `:h i^x^f` |
+| `<c-x><c-d>` | definições ou macros | `:h i^x^d` |
+| `<c-x><c-v>` | Comandos do Vim | `:h i^x^v` |
+| `<c-x><c-u>` | definido pela usuária (como especificado em `'completefunc'`) | `:h i^x^u` |
+| `<c-x><c-o>` | omni complementação (como especificado em `'omnifunc'`) | `:h i^x^o` |
+| `<c-x>s`     | sugestões ortográficas | `:h i^Xs` |
 
-People might be confused about the difference between user defined completion
-and omni completion, but technically they do the same thing. They take a
-function that inspects the current position and return a list of suggestions.
-User defined completion is defined by the user for their own personal purposes.
-(Surprise!) It could be anything. Omni completion is meant for filetype-specific
-purposes, like completing struct members or class methods, and is often set by
-filetype plugins.
+As pessoas podem se confundir entre Autocomplementação definida pelo usuário e a
+omni complementação, mas tecnicamente elas fazem a mesma coisa. Elas pegam uma
+função que inspeciona a posição atual e retornam uma lista de sugestões.
+Complementações definidas pela usuária são determinadas pela própria pessoa e
+para uso pessoal. (Surpresa!) Pode ser qualqer coisa. A Omni Complementação tem
+o propósito de ser usada para tipos específicos de arquivos, como complementando
+estruturas de membros ou métodos de classes, e é normalmente determinada por
+plugins de tipos de arquivo ("_filetype plugins_").
 
-Vim also allows for completing multiple kinds at once by setting the
-`'complete'` option. By default that option includes quite a lot, so be sure to
-trim it to your taste. You can trigger this completion by using either `<c-n>`
-(next) and `<c-p>` (previous), which also happen to be the keys used for
-choosing entries in the popup menu. See `:h i^n` and `:h 'complete'` for more on
-this.
+O Vim também permite a complementação de múltiplos tipos de uma vez só, bastando
+ativas a opção `'complete'`. Por padrão, essa opção já inclui um bocado de
+coisas por si mesma, então tenha certeza de dar uma polida para que fique ao seu
+gosto. Você pode ativar essa opção de complementação usando tanto `<c-n>`
+(próximo) quanto `<c-p>` (anterior), que por coincidência também são os atalhos
+de teclado usados para navegar pelas opções do menu flutuante. Veja `:h i^n` e
+`:h 'complete'` para saber mais sobre isso.
 
-Be sure to check out `:h 'completeopt'` for configuring the behaviour of the
-popup menu. The default is quite sane, but I prefer adding "noselect" as well.
+Aproveite e confira também `:h 'completeopt'` para configurar o comportamento do
+menu flutuante. O padrão até que bem são, mas eu prefiro adicionar também "noselect" ("_nenhuma seleção_").
 
-Help:
+Ajuda:
 
 ```
 :h ins-completion
