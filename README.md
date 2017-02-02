@@ -8,14 +8,14 @@
 [![badge-translation-japanese](https://img.shields.io/badge/Translation-Japanese-lightgrey.svg)](http://postd.cc/?s=vim-galore)
 [![vim-galore](https://cdn.rawgit.com/mhinz/vim-galore/master/contents/images/badge-awesome.svg)](https://github.com/sindresorhus/awesome)
 
-## [Intro](#intro-1)
+## [Introdução](#introdução-1)
 
-- [What is Vim?](#what-is-vim)
-- [The Vim Philosophy](#the-vim-philosophy)
-- [First steps](#first-steps)
-- [Minimal vimrc](#minimal-vimrc)
-- [What kind of Vim am I running?](#what-kind-of-vim-am-i-running)
-- [Cheatsheets](#cheatsheets)
+- [O que é o Vim?](#o-que-é-o-vim)
+- [A filosofia do Vim](#a-filosofia-do-vim)
+- [Primeiros passos](#primeiros-passos)
+- [Vimrc mínimo](#vimrc-mínimo)
+- [Que tipo de Vim eu estou rodando?](#que-tipo-de-vim-eu-estou-rodando)
+- [Planilhas de cola](#planilhas-de-cola)
 
 ## [Basics](#basics-1)
 
