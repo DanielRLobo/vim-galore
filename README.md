@@ -760,51 +760,52 @@ Veja `:h text-objects` para conferir todos os objetos de texto disponíveis.
 
 ## Autocmds
 
-On many occasions, Vim emits events. You hook into these events by using
-autocmds.
+Em muitas ocasiões o Vim emite eventos. Você engancha nesses eventos usando
+Autocmds ("_auto comandos_").
 
-You wouldn't use Vim if there weren't autocmds. They're used all the time, even
-if you don't notice it. Don't believe me? Check `:au`, but don't let the output
-overwhelm you. These are all the autocmds that are in effect right now!
+Você não usaria o Vim se não houvessem os Autocmds. Eles são usados o tempo
+todo, mesmo que você não perceba. Não acredita em mim? Confira `:au`, mas não
+deixe que o resultado te assuste. Esses são todos os Autocmds que estão fazendo
+efeito agora mesmo.
 
-See `:h {event}` for a quick overview of all available events and `:h
-autocmd-events-abc` for more details.
+Veja `:h {event}` para uma ter uma rápida visão geral de todos os eventos
+disponíveis e `:h autocmd-events-abc` para mais detalhes.
 
-A typical example would be setting filetype-specific settings:
+Um exemplo típico seria determinar configurações de acordo um típo específico de
+arquivo:
 
 ```vim
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 comments-=:#
 ```
+Mas como que um buffer pode saber que ele contém um código em Ruby? Porque um
+outro Autocmd detectou isso e configurou o tipo de arquivo de acordo, o que por
+sua vez engatilhou o evento `FileType` ("_tipo de arquivo_").
 
-But how does a buffer even know that it contains Ruby code? Because another
-autocmd detected it as that and set the filetype accordingly which again
-triggered the `FileType` event.
+Uma das primeiras coisas que todos adicionam aos seus vimrc é `filetype on`.
+Isso simplesmente quer dizer que o `filetype.vim` é lido na inicialização, o que
+determina Autocmds para quase todos os tipos de arquivo que existem sob o sol.
 
-One of the first things everyone adds to their vimrc is `filetype on`. This
-simply means that `filetype.vim` is read at startup which sets autocmds for
-almost all filetypes under the sun.
+Se você tiver coragem, de uma olhada nisto aqui: `:e $VIMRUNTIME/filetype.vim`.
+Procure por "Ruby" e você descobrirá que o Vim simplesmente usa a extensão de
+arquivo `.rb` para detectar arquivos de Ruby:
 
-If you're brave enough, have a look at it: `:e $VIMRUNTIME/filetype.vim`. Search
-for "Ruby" and you'll find that Vim simply uses the file extension `.rb` to
-detect Ruby files:
-
-**NOTE**: Autocmds of the same event are executed in the order they were
-created. `:au` shows them in the correct order.
+**NOTA**: Autocmds do mesmo evento são executados na ordem em que foram criados.
+`:au` os mostra na ordem correta.
 
 ```vim
 au BufNewFile,BufRead *.rb,*.rbw  setf ruby
 ```
 
-The `BufNewFile` and `BufRead` events in this case are hardcoded in the C
-sources of Vim and get emitted everytime you open a file via `:e` and similar
-commands. Afterwards all the hundreds of filetypes from `filetype.vim` are
-tested for.
+Os eventos `BufNewFile` e `BufRead` nesse caso são codificados manualmente nas
+fontes (sources) em C do Vim e são emitidos a cada vez que você abre um arquivo
+por meio de `:e` e comandos similares. Em seguida todas as centenas de tipos de
+arquivo do `filetype.vim` são testados.
 
-Putting it in a nutshell, Vim makes heavy use of events and autocmds but also
-exposes a clean interface to hook into that event-driven system for
-customization.
+Resumindo, o Vim faz uso pesado de eventos e Autocmds mas também expõe uma
+interface limpa para enganchar nesse sistema dirigido por eventos para a
+customização.
 
-Help: `:h autocommand`
+Ajuda: `:h autocommand`
 
 ## Changelist, jumplist
 
