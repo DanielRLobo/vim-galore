@@ -22,13 +22,13 @@
 - [Buffers, janelas, abas](#buffers-janelas-abas)
 - [Buffer ativos, carregados, listados e nomeados](#buffer-ativos-carregados-listados-e-nomeado)
 - [Lista de argumentos](#lista-de-argumento)
-- [Mappings](#mappings)
-- [Mapleader](#mapleader)
-- [Registers](#registers)
-- [Ranges](#ranges)
-- [Marks](#marks)
-- [Completion](#completion)
-- [Motions, operators, text objects](#motions-operators-text-objects)
+- [Mapeamentos](#mapeamentos)
+- [A tecla líder](#a-tecla-líder)
+- [Registradores](#registradores)
+- [Alcances](#alcances)
+- [Marcadores](#marcadores)
+- [Autocomplementação](#autocomplementação)
+- [Movimentos, operadores, objetos de texto](#Movimentos-operadores-objetos-de-texto)
 - [Autocmds](#autocmds)
 - [Changelist, jumplist](#changelist-jumplist)
 - [Undo tree](#undo-tree)
@@ -539,7 +539,7 @@ registradores.
 
 **Caso engraçado**: No Emacs, `yaking` quer dizer colar [ou _reinserir texto que anteriormente morto_("_reinserting previously killed text_")] e não copiar.
 
-## Alcances (ranges)
+## Alcances
 
 Os alcances são bem fáceis de entender, mas muitos (Vimmers) não sabem sobre o
 potencial que eles possuem.
@@ -656,7 +656,7 @@ encoberto pela seleção visual.
 Use `:marks` para listar todos os marcadores. Leia tudo que puder em `:h
 mark-motions`.
 
-## Autocomplemento (completion)
+## Autocomplementação
 
 O Vim possui vários tipos de autocomplemento em modo de inserção. Em caso de
 múltiplas possibilidades, um menu flutuante irá permitir que você navegue até a
