@@ -17,11 +17,11 @@
 - [Que tipo de Vim eu estou rodando?](#que-tipo-de-vim-eu-estou-rodando)
 - [Planilhas de cola](#planilhas-de-cola)
 
-## [Basics](#basics-1)
+## [O básico](#o-básico-1)
 
-- [Buffers, windows, tabs](#buffers-windows-tabs)
-- [Active, loaded, listed, named buffers](#active-loaded-listed-named-buffers)
-- [Argument list](#argument-list)
+- [Buffers, janelas, abas](#buffers-janelas-abas)
+- [Buffer ativos, carregados, listados e nomeados](#buffer-ativos-carregados-listados-e-nomeado)
+- [Lista de argumentos](#lista-de-argumento)
 - [Mappings](#mappings)
 - [Mapleader](#mapleader)
 - [Registers](#registers)
