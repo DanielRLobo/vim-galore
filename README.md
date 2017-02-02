@@ -712,45 +712,51 @@ Ajuda:
 :h new-omni-completion
 ```
 
-## Motions, operators, text objects
+## Movimentos, operadores, objetos de texto
 
-**Motions** move the cursor. You all know `h`/`j`/`k`/`l`. Or `w` and `b`. Even
-`/` is a motion. They also take a count. `2?the<cr>` jumps to the second last
-occurrence of "the".
+**Movimentos** movem o cursor. Todos você já sabem sobre `h`/`j`/`k`/`l`. Ou
+`w` e `b`. Até `/` é um movimento. Eles também aceitam uma conta. `2?the<cr>`
+pula para a anti-penúltima ocorrência de "the".
 
-See `:h navigation` and everything below for all available motions.
+Veja `:h navigation` e tudo que estiver abaixo para todos os movimentos
+disponíveis.
 
-**Operators** act on a region of text, e.g. `d`, `~`, `gU`, `>` to name just a
-few. They get used in two contexts, either in normal or visual mode. In normal
-mode, operators come first followed by a motion, e.g. `>j`. In visual mode,
-operators simply act on the selection, e.g. `Vjd`.
+**Operadores** agem em uma região do texto, por exemplo `d`, `~`, `gU`, `>` para
+mencionar apenas alguns. Eles são usados em dois contextos, ou em modo normal ou
+em modo visual. Em modo normal, os operadores vem primeiro seguidos por um
+movimento, por exemplo `>j`. Em modo visual, operadores simplesmente agem na
+área selecionada, por exemplo `Vjd`.
 
-Like motions, operators take a count, e.g. `2gUw` makes the rest of the current
-word and the next one uppercase. Since motions and operators take counts,
-`2gU2w` works just as well and executes `gU2w` twice.
+Assim como os movimentos, os operadores também aceitam uma conta, como por
+exemplo `2gUw` que transforma o resto da palavra atual e da próxima palavra em
+maiúsculas. Já que movimentos e operadores aceitam contas, `2gU2w` funciona bem
+e executa `gU2w` duas vezes.
 
-See `:h operator` for all available operators. Use `:set tildeop` to make `~`
-act as an operator.
+Veja `:h operator` para conferir todos os operadores disponíveis. Use `:set
+tildeop` para fazer com que o til (`~`) funcione como um operador. 
 
-**Text objects** act on the surrounding area, opposed to motions that act into
-one direction. Actually they work on objects, e.g. a whole word, a whole
-sentence, everything between parentheses, and so on.
+**Objetos de texto** agem na área que os cerca, em oposição aos movimentos que
+agem em uma direção específica.  Na verdade eles funcionam em objetos, como por
+exemplo uma palavra toda, uma frase inteira, tudo entre parênteses, e assim por
+diante.
 
-Text objects can't be used to move the cursor in normal mode, because even the
-most-skilled cursors can't jump into two directions at the same time. It works
-in visual mode though, because then one side of the object is already selected
-and the cursor simply jumps to the other side.
+Objetos de texto não podem ser usados para mover o cursor em modo normal, porque
+nem mesmo os cursores mais habilidores dão conta de pular em duas direções ao
+mesmo tempo. Entretanto, isso funciona em modo visual, pois que um lado do texto
+já está selecionado e o cursor pode simplesmente pular para o outro lado.
 
-Text objects start with either `i` (think _inner_) or `a` (think _around_)
-followed by a character denoting the object. With `i` it only acts on the object
-itself, with `a` on the object plus trailing whitespace. E.g. `diw` deletes the
-current word and `ci(` changes everything between parentheses.
+Objetos de texto começam ou com um `i` ou `a` seguidos por um caractere que
+denota o objeto (`i` pode ser lembrado como "_i_nterno", e `a` como o que
+está "_a_o redor"). Com o `i` a ação é executada apenas no objeto em si, com 
+o `a` a ação é no objeto e mais os espaçoes (em branco) ao redor do objeto. 
+Por exemplo, `diw` deleta a palavra atual e `ci(` altera tudo que estiver entre
+os parênteses.
 
-Text objects take a count. Imagine `((( )))` and the cursor on or between the
-most inner parentheses, then `d2a(` will remove the 2 inner pairs of parentheses
-and everything in between.
+Objetos de texto também aceitam uma conta. Imagine `((( )))` e o cursor no meio
+ou nos parênteses mais internos, então `d2a(` irá remover os dois _pares de
+parênteses_ mais internos e tudo o que estiver no meio e entre eles.
 
-See `:h text-objects` for all available text objects.
+Veja `:h text-objects` para conferir todos os objetos de texto disponíveis.
 
 ## Autocmds
 
