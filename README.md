@@ -807,36 +807,38 @@ customização.
 
 Ajuda: `:h autocommand`
 
-## Changelist, jumplist
+## Lista de alterações, lista de pulos
+### Changelist, jumplist
 
-The positions of the last 100 changes are kept in the **changelist**. Several
-small changes on the same line will be merged together, but the position will be
-that of the last change nevertheless (in case you added something in the middle
-of the line).
+As posições das últimas 100 alterações são mantidas na **lista de alterações**.
+Várias alterações pequenas feitas na mesma linha serão fundidas, mas assim a 
+posição será aquela da última mudança (caso você tenha adicionado alguma coisa
+no meio da linha).
 
-Every time you jump, the position _before_ the jump is remembered in the
-**jumplist**. A jumplist has up to 100 entries. Each window has its own
-jumplist. When you split a window, the jumplist is copied.
+Cada vez que você pular, a posição de _antes_ do pulo será lembrada na **lista
+de pulos**. A lista de pulos tem até 100 registros. Cada janela possui sua
+própria lista de pulos. Quando você divide ("_split_") uma janela, a lista de
+pulos será copiada.
 
-A jump is one of the following commands: `'`, `` ` ``, `G`, `/`, `?`, `n`, `N`,
-`%`, `(`, `)`, `[[`, `]]`, `{`, `}`, `:s`, `:tag`, `L`, `M`, `H` and commands
-that start editing a new file.
+Um pulo é um dos seguintes comandos: `'`, `` ` ``, `G`, `/`, `?`, `n`, `N`,
+`%`, `(`, `)`, `[[`, `]]`, `{`, `}`, `:s`, `:tag`, `L`, `M`, `H` e comandos que
+começam a edição de um novo arquivo.
 
-| List       | List all entries | Go to older position | Go to newer position |
+| Lista       | Listar todos os registros | Ir para uma posição anterior | Ir para uma posição posterior |
 |------------|------------------|----------------------|----------------------|
-| jumplist   | `:jumps`         | `[count]<c-o>`       | `[count]<c-i>`       |
-| changelist | `:changes`       | `[count]g;`          | `[count]g,`          |
+| lista de pulos   | `:jumps`         | `[conta]<c-o>`       | `[conta]<c-i>`       |
+| lista de alterações | `:changes`       | `[conta]g;`          | `[conta]g,`          |
+Quando você listar todos os registros, um marcador `>` será usado para mostrar
+qual a posição atual. Normalmente isso estará abaixo da posição 1, a última
+posição.
 
-When you list all entries, a marker `>` will be used to show the current
-position. Usually that will be below position 1, the latest position.
+Se você quiser que ambas as listas continuem a existir mesmo após reiniciar o
+Vim, você precisará utilizar o arquivo viminfo e `:h viminfo-`.
 
-If you want both lists to persist after restarting Vim, you need to use the
-viminfo file and `:h viminfo-'`.
+**NOTA**: A posição antes do último pulo também é mantida como um
+[marcador](#marcadores) e pode ser pulada com ``` `` ``` ou `''`.
 
-**NOTE**: The position before the latest jump is also kept as a [mark](#marks)
-and can be jumped to via ``` `` ``` or `''`.
-
-Help:
+Ajuda:
 
 ```
 :h changelist
