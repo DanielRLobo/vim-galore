@@ -845,19 +845,21 @@ Ajuda:
 :h jumplist
 ```
 
-## Undo tree
+## Árvore do desfazer
 
-The latest changes to the text state are remembered. You can use _undo_ to
-revert changes and _redo_ to reapply previously reverted changes.
+As últimas mudanças do estado do texto são lembradas. Você pode usar o comando
+_undo_ ("desfazer") para reverter as mudanças, e o comando _redo_ ("refazer")
+para reverter mudanças.
 
-The important bit to understand it that the data structure holding recent
-changes is not a
-[queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) but a
-[tree](https://en.wikipedia.org/wiki/Tree_(data_structure))! Your changes are
-nodes in the tree and each (but the top node) has a parent node. Each node keeps
-information about the changed text and time. A branch is a series of nodes that
-starts from any node and goes up to the top node. New branches get created when
-you undo a change and then insert something else.
+O ponto importante para entender disso; é que a estrutura de dados que mantém as
+alterações recentes não é uma
+[fila](https://es.wikipedia.org/wiki/Cola_(inform%C3%A1tica)), mas sim uma
+[árvore](https://pt.wikipedia.org/wiki/%C3%81rvore_(estrutura_de_dados))! Suas 
+alterações são nodos/nós na árvore e cada um deles (com exceção do mais 
+superior) possui um nodo antecestral/antecessor. Cada nodo mantém informação
+sobre o texto e o tempo da alteração. Um galho (ou ramo) é uma série de nodos
+que começam a partir de um nodo e vão até o nodo do topo. Um novo é galho é
+criado quando você desfaz uma mudança e insere algo novo.
 
 ```
 ifoo<esc>
@@ -867,7 +869,7 @@ u
 oquux<esc>
 ```
 
-Now you have 3 lines and the undo tree looks like this:
+Agora você tem três linhas e a árvore dos desfazares fica mais ou menos assim:
 
 ```
      foo(1)
@@ -877,41 +879,45 @@ Now you have 3 lines and the undo tree looks like this:
 baz(3)   quux(4)
 ```
 
-The undo tree has 4 changes. The numbers represent the _time_ the nodes were
-created.
+A árvore do desfazer possui 4 mudanças. Os números representam o _tempo_ em que
+os nodos foram criados.
 
-Now there are two ways to traverse this tree, let's call them _branch-wise_ and
-_time-wise_.
+Agora há duas formas de atravessar essa árvore, podemos dizer que uma é
+_conforme o galho_ e a outra é _conforme o tempo_.
 
-Undo (`u`) and redo (`<c-r>`) work branch-wise. They go up and down the current
-branch. `u` will revert the text state to the one of node "bar". Another `u`
-will revert the text state even further, to the one of node "foo". Now `<c-r>`
-goes back to the state of node "bar" and another `<c-r>` to the state of node
-"quux". (There's no way to reach node "baz" using branch-wise commands anymore.)
+Desfazer ("_undo_" ou `u`) e refazer ("_redo_" ou `<c-r>`) funcionam conforme-o-galho. Eles vão para cime e para baixo no galho atual. O `u` irá reverter o
+texto ao nodo em que "bar" se encontra. Um outro `u` a mais irá reverter o texto
+ainda mais, ao ponto (nodo) em que "foo" se encontra. Agora, ao apertar `<c-r>`
+irá voltar ao estado do nodo "bar", e apertar `<c-r>` mais uma vez irá levar ao
+nodo "quux". (Não existe mais nenhuma forma de alcançar o nodo "baz" apenas
+conforme-o-galho).
 
-Opposed to this, `g-` and `g+` work time-wise. Thus, `g-` won't revert to the
-state of node "bar", like `u` does, but to the chronologically previous state,
-node "baz". Another `g-` would revert the state to the one of node "bar" and so
-on. Thus, `g-` and `g+` simply go back and forth in time, respectively.
+Por outro lado, `g-` e `g+` funcionam conforme-o-tempo. Portanto, `g-` não irá
+reverter ao estado do nodo "bar", como o `u` faz, mas ao estado cronologicamente
+anterior, que no caso é o nodo "baz". Um outro `g-` a mais irá reverter ao
+estado em que o nodo "bar" se encontra, e assim por diante. Portanto, `g-` e
+`g+` vão e voltam no tempo, respectivamente.
 
-| Command / Mapping | Action |
+| Comando / Mapeamento | Ação |
 |-------------------|--------|
-| `[count]u`, `:undo [count]` | Undo [count] changes. |
-| `[count]<c-r>`, `:redo` | Redo [count] changes. |
-| `U` | Undo all changes to the line of the latest change. |
-| `[count]g-`, `:earlier [count]?` | Go to older text state [count] times. The "?" can be either "s", "m", "h", "d", or "f". E.g. `:earlier 2d` goes to the text state from 2 days ago. `:earlier 1f` will go to the state of the latest file save. |
-| `[count]g+`, `:later [count]?` | Same as above, but other direction. |
+| `[conta]u`, `:undo [conta]` | Desfazer [conta] mudanças. |
+| `[conta]<c-r>`, `:redo` | Refazer [conta] mudanças. |
+| `U` | Desfazer todas as alterações na linha desde a última mudança (a mais
+recente). |
+| `[conta]g-`, `:earlier [conta]?` | Ir para o estado anterior do texto tantas vezes quanto a [conta].  A "?" pode ser também "s", "m", "h", "d", ou "f". Por
+exemplo, `:earlier 2d` volta o texto ao estado em que estava a 2 dias atrás. `:earlier 1f` irá ao estado em que o texto se encontrava quano foi salvo pela última vez. |
+| `[conta]g+`, `:later [conta]?` | Assim como o comando acima, só que na outra
+direção. (OBS: em inglês "earlier" quer dizer "_mais cedo_" e "later" quer dizer
+"_mais tarde_").|
 
-The undo tree is kept in memory and will be lost when Vim quits. See [Handling
-backup, swap, undo, and viminfo
-files](#handling-backup-swap-undo-and-viminfo-files) for how to enable
-persistent undo.
+A árvore com os desfazares é mantida na memória e será perdida quando o Vim for
+encerrado. Veja [Manipulando os arquivos de backup, swap, undo, e viminfo](#manipulando-os-arquivos-de-backup-swap-undo-e-viminfo) para saber como ativar permanentemente o desfazer.
 
-If you're confused by the undo tree,
-[undotree](https://github.com/mbbill/undotree) does a great job at visualizing
-it.
+Se você está confuso com a árvore do desfazer, o plugin 
+[undotree](https://github.com/mbbill/undotree) faz um ótimo trabalho ajudando a
+visualizar a árvore.
 
-Help:
+Ajuda:
 
 ```
 :h undo.txt
