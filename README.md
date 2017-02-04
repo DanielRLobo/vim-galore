@@ -924,40 +924,42 @@ Ajuda:
 :h usr_32
 ```
 
-## Quickfix and location lists
+## Listas de conserto rápido e de localização
+### Quickfix and location lists
 
-Every time an action has to return a list of locations, _quickfix_ or _location_
-lists can be used. In this case a location is a file, a line number and
-optionally a column.
+Toda vez que uma ação precisar retornar uma lista de localizações, a _lista de
+conserto rápido_ ou a _lista de localização_ podem ser usadas. Neste caso, uma
+localição é um arquivo, o número de uma linha e opcionalmente uma coluna.
 
-Examples are compiler errors assembled in a quickfix list or matches of an
-external grep tool assembled in a location list.
+Exemplos disso seriam erros de compilador montados em uma lista de conserto
+rápido, ou os resultados correspontes de ferrementa grep externa montados em uma
+lista de localização.
 
-The big advantage over just putting that stuff in an empty buffer is that you
-get a nice uniform interface for browsing the entries.
+A grande vantagem de usar essas listas ao invés de um buffer vazio é que você
+obtem uma boa interface para navegar pelos resultados.
 
-At all time there's only one quickfix list, but every window can have its own
-location list. Both type of lists _feel_ the same, but use slightly different
-commands for navigation.
+Todo o tempo, existe apenas uma lista de conserto rápido, mas cada janela pode
+ter sua própria lista de localização. As duas listas _podem até_ parecerem
+iguais, mas usam comandos um pouco diferentes para a navegação.
 
-Most common commands:
+Comandos mais comuns:
 
-| Action         | Quickfix     | Location     |
+| Ação         | Conserto rápido (Quickfix)     | Localização (Location)     |
 |----------------|--------------|--------------|
-| open window    | `:copen`     | `:lopen`     |
-| close window   | `:cclose`    | `:lclose`    |
-| next entry     | `:cnext`     | `:lnext`     |
-| previous entry | `:cprevious` | `:lprevious` |
-| first entry    | `:cfirst`    | `:lfirst`    |
-| last entry     | `:clast`     | `:llast`     |
+| abrir janela    | `:copen`     | `:lopen`     |
+| fechar janela   | `:cclose`    | `:lclose`    |
+| próximo resultado     | `:cnext`     | `:lnext`     |
+| resultado anterior | `:cprevious` | `:lprevious` |
+| primeiro resultado    | `:cfirst`    | `:lfirst`    |
+| resultado anterior     | `:clast`     | `:llast`     |
 
-See `:h :cc` and everything below for all commands.
+Veja `:h :cc` e tudo que estiver abaixo para saber todos os comandos.
 
-**Example**:
+**Exemplo**:
 
-Let's use our good old friend `grep` for searching the files in the current
-directory recursively for a certain query and put the results in the quickfix
-list.
+Vamos usar nosso velho amigo `grep` para pesquisar pelos arquivos do diretório
+atual por uma certa informação e colocar os resultados na lista de conserto
+rápido.
 
 ```vim
 :let &grepprg = 'grep -Rn $* .'
@@ -966,8 +968,8 @@ list.
 :copen
 ```
 
-Assuming any files contained the string "foo", it should be shown now in the
-quickfix window.
+Assumindo que algum dos arquivos continha alguma ocorrência de "foo", o mesmo
+será mostrado na lista de conserto rápido. 
 
 ## Macros
 
