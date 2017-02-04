@@ -31,7 +31,7 @@
 - [Movimentos, operadores, objetos de texto](#Movimentos-operadores-objetos-de-texto)
 - [Autocmds](#autocmds)
 - [Lista de alterações, lista de pulos](#lista-de-alterações-lista-de-pulos)
-- [Undo tree](#undo-tree)
+- [Árvore do desfazer](#árvore-do-desfazer)
 - [Quickfix and location lists](#quickfix-and-location-lists)
 - [Macros](#macros)
 - [Colorschemes](#colorschemes)
