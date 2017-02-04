@@ -51,7 +51,7 @@
   - [Clipboard usage (Windows, OSX)](#clipboard-usage-windows-osx)
   - [Clipboard usage (Linux, BSD, ...)](#clipboard-usage-linux-bsd-)
 - [Restore cursor position when opening file](#restore-cursor-position-when-opening-file)
-- [Handling backup, swap, undo, and viminfo files](#handling-backup-swap-undo-and-viminfo-files)
+- [Manipulando os arquivos de backup, swap, undo, e viminfo](#manipulando-os-arquivos-de-backup-swap-undo-e-viminfo)
 - [Editing remote files](#editing-remote-files)
 - [Managing plugins](#managing-plugins)
 - [Block insert](#block-insert)
