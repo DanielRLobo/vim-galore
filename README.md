@@ -32,7 +32,7 @@
 - [Autocmds](#autocmds)
 - [Lista de alterações, lista de pulos](#lista-de-alterações-lista-de-pulos)
 - [Árvore do desfazer](#árvore-do-desfazer)
-- [Quickfix and location lists](#quickfix-and-location-lists)
+- [Listas de conserto rápido e de localização](#listas-de-conserto-rápido-e-de-localização)
 - [Macros](#macros)
 - [Colorschemes](#colorschemes)
 - [Folding](#folding)
