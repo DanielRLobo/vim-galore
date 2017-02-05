@@ -68,7 +68,7 @@
 - [Disable audible and visual bells](#disable-audible-and-visual-bells)
 - [Quickly move current line](#quickly-move-current-line)
 - [Quickly add empty lines](#quickly-add-empty-lines)
-- [Quickly edit your macros](#quickly-edit-your-macros)
+- [Edite seus macros rapidamente](#edite-seus-macros-rapidamente)
 - [Quickly jump to header or source file](#quickly-jump-to-header-or-source-file)
 - [Quickly change font size in GUI](#quickly-change-font-size-in-gui)
 - [Change cursor style dependent on mode](#change-cursor-style-dependent-on-mode)
@@ -1027,7 +1027,7 @@ Repare que apesar de eu mostrar como conseguir o mesmo resultado sem o uso de
 macros, isso só funciona para esses tipos de exemplos simples. Para
 automatizações mais complexas, macros são literalmente como uma bomba!
 
-Veja também: [Edite seus macros rapidamente](#edite-seus-macros-rapidament)
+Veja também: [Edite seus macros rapidamente](#edite-seus-macros-rapidamente)
 
 Ajuda:
 
