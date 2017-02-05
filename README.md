@@ -37,7 +37,7 @@
 - [Macros](#macros)
 - [Esquemas de cores](#esquemas-de-cores)
 - [Dobraduras](#dobraduras)
-- [Sessions](#sessions)
+- [Sessões](#sessões)
 - [Locality](#locality)
 
 ## [Usage](#usage-1)
