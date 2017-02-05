@@ -38,7 +38,7 @@
 - [Esquemas de cores](#esquemas-de-cores)
 - [Dobraduras](#dobraduras)
 - [Sessões](#sessões)
-- [Locality](#locality)
+- [Localidade](#localiade)
 
 ## [Usage](#usage-1)
 
