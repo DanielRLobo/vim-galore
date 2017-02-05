@@ -1108,38 +1108,41 @@ Ajuda:
 :h folds
 ```
 
-## Sessions
+## Sessões
+### Sessions
 
-If you save a **view** (`:h :mkview`), the current state of the window (and
-options and mappings) gets saved for later use (`:h :loadview`).
+Se você salvar uma **visão** ("_view_", `:h :mkview`), o estado atual da janela
+(e as opções e mapeamentos) são salvos para uso posterior (`:h :loadview`).
 
-A **session** saves the views of all windows plus global settings. It basically
-makes a snapshot of your current Vim instance and saves it in a session file.
-Let me stress this: it saves the current state; everything done after saving a
-session won't be part of the session file. To "update" a session, simply write
-it out again.
+Uma **sessão** salva as visões de todas as janelas e mais as configurações
+globais. Ela basicamente 'tira um retrato' da sua instância atual do Vim e a
+salva um um arquivo de sessão. Deixe-me realçar isso: ela salva o estado atual;
+tudo que for feito após salvar a sessão não será parte do arquivo de sessão.
+Para "atualizar" a sessão, simplesmente salve-a novamente.
 
-This makes it perfect for saving your _projects_ and easy to switch between
-them.
+Isso é perfeito para salvar os seus _projetos_ e facilita na hora de mudar entre
+eles.
 
-Try it right now! Open a few windows and tabs and do `:mksession Foo.vim`. If
-you omit the filename, `Session.vim` will be assumed. The file will be saved to
-the current working directory, check `:pwd`. Restart Vim and do `:source
-Foo.vim` and voilà, the buffer list, window layout, mappings, working directory
-etc. should all be the same as before you saved the session. Do some more work
-and update the session by overwriting the already existing session file with
-`:mksession! Foo.vim`.
+Tente fazer isso agora mesmo! Abra algumas janelas e abas e faça `:mksession
+Foo.Vim`. Se você omitir o nome do arquivo, o Vim assumirá que é
+`Session.vim`. O arquivo será salvo no diretório de trabalho atual, confira qual
+o diretório com `:pwd`. Recomece o Vim e faça `:source Foo.vim` e voilà, a lista
+de buffers, o leiaute das janelas, os mapeamentos, o diretório atual e etc. tudo
+deve ser o mesmo que era quando você salvou a sessão. Faça um pouco mais de
+trabalho e atualize a sessão sobreescrevendo o arquivo de sessão que já existe
+com `:mksession! Foo.vim`.
 
-Note that a session file is really just a collection of Vim commands that are
-supposed to restore a certain state of a Vim instance, so feel free to take a
-look at it: `:vs Foo.vim`.
+Note que um arquivo de sessão não passa de uma coleção de comando do Vim que
+supostamente vão restaurar um certo estado de uma instância do Vim, portanto
+sinta-se a livre para dar uma olhada nele: `:vs Foo.vim`.
 
-You can tell Vim what things to save in a session by setting `'sessionoptions'`.
+Você pode dizer ao Vim que tipo de coisas devem ser salvas em uma sessão
+determinando ("_set_") as opções da sessão `'sessionoptions'`.
 
-For scripting purposes Vim keeps the name of the last sourced or written session
-in the internal variable `v:this_session`.
+Com o próposito de scripts o Vim mantém o nome da última sessão originada
+("_sourced_") na variável interna `v:this_session`.
 
-Help:
+Ajuda:
 
 ```
 :h Session
