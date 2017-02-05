@@ -1036,45 +1036,45 @@ Ajuda:
 :h 'lazyredraw'
 ```
 
-## Colorschemes
+## Esquemas de cores
 
-Colorschemes are the way to style your Vim. Vim consists of many components and
-each of those can be customized with different colors for the foreground,
-background and a few other attributes like bold text etc. They can be set like
-this:
+Esquemas de cores são o jeito que você pode estilizar o seu Vim. O Vim consiste de vários componentes e cada um deles pode ser customizado com diferentes cores
+para o plano de frente, plano de fundo e alguns outros atributos como texto em
+negrito etc. Eles podem podem ser determinados desse jeito:
 
 ```vim
 :highlight Normal ctermbg=1 guibg=red
 ```
 
-This would paint the background of the editor red. See `:h :highlight` for more
-information.
+Isso iria colorir o plano de fundo ("_bg_") de vermelho. Veja `:h highlight`
+para mais informações.
 
-So, colorschemes are mostly collections of `:highlight` commands.
+Então, esquemas de cores são basicamente coleções de comandos `:highlight`.
 
-Actually, most colorschemes are really 2 colorschemes! The example above sets
-colors via `ctermbg` and `guibg`. The former definition (`cterm*`) will only be
-used if Vim was started in a terminal emulator, e.g. xterm. The latter (`gui*`)
-will be used in graphical environments like gvim or MacVim.
+Na verdade, a maioria dos esquemas de cores são 2 esquemas de cores! O exemplo
+acima determina as cores com `cterbg` e `guibg`. A primeira opção (`cterm`)
+apenas será usada se o Vim for inicializado em um emulador de terminal, por
+exemplo o xterm. A última (`gui*`) será usada em ambientes gráficos como o Gvim
+ou o MacVim.
 
-If you ever happen to use a colorscheme in terminal Vim and the colors don't
-look like the ones in the screenshot at all, chances are that the colorscheme
-only defines colors for the GUI. Conversely, if you use a graphical Vim (e.g.
-gvim or MacVim) and the colors look off, the colorscheme might only define
-colors for the terminal.
+Se alguma vez ocorrer de você usar um esquema de cores no Vim em um terminal e
+as cores não se parecerem com as da imagem (screenshot/printscreen),
+provavelmente o esquema de cores define apenas as cores a GUI (Interface Gráfica
+da Usuária). O oposto também pode acontecer, se você usar um Vim gráfico (como o
+Gvim ou o MacVim) e as cores parecerem meio desajustadas, talvez o esquema de
+cores esteja definindo apenas as cores para o terminal. 
 
-The latter case can be "solved" by enabling true colors in Neovim or Vim
-7.4.1830 and newer. This makes terminal Vim use the GUI definitions instead, but
-also requires the terminal emulator itself and all software in between (e.g.
-tmux) to be capable of handling true colors. ([This
-gist](https://gist.github.com/XVilka/8346728) gives a good overview about the
-topic.)
+O último caso pode ser "resolvido" ativando as cores verdadeiras ("_true
+colors_") no Neovim ou no Vim a partir da versão 7.4.1830. Isso faz com que o
+Vim use as definições de cores para o ambiente gráfico ("_GUI_"), mas isso
+também requer que o emulador de terminal em si e todo programa que estiver pelo
+meio do caminho (como o tmux) serem capazes de lidar com cores verdadeiras.  ([Essa gist](https://gist.github.com/XVilka/8346728) fornece uma boa visão geral sobre o assunto.)
 
-Help:
+Ajuda:
 
 - `:h 'termguicolors'`
-- [List of colorschemes](#list-of-colorschemes-1)
-- [Cosmetic changes to colorschemes](#cosmetic-changes-to-colorschemes)
+- [Lista de esquemas de cores](#lista-de-esquemas-de-cores)
+- [Alterações cosméticas a esquemas de cores](#alterações-cosméticas-a-esquemas-de-cores)
 
 ## Folding
 
