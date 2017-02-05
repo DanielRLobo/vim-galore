@@ -35,7 +35,7 @@
 - [Árvore do desfazer](#árvore-do-desfazer)
 - [Listas de conserto rápido e de localização](#listas-de-conserto-rápido-e-de-localização)
 - [Macros](#macros)
-- [Colorschemes](#colorschemes)
+- [Esquemas de cores](#esquemas-de-cores)
 - [Folding](#folding)
 - [Sessions](#sessions)
 - [Locality](#locality)
@@ -76,7 +76,7 @@
 - [Reload a file on saving](#reload-a-file-on-saving)
 - [Smarter cursorline](#smarter-cursorline)
 - [Faster keyword completion](#faster-keyword-completion)
-- [Cosmetic changes to colorschemes](#cosmetic-changes-to-colorschemes)
+- [Alterações cosméticas a esquemas de cores](#alterações-cosméticas-a-esquemas-de-cores)
 
 ## [Commands](#commands-1)
 
@@ -114,7 +114,7 @@
 
 - [Newline used for NUL](#newline-used-for-nul)
 
-## [List of colorschemes](#list-of-colorschemes-1)
+## [Lista de esquemas de cores](#lista-de-esquemas-de-cores-1)
 
 ## [List of plugins](contents/plugins.md)
 
