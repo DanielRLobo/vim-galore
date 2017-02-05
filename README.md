@@ -974,19 +974,19 @@ será mostrado na lista de conserto rápido.
 
 ## Macros
 
-Vim allows _recording_ typed characters into a [register](#registers). It's a
-great way to automate certain tasks on the fly. (For more elaborate tasks, [Vim
-scripting](#vim-scripting) should be used instead.)
+O Vim permite que você _grave_ os caracteres digitados em um
+[registrador](#registradores). É um ótimo jeito de automatizar certas tarefas
+no meio do trabalho. (Para tarefas mais elaboradas, [Vim
+scripting](#Vim-scripting) deve ser usado ao invés de Macros).
 
-- Start recording by typing `q` followed by the register, e.g. `q`. (The
-  command-line will signify this via "recording @q".)
-- Stop recording by hitting `q` once again.
-- Execute the macro via `[count]@q`.
-- Repeat the last used macro via `[count]@@`.
+- Comece a gravar digitando `q` seguido por um registrador, por exemplo o `q`. (A linha de comando irá assinalar com a mensagem "recording @q".)
+- Encerre a gravação digitando `q` novamente.
+- Execute o macro digitando `[conta]@q`.
+- Repita o último macro com `[count]@@`.
 
-**Example 1:**
+**Exemplo 1:**
 
-Insert a line and repeat it 10 times:
+Insira uma linha e repita 10 vezes:
 
 ```
 qq
@@ -995,13 +995,13 @@ q
 10@q
 ```
 
-(The same could be done without macros: `oabc<esc>10.`)
+(O mesmo poderia ser feito sem macros: `oabc<esc>10.`)
 
-**Example 2:**
+**Exemplo 2:**
 
-For adding line numbers in front of all lines, start on the first line and add
-"1. " to it manually. Increment the number under the cursor by using `<c-a>`,
-displayed as `^A`.
+Para adicionar o número da linha na frente de todas as linhas, comece na
+primeira linha adicione "1. " a ela manualmente. Incremente o número sob o
+cursor usando `<c-a>`, mostrado como `^A`.
 
 ```
 qq
@@ -1010,9 +1010,9 @@ q
 1000@q
 ```
 
-Here we simply hope that the file doesn't contain more than 1000 lines when
-using `1000@q`, but we can also use a _recursive macro_, which executes until
-the macro can't be applied to a line anymore:
+Aqui nós simplesmente esperamos que o arquivo não contenha mais que 1000 linhas
+quando usamos `1000@q`, mas também podemos usar um _macro recursivo_, que
+executa até que o macro não possa mais ser aplicado a uma linha:
 
 ```
 qq
@@ -1021,15 +1021,15 @@ q
 @q
 ```
 
-(The same could be done without macros: `:%s/^/\=line('.') . '. '`)
+(O mesmo poderia ser atingido sem macros: `:%s/^/\=line('.') . '. '`)
 
-Mind that I also show how to achieve the same without using macros, but this
-mostly works only for such simple examples. For more complex automation, macros
-are the bomb!
+Repare que apesar de eu mostrar como conseguir o mesmo resultado sem o uso de
+macros, isso só funciona para esses tipos de exemplos simples. Para
+automatizações mais complexas, macros são literalmente como uma bomba!
 
-Also see: [Quickly edit your macros](#quickly-edit-your-macros)
+Veja também: [Edite seus macros rapidamente](#edite-seus-macros-rapidament)
 
-Help:
+Ajuda:
 
 ```
 :h recording
