@@ -1076,30 +1076,32 @@ Ajuda:
 - [Lista de esquemas de cores](#lista-de-esquemas-de-cores)
 - [Alterações cosméticas a esquemas de cores](#alterações-cosméticas-a-esquemas-de-cores)
 
-## Folding
+## Dobraduras
+### Folding
 
-Every text (or source code) has a certain structure. If you have a structure, it
-means you have regions of logically separated text. Folding allows to "fold"
-such a region into a single line and displaying a short description. There are
-many commands that act on these regions called _folds_. Folds can be nested.
+Todo texto (ou código fonte) possui uma certa estrutura. Se você tem uma
+estrutura, isso significa que você tem regiões de texto separadas logicamente.
+As dobraduras permitem que você "dobre" certa região em uma única linha e
+mostrando uma descrição curta. Existem vários comandos que agem nessas regiões
+chamadas de _dobras_ ("_folds_"). As dobras também podem ser aninhadas.
 
-Vim distinguishes between several types of fold methods:
+O Vim faz distinção entre vários tipos de métodos de dobraduras: 
 
-| 'foldmethod' | Usage |
+| 'método de dobra' | Uso |
 |--------------|-------|
-| diff         | Used in diff windows to fold unchanged text. |
-| expr         | Uses `'foldexpr'` to basically create a new fold method. |
-| indent       | Folds based on indentation. |
-| manual       | Create folds yourself via `zf`, `zF`, and `:fold`. |
-| marker       | Folds based on markers in the text (often in comments). |
-| syntax       | Folds based on syntax, e.g. folding `if` blocks. |
+| diff         | Usado em janelas de diff para dobrar texto não alterado. |
+| expr         | Usa `'foldexpr'` para basicamente criar um novo método de dobra. |
+| indent       | Dobra baseado na indentação. |
+| manual       | Crie dobras você mesma com `zf`, `zF`, e `:fold`. |
+| marker       | Dobra baseado nos marcadores no texto (com frequência nos comentários). |
+| syntax       | Dobra baseado na sintáxe, como dobrar em blocos de `if`. |
 
-**NOTE**: Folding can be computationally intensive! If you experience any
-performance drawbacks (small delays when typing), have a look at
-[FastFold](https://github.com/Konfekt/FastFold), which prevents Vim from
-updating folds when it's not needed.
 
-Help:
+**NOTA**: Dobraduras podem ser computacionalmente intensas! Se você experienciardesvantagens na performance (pequenos atrasos enquanto digita), de uma olhada no
+plugin [FastFold](https://github.com/Konfekt/FastFold), que prevem que o Vim 
+atualize as dobras quando isso não é necessário.
+
+Ajuda:
 
 ```
 :h usr_28
