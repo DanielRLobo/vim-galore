@@ -1150,20 +1150,20 @@ Ajuda:
 :h v:this_session
 ```
 
-## Locality
+## Localidade
+### Locality
 
-Many of the concepts mentioned above also have _local_ counterparts:
+Muitos dos conceitos mencionados acima possuem uma contraparte _local_:
 
-| Global | Local | Scope | Help |
+| Global | Local | Escopo | Ajuda |
 |--------|-------|-------|------|
-| `:set`     | `:setlocal`           | buffer or window | `:h local-options`    |
+| `:set`     | `:setlocal`           | buffer ou janela | `:h local-options`    |
 | `:map`     | `:map <buffer>`       | buffer           | `:h :map-local`       |
 | `:autocmd` | `:autocmd * <buffer>` | buffer           | `:h autocmd-buflocal` |
-| `:cd`      | `:lcd`                | window           | `:h :lcd`             |
+| `:cd`      | `:lcd`                | janela           | `:h :lcd`             |
 | `<leader>` | `<localleader>`       | buffer           | `:h maplocalleader`   |
 
-Variables also sport different scopes, but will be explained in
-[Vim scripting](#vim-scripting).
+Variáveis também suportam escopos diferentes, mas isso será explicado em [Vim scripting](#vim-scripting).
 
 # Usage
 
