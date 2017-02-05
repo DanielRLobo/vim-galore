@@ -36,7 +36,7 @@
 - [Listas de conserto rápido e de localização](#listas-de-conserto-rápido-e-de-localização)
 - [Macros](#macros)
 - [Esquemas de cores](#esquemas-de-cores)
-- [Folding](#folding)
+- [Dobraduras](#dobraduras)
 - [Sessions](#sessions)
 - [Locality](#locality)
 
