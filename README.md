@@ -1165,23 +1165,24 @@ Muitos dos conceitos mencionados acima possuem uma contraparte _local_:
 
 Variáveis também suportam escopos diferentes, mas isso será explicado em [Vim scripting](#vim-scripting).
 
-# Usage
+# Utilização
 
-## Getting help offline
+## Receber ajuda desconectado
 
-Vim comes with great documentation in the form of single text files with a
-special layout. Vim uses a system based on tags for accessing certain parts of
-those help files.
+O Vim vem com uma ótima documentação no formato de simples arquivos de texto com
+um layout especial. O sistema utilizado pelo Vim para acessar certas partes
+desses arquivos é baseado em marcas (tags).
 
-First of all, read this: `:help :help`. This will open the file
-`$VIMRUNTIME/doc/helphelp.txt` in a new window and jump to the `:help` tag
-within that file.
+Primeiramente, leia isso: `:help :help`. Isso irá abrir o arquivo 
+`$VIMRUNTIME/doc/helphelp.txt` em uma nova janela e pular para a marca `:help` 
+dentro desse arquivo.
 
-A few simple rules:
+Algumas regras simples:
 
-- options are enclosed in single quotes, e.g. `:h 'textwidth'`
-- VimL functions end in (), e.g. `:h reverse()`
-- commands start with :, e.g. `:h :echo`
+- opções são colocadas dentro de aspas curvas simples (`'`, e não ``` ` ```),
+  como em `:h 'textwidth'` 
+- funções de VimL terminam em (), como em `:h reverse()`
+- comandos começam com :, como em `:h :echo`
 
 You can use `<c-d>` (this is <kbd>ctrl</kbd>+<kbd>d</kbd>) to list all tags that
 match the currently entered query. E.g. `:h tab<c-d>` will get you a list of all
