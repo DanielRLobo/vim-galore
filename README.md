@@ -1184,26 +1184,29 @@ Algumas regras simples:
 - funções de VimL terminam em (), como em `:h reverse()`
 - comandos começam com :, como em `:h :echo`
 
-You can use `<c-d>` (this is <kbd>ctrl</kbd>+<kbd>d</kbd>) to list all tags that
-match the currently entered query. E.g. `:h tab<c-d>` will get you a list of all
-tags from `tab` over `'softtabstop'` to `setting-guitablabel`.
+Você pode usar `<c-d>` (isso quer dizer <kbd>ctrl</kbd>+<kbd>d</kbd>) para
+listar todas as marcas ("_tags_") que correspondem com o termo pesquisado em
+questão. Por exemplo, `:h tab<c-d>` irá lhe mostrar uma lista de todas as marcas
+desde `tab` até `'softtabstop'` e `setting-guitablabel`.
 
-You want to list all VimL functions? Simple: `:h ()<c-d>`. You want to list all
-VimL functions that concern windows? `:h win*()<c-d>`.
+Você quer listar todas as funções de VimL? Simples: `:h ()<c-d>`. Você quer
+listar todas as funções de VimL relacionadas as janelas ("_windows_")? `:h
+win*()<c-d>`.
 
-This quickly becomes second nature, but especially in the beginning, you
-sometimes don't know any part of the tag you are looking for. You can only
-imagine some keywords that could be involved. `:helpgrep` to the rescue!
+Isso rapidamente fica instintivo, mas especialmente no começo, você não sabe nem
+sequer uma parte da marca que está procurando. Você apenas pode imaginar algumas
+palavras chave que podem estar envolvidas. `:helpgrep` irá salvar!
 
 ```
 :helpgrep backwards
 ```
 
-This will look for "backwards" in all documentation files and jump to the first
-match. The matches will be assembled in the quickfix list. Use `:cn`/`:cp` to
-jump to the next/previous match. Or use `:copen` to open the quickfix window,
-navigate to an entry and hit `<cr>` to jump to that match. See `:h quickfix` for
-the whole truth.
+Isso irá procurar por "backwards" em toda a documentação e irá pular para a
+primeira ocorrência. As ocorrências serão agrupadas em uma lista de conserto
+rápido ("_quickfix list_"). Use `:cn`/`:cp` para pular para a próxima/última 
+ocorrência. Ou use `:copen` para abrir a janela de conserto rápido, navegar para
+uma ocorrência e apertar `<cr>` para pular para o ocorrência em questão. Veja
+`:h quickfix` para conhecer a verdade.
 
 ## Getting help offline (alternative)
 
