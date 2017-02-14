@@ -1208,31 +1208,33 @@ ocorrência. Ou use `:copen` para abrir a janela de conserto rápido, navegar pa
 uma ocorrência e apertar `<cr>` para pular para o ocorrência em questão. Veja
 `:h quickfix` para conhecer a verdade.
 
-## Getting help offline (alternative)
+## Conseguindo ajuda desconectado (alternativa)
 
-This list was compiled by @chrisbra, one of the most active Vim developers, and
-posted to [vim_dev](https://groups.google.com/forum/#!forum/vim_dev).
+Esta lista foi compilada por @chrisbra, um dos desenvolvedores mais ativos do
+Vim, e foi postada na [vim_dev](https://groups.google.com/forum/#!forum/vim_dev).
 
-It's reposted here with minor changes.
+Está sendo repostada aqui com algumas poucas alterações.
 
 ---
 
-If you know what you are looking for, it is usually easier to search for it
-using the help system, because the subjects follow a certain style guide.
+Se você sabe o quê está procurando, é normalmente mais fácil procurar usando o
+sistema de ajuda, pois os assuntos seguem um certo guia de estilo.
 
-Also, the help has the advantage of belonging to your particular Vim version, so
-that obsolete topics or topics that have been added later won't turn up.
+Outra coisa, o sistema de ajuda tem a vantagem de pertencer à sua versão em
+particular do Vim, de modo que tópicos obsoletos ou tópicos que foram
+adicionados mais tarde não irão aparecer.
 
-Therefore, it is essential to learn the help system and the language it uses.
-Here are some examples (not necessarily complete and I might have forgotten
-something).
+Por isso que é importante aprender a usar o sistema de ajuda e a linguagem que
+ele usa. Aqui vão alguns exemplos (não necessariamente completo, e eu devo ter
+me esquecido de alguma coisa).
 
-1. Options are enclosed in single quotes. So you would use `:h 'list'` to go to
-   the help topic for the list option. If you only know, you are looking for a
-   certain option, you can also do `:h options.txt` to open the help page which
-   describes all option handling and then you can search using regular
-   expressions e.g. `/width`. Certain options have their own namespace, e.g. `:h
-   cpo-a`, `:h cpo-A`, `:h cpo-b`, and so on.
+1. Opções são colocadas entre aspas únicas e simples. Então você usaria `:h
+   'list'` para ir para o tópico de ajuda para a opção "list". Se você só sabe
+   que está procurando por uma certa opção, você também pode fazer `:h
+   options.txt` para abrir a página de ajuda que descreve como que todas as
+   opções são tratadas, e a partir daí usar expressões regulares, como `/width`.
+   Algumas opções possuem nome próprio, como `: h cpo-a`, `:h cpo-A`, `:h
+   cpo-b`, e assim por diante.
 
 2. Normal mode commands are just that. Use `:h gt` to go to the help page for
    the "gt" command.
