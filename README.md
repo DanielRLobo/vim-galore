@@ -485,7 +485,7 @@ Veja `:h mapleader` e `:h maplocalleader` para saber mais.
 
 Registradores (inglês: "_registers_") são lugares que o Vim usa para registrar texto.
 Copiar texto para um registrador é chamado de **yanking** e extrair texto de um
-registradoro é chamado de **pasting** ("_colar_"). 
+registrador é chamado de **pasting** ("_colar_"). 
 
 O Vim provem os seguintes registradores:
 
@@ -1236,99 +1236,114 @@ me esquecido de alguma coisa).
    Algumas opções possuem nome próprio, como `: h cpo-a`, `:h cpo-A`, `:h
    cpo-b`, e assim por diante.
 
-2. Normal mode commands are just that. Use `:h gt` to go to the help page for
-   the "gt" command.
+2. Comandos do modo normal são apenas isso mesmo. Use `:h gt` para ir para a
+   página de ajuda do comando "gt".
 
-3. Regexp items always start with "/", so `:h /\+` takes you to the help item
-   for the "\+" quantifier in Vim regexes. If you need to know anything about
-   regular expressions, start reading at `:h pattern.txt`.
+3. Expressões regulares ("_regexp_") sempre começam com "/", então `:h /\+` leva
+   você para a página de ajuda do itém quantificador "\+" nas expressões
+   regulares do Vim. Se você precisa aprender alguma coisa sobre expressões
+   regulares, comece lendo em `:h pattern.txt`.
 
-4. Key combinations. They usually start with a single letter indicating the mode
-   for which they can be used. E.g. `:h i_CTRL-X` takes you to the family of
-   CTRL-X commands for insert mode which can be used to auto complete different
-   things. Note that certain keys will always be written the same, e.g. Control
-   will always be CTRL. Note, for normal mode commands, the "n" is left away,
-   e.g. `:h CTRL-A`. In contrast, `:h c_CTRL-R` will describe what CTRL-R does
-   when entering commands in the command line and `:h v_Ctrl-A` talks about
-   incrementing numbers in visual mode and `:h g_CTRL-A` talks about the g<C-A>
-   command (thus you have to press "g" then <Ctrl-A>). Here the "g" stand for
-   the normal command "g" which always expect a second key before doing
-   something similar to the commands starting with "z".
+4. Combinações de teclas. Elas normalmente começam com uma única letra indicando
+   o modo para o qual elas podem ser usadas. Por exemplo, `:h i_CTRL-X` irá
+   levar você para a família dos comandos com CTRL-X para o modo de inserção,
+   que podem ser usados para autocompletar diferentes coisas. Repare que certas
+   chaves serão sempre escritas da mesma maneira, por exemplo Control sempre
+   será CTRL. Atenção também para o fato de que para os comandos para o modo
+   normal, o "n" é deixado de fora, como em `:h CTRL-A`. Por outro lado, `:h
+   c_CTRL-R` irá descrever o quê CTRL-R faz quando estiver escrevendo comandos
+   na linha de comando, e `:h g_CTRL-A` fala sobre o comando g<C-A> (portanto
+   você precisa apertar "g" e em seguida <Ctrl-A>). Aqui o "g" se refere ao
+   comando "g" do modo normal, que sempre espera uma segunda tecla antes de
+   fazer alguma coisa, os comandos començando com "z" também agem de forma
+   parecida.
 
-5. Registers always start with "quote" so use `:h quote` to find out about the
-   special ":" register.
+5. Registradores sempre começam com "quote", portanto use `:h quote` para saber
+   mais sobre o registrador especial ":".
 
-6. Vim script (VimL) is available at `:h eval.txt`. Certain aspects of the
-   language are available at `:h expr-X` where 'X' is a single letter, e.g. `:h
-   expr-!` will take you to the topic describing the '!' (Not) operator for
-   VimL. Also important, see `:h function-list` to find a short description of
-   all functions available.
+6. Vim script (VimL) está disponível em `:h eval.txt`. Certos aspectos da língua
+   estão disponíveis em `:h expr-X` onde 'X' é um caractere único, como em `:h 
+   expr-!` que irá lhe levar ao tópico que descreve o (Não) operador '!' para
+   VimL. Também importante, veja `:h function-list` para encontrar uma curta
+   descrição de todas as funções disponíveis.
+   
+7. Mapeamentos são encontrados na página de ajuda `:h map.txt`. Use `:h
+   mapmode-i` para descobrir mais sobre o comando `:imap`. Use também  `:h
+   map-tópico` para saber mais sobre certos subtópicos sobre mapeamentos (como
+   em `:h :map-local` para mapeamentos localizados/específicos a um buffer ou
+   `:h map_bar` para como lidar com a '|' em mapeamentos.
 
-7. Mappings are talked about in the help page `:h map.txt`. Use `:h mapmode-i`
-   to find out about the `:imap` command. Also use `:map-topic` to find out
-   about certain subtopics particular for mappings (e.g. `:h :map-local` for
-   buffer-local mappings or `:h map_bar` for how the '|' is handled in mappings.
+8. Definições de comandos são encontradas em `:h command-*`, portanto use `:h
+   command-bang` para saber sobre o argumento '!' para comandos customizados.
 
-8. Command definitions are talked about at `:h command-*`, so use :h command-bar
-   to find out about the '!' argument for custom commands.
+9. Comandos para o gerenciamento de janelas sempre começam com CTRL-W, portanto
+   você encontra a ajuda correspondente em `:h CTRL-W_*` (por exemplo `:h
+   CTRL-W_p` para mudar a janela acessada anteriormente). Você também pode
+   acessar `:h windows.txt` e olhar tudo, caso esteja procurando por um comando
+   para lidar com janelas.
 
-9. Window management commands always start with CTRL-W, so you find the
-   corresponding help at `:h CTRL-W_*` (e.g. `:h CTRL-W_p` for switch to the
-   previously accessed window). You can also access `:h windows.txt` and read
-   your way through, if you are looking for window handling command.
+10. Comandos Ex sempre começam com ":", portanto `:h :s` cobre o comando ":s".
 
-10. Ex commands always start with ":", so `:h :s` covers the ":s" command.
+11. Use CTRL-D após digitar um tópico e deixe o Vim completar com todos os
+    tópicos disponíveis.
 
-11. Use CTRL-D after typing a topic and let Vim try to complete to all available
-    topics.
+12. Use `:helpgrep` para fazer uma busca em todas as páginas de ajuda
+    (geralmente também inclui as páginas de ajuda instaladas por plugins). Veja
+    `:h :helpgrep` para saber como a usar. Uma vez que você tenha buscado por um
+    tópico, todos os resultados estarão disponíveis na janela da [lista de
+    conserto rápido ou de
+    localização](#listas-de-conserto-rápido-e-de-localização) que podem ser
+    abertas com `:copen` ou `:lopen`. Uma vez lá, você pode usar `/` para
+    filtrar os resultados ainda mais. 
 
-12. Use `:helpgrep` to search in all help pages (usually also includes help
-    pages by installed plugins). See `:h :helpgrep` for how to use it. Once you
-    have searched for a topic, all matches are available in the quickfix (or
-    location) window which can be opened with `:copen` or `:lopen`. There you
-    can also use `/` to further filter the matches.
+13. `:h helphelp` contém alguma informação sobre como usar a ajuda.
 
-13. `:h helphelp` contains some information on how to use the help.
+14. O manual do usuário. Ele irá descrever os tópicos de ajuda para iniciantes
+    em uma maneira até amigável. Comece em `:h usr_toc.txt` para encontrar a
+    tabela de conteúdo. Passe o olho por essa ajuda para encontrar certos
+    tópicos, como por exemplo você encontrará uma entrada chamada "Digraphs" e
+    "Entering special characters" no capítulo 24 (então use `:h usr_24.txt` para
+    ir para a página de ajuda em particular).
 
-14. The user manual. This describes help topics for beginners in a rather
-    friendly way. Start at `:h usr_toc.txt` to find the table of content (as you
-    might have guessed). Skimming over that help to find certain topics, .e.g
-    you will find an entry "Digraphs" and "Entering special characters" in
-    chapter 24 (so use `:h usr_24.txt` to go to that particular help page).
+15. Grupos de realçamentos ("_Highlighting groups_") sempre iniciam com `hl-*`.
+    Por exemplo, `:h hl-WarningMsg` fala sobre o grupo "WarningMsg" de
+    realçamento.
 
-15. Highlighting groups always start with `hl-*`. E.g. `:h hl-WarningMsg` talks
-    about the "WarningMsg" highlighting group.
+16. Realçamento de sintáxe ("_syntax highlighting_") é renomeado para
+    ":syn-tópico", como em `:h :syn-conceal` que fala sobre o argumento
+    "conceal" para o comando `:syn`.
 
-16. Syntax highlighting is namespaced to ":syn-topic", e.g. `:h :syn-conceal`
-    talks about the conceal argument for the :syn command.
+17. Comandos de conserto rápido ("quickfix") geralmente começam com ":c",
+    enquanto que os comandos da lista de localização geralmente começam com
+    ":l".
 
-17. Quickfix commands usually start with ":c", while location list commands
-    usually start with ":l".
+18. A página `:h BufWinLeave` fala sobre o autocmd BufWinLeave ("_deixar a
+    janela do buffer_"). Também `:h autocommands-events` fala sobre todos os
+    eventos possíveis.
 
-18. `:h BufWinLeave` talks about the BufWinLeave autocmd. Also, `:h
-    autocommands-events` talks about all possible events.
+19. Argumentos de inicialização sempre começam com "-", então `:h -f` irá lhe
+    levar a página de ajuda do comando "-f" para iniciar o Vim.
 
-19. Startup arguments always start with "-", so `:h -f` takes you to the help of
-    the "-f" command switch of Vim.
+20. Funções extras compiladas sempre começam com "+", então `:h +conceal` fala
+    sobre o suporte a função "conceal" compilada.
 
-20. Compiled extra features always start with "+", so `:h +conceal` talks about
-    the conceal support.
+21. Códigos de erro podem ser buscados diretamente na ajuda. `:h E297` irá
+    exatamente para a descrição da mensagem do erro. Entretanto algumas vezes,
+    esses códigos de erro não estão descritos, mas sim listados no comando do
+    Vim que os causa. Como em `:h hE128` que o levará diretamente para o comando
+    `:function`.
 
-21. Error codes can be looked up directly in the help. `:h E297` takes you
-    exactly to the description of the error message. Sometimes however, those
-    error codes are not described, but rather are listed at the Vim command that
-    usually causes this. E.g. `:h hE128` takes you directly to the `:function`
-    command.
+22. A documentação para arquivos de sintáxe incluídos geralmente estão
+    disponíveis em `:h ft-*-syntax`. Por exemplo, `:h ft-c-syntax` fala sobre o
+    arquivo de sintáxe C e as opções que ele apresenta. Algumas vezes, seções
+    adicionais para a omni autocomplementação (`:h ft-php-omni`) ou plugins de
+    tipos de arquivo (`:h ft-tex-plugin`) estão disponíveis.
 
-22. Documentation for included syntax files is usually available at `:h
-    ft-*-syntax`. E.g. `:h ft-c-syntax` talks about the C syntax file and the
-    options it provides. Sometimes, additional sections for omni completion (`:h
-    ft-php-omni`) or filetype plugins (`:h ft-tex-plugin`) are available.
-
-Also, a link to the user documentation (which describes certain commands more
-from a user perspective and less detailed) will be mentioned at the top of help
-pages if they are available. So `:h pattern.txt` mentions the user guide topics
-`:h 03.9` and `:h usr_27`.
+Também, um linque para a documentação do usuário (que por sua vez descreve
+certos comandos mais da perspectiva do usuário e de forma menos detalhada)
+serão mencionados no topo das páginas de ajuda caso estejam disponíveis.
+Portanto, `:h pattern.txt` menciona os tópicos `:h 03.9` e `:h usr_27` do guia
+do usuário.
 
 ## Getting help online
 
