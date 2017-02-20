@@ -1356,43 +1356,47 @@ Another great resource is using
 If you want to report a Vim bug, use the
 [vim_dev](https://groups.google.com/forum/#!forum/vim_dev) mailing list.
 
-## Autocmds in practice
+## Autocmds na prática
 
-You can trigger any event right now: `:doautocmd BufRead`.
+Você pode ativar qualquer evento agora mesmo com: `:doautocmd BufRead`.
 
-### User events
+### Eventos do usuário
+#### User events
 
-Especially for plugins it's useful to create your own "User" events:
+Especialmente para plugins, vale a pena criar os seus próprios eventos de
+usuário:
 
 ```vim
-function! Chibby()
-  " A lot of stuff is happening here.
-  " And at last..
-  doautocmd User ChibbyExit
+function! Aleatoriedade()
+  " Um monte de coisa tá acontecendo aqui.
+  " E por útlimo...
+  doautocmd User AleatoriedadeSaida
 endfunction
 ```
 
-Now users of your plugin can execute anything when Chibby finishes running:
+Agora os usuários do seu plugin pode executar qualquer coisa assim que
+Aleatoriedade terminar de rodar:
 
 ```vim
-autocmd User ChibbyExit call ChibbyCleanup()
+autocmd User AleatoriedadeSaida call AleatoriedadeCleanup()
 ```
 
-By the way, if there's no "catching" :autocmd, :doautocmd will output a pesky
-"No matching autocommands" message. That's why many plugins use `silent
-doautocmd ...` instead. But this has the disadvantage, that you can't simply use
-`echo "foo"` in the :autocmd, you have to use `unsilent echo "foo"` instead..
+A propósito, se não houver nenhum comando :autocmd para ser encontrado,
+:doautocmd vai jogar uma mensagem irritado "No matching autocommands". É por
+isso que muitos plugins usam `silent doautocmd ...`. Mas isso também possui
+a desvantagem que você não pode simplesmente usar `echo foo` no :autocmd, você
+precisa usar `unsilent echo "foo"`.
 
-That's why it's better to check if there even is a receiving autocmd and not
-bothering emitting the event otherwise:
+É por isso que é melhor checar se ao menos existe o recebimento de um autocmd e
+não se incomodar de emitir uma mensagem em caso contrário:
 
 ```vim
-if exists('#User#ChibbyExit')
-  doautocmd User ChibbyExit
+if exists('#User#AleatoriedadeSaida')
+  doautocmd User AleatoriedadeSaida
 endif
 ```
 
-Help: `:h User`
+Ajuda: `:h User`
 
 ### Nested autocmds
 
