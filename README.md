@@ -1345,16 +1345,15 @@ serão mencionados no topo das páginas de ajuda caso estejam disponíveis.
 Portanto, `:h pattern.txt` menciona os tópicos `:h 03.9` e `:h usr_27` do guia
 do usuário.
 
-## Getting help online
+## Conseguindo ajuda conectado
 
-If you have an issue you can't resolve or are in need of general guidance, see
-the [vim_use](https://groups.google.com/forum/#!forum/vim_use) mailing list.
-Another great resource is using
-[IRC](https://de.wikipedia.org/wiki/Internet_Relay_Chat). The channel `#vim` on
-[Freenode](https://freenode.net) is huge and usually full of helpful people.
+Caso tenha um problema que não consiga resolver ou precise de uma orientação
+geral, veja o grupo de e-mail [vim_use](https://groups.google.com/forum/#!forum/vim_use) (em inglês).
+Um outro ótimo recurso é usar o [IRC](https://pt.wikipedia.org/wiki/Internet_Relay_Chat). O canal `#vim` na [Freenode](https://freenode.net) é grande e 
+geralmente cheio de gente disposta a ajudar.
 
-If you want to report a Vim bug, use the
-[vim_dev](https://groups.google.com/forum/#!forum/vim_dev) mailing list.
+Se você quiser reportar um bug no Vim, use a lista de e-mails 
+[vim_dev](https://groups.google.com/forum/#!forum/vim_dev).
 
 ## Autocmds na prática
 
