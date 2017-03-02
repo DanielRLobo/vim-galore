@@ -1397,30 +1397,32 @@ endif
 
 Ajuda: `:h User`
 
-### Nested autocmds
+### Autocmds aninhados
 
-By default, autocmds do not nest! If an autocmd executes a command, which in
-turn would usually trigger another event, it won't happen.
+Por padrão, autocmds não aninham! Se um autocmd executa um comando, que em
+seguida iria geralmente ativar um outro evento, isso não irá acontecer.
 
-Let's say every time you start Vim, you want to automatically open your vimrc:
+Vamos supor que você queira que abrir o seu vimrc automaticamente toda vez que o
+Vim for inicializado:
 
 ```vim
 autocmd VimEnter * edit $MYVIMRC
 ```
 
-When you now start Vim, it will open your vimrc, but the first thing you'll
-notice is that there won't be any highlighting although usually there would be.
+A partir de agora, quando o Vim for inicializado, o seu vimrc será aberto, mas a
+primeira coisa que você irá notar é que não haverá nenhum realce que normalmente
+haveria.
 
-The problem is that `:edit` in your non-nested autocmd won't trigger the
-"BufRead" event, so the filetype never gets set to "vim" and
-`$VIMRUNTIME/syntax/vim.vim` never sourced. See `:au BufRead *.vim`. Use this
-instead:
+O problema é que `:edit` no seu autocmd não-aninhado não irá ativar o evento
+"BufRead", portanto o tipo de arquivo ("_filetype_") não será configurado para
+"vim" e `$VIMRUNTIME/syntax/vim.vim` nunca será originado. Veja `:au BufRead
+*.vim`. Use isso ao invés:
 
 ```vim
 autocmd VimEnter * nested edit $MYVIMRC
 ```
 
-Help: `:h autocmd-nested`
+Ajuda: `:h autocmd-nested`
 
 ## Clipboard
 
