@@ -1443,48 +1443,46 @@ Veja também: [Colar entre parenteses (ou por que preciso configurar 'paste' o
 tempo
 todo?)](#colar-entre-parenteses-ou-por-que-preciso-configurar-paste-o-tempo-todo)
 
-### Clipboard usage (Windows, OSX)
+### Utilização da área de transferência (Windows, OSX)
 
-Windows comes with a
-[clipboard](https://msdn.microsoft.com/en-us/library/windows/desktop/ms649012(v=vs.85).aspx)
-and OSX comes with a
-[pasteboard](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PasteboardGuide106/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008100-SW1).
+O Windows vem com [clipboard](https://msdn.microsoft.com/en-us/library/windows/desktop/ms649012(v=vs.85).aspx)
+e OSX vem com uma [pasteboard](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PasteboardGuide106/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008100-SW1).
 
-Both work like most users would expect them to work. You copy selected text with
-`ctrl+c`/`cmd+c` and paste them in another application with `ctrl+v`/`cmd+v`.
+Ambos funcionam mais ou menos como usuários esperariam que funcionassem. Você
+copia o texto selecionado com `ctrl+c`/`cmd+c` e cola em um outro aplicativo com `ctrl+v`/`cmd+v`.  
 
-Note that copied text is actually transferred to the clipboard, so you can close
-the application you copied from before pasting in another application without
-problems.
+Repare que o texto copiado é naverdade transferido para a área de transferência
+("_clipboard_"), e por isso você pode fechar o aplicativo onde copiou o texto
+antes de colar em um outro aplicativo sem problemas.
 
-Whenever this happens, the clipboard register `*` gets filled with the
-selection. From Vim use `"*y` and `"*p` to yank and paste from the clipboard
-respectively.
+Quando quer que isso aconteça, o registro `*` da área de transferência é
+preenchido com a seleção. A partir do Vim, use `"*y"` e `"+p` para copiar e
+colar para dentro ou para fora da área de transferência respectivamente.
 
-If you don't even want to specify the `*` register all the time, put this in
-your vimrc:
+Se você nem sequer quer ter que especificar o registrador `*` todo o tempo,
+coloque isso no seu vimrc:
 
 ```vim
 set clipboard=unnamed
 ```
 
-Usually all yank/delete/put operations fill the `"` register, now the `*`
-register is used for the same operations, therefore simply `y` and `p` will be
-enough.
+Geralmente todas as operações de copiar/deletar/colocar ("_yank/delete/put_")
+preencheriam o registrador `"`, mas agora o registrador `*` é usado para as
+mesmas operações, e portanto, simplesmente `y` e `p` serão suficiente.
 
-Let me repeat: Using the option above means that every yank/paste, even when
-only used in the same Vim window, will alter the clipboard. Decide for yourself
-if this is useful or not.
+Deixe-me repetir: usar a opção acima quer dizer que todo e qualquer
+copiar/colar, até mesmo quando usado apenas na mesma janela do Vim, todos irão
+alterar a área de transferência. Decida por conta própria se isso é útil ou não.
 
-If you're even too lazy to type `y`, you can send every visual selection to the
-clipboard by using these settings:
+Se você tem preguiça até mesmo de digitar `y`, você pode enviar cada seleção
+visual para a área de transferência usando essas configurações:
 
 ```vim
 set clipboard=unnamed,autoselect
 set guioptions+=a
 ```
 
-Help:
+Ajuda:
 
 ```
 :h clipboard-unnamed
