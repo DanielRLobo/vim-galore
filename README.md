@@ -1424,13 +1424,14 @@ autocmd VimEnter * nested edit $MYVIMRC
 
 Ajuda: `:h autocmd-nested`
 
-## Clipboard
+## Área de transferência
+#### Clipboard
 
-Required [features](#what-kind-of-vim-am-i-running): `+clipboard` and optionally
-`+xterm_clipboard` if you want to use the `'clipboard'` option on a Unix system
-with a Vim that doesn't have GUI support.
+Recursos [necessários](#que-tipo-de-vim-eu-estou-rodando): `+Clipboard` e
+opcionalmente `+xterm_clipboard` caso queira usar a opção `+clipboard` em um
+sistema Unix com o Vim mas que não suporta interface gráfica.
 
-Help:
+Ajuda:
 
 ```
 :h 'clipboard'
@@ -1438,8 +1439,9 @@ Help:
 :h gui-selections
 ```
 
-Also see: [Bracketed paste (or why do I have to set 'paste' all the
-time?)](#bracketed-paste-or-why-do-i-have-to-set-paste-all-the-time)
+Veja também: [Colar entre parenteses (ou por que preciso configurar 'paste' o
+tempo
+todo?)](#colar-entre-parenteses-ou-por-que-preciso-configurar-paste-o-tempo-todo)
 
 ### Clipboard usage (Windows, OSX)
 
