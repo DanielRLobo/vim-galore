@@ -40,11 +40,11 @@
 - [Sessões](#sessões)
 - [Localidade](#localiade)
 
-## [Usage](#usage-1)
+## [Utilização](#Utilização-1)
 
-- [Getting help offline](#getting-help-offline)
-- [Getting help offline (alternative)](#getting-help-offline-alternative)
-- [Getting help online](#getting-help-online)
+- [Conseguir ajuda desconectado](#conseguir-ajuda-desconectado)
+- [Conseguir ajuda desconectado (alternativa)](#conseguir-ajuda-desconectado-alternativa)
+- [Conseguindo ajuda conectado](#Conseguindo ajuda conectado)
 - [Autocmds in practice](#autocmds-in-practice)
   - [User events](#user-events)
   - [Nested autocmds](#nested-autocmds)
@@ -1167,7 +1167,7 @@ Variáveis também suportam escopos diferentes, mas isso será explicado em [Vim
 
 # Utilização
 
-## Receber ajuda desconectado
+## Conseguir ajuda desconectado
 
 O Vim vem com uma ótima documentação no formato de simples arquivos de texto com
 um layout especial. O sistema utilizado pelo Vim para acessar certas partes
