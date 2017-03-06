@@ -106,7 +106,7 @@
 
 - [Editing small files is slow](#editing-small-files-is-slow)
 - [Editing huge files is slow](#editing-huge-files-is-slow)
-- [Bracketed paste (or why do I have to set 'paste' all the time?)](#bracketed-paste-or-why-do-i-have-to-set-paste-all-the-time)
+- [Colar entre parenteses (ou por que preciso configurar 'paste' o tempo todo?)](#colar-entre-parenteses-ou-por-que-preciso-configurar-paste-o-tempo-todo)
 - [Delays when using escape key in terminal](#delays-when-using-escape-key-in-terminal)
 - [Function search undo](#function-search-undo)
 
