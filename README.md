@@ -1490,64 +1490,65 @@ Ajuda:
 :h 'go_a'
 ```
 
-### Clipboard usage (Linux, BSD, ...)
+### Utilização da área de transferência (Linux, BSD, ...)
 
-If your OS uses [X](http://www.x.org/wiki), things work a bit different. X
-implements the [X Window System
-Protocol](http://www.x.org/releases/X11R7.7/doc/xproto/x11protocol.html) which
-happens to be at major version 11 since 1987, hence X is also often called X11.
+Se o seu sistema operacional (SO) faz uso do [X](http://www.x.org/wiki), as
+coisas são um pouco diferentes. O X implementa o [Protocolo de Janela de
+Sistema X](http://www.x.org/releases/X11R7.7/doc/xproto/x11protocol.html) que
+está em na versão principal 11 desde 1987, e por isso o X é normalmente chamado
+de X11.
 
-Prior, in X10, [cut
-buffers](http://www.x.org/releases/X11R7.7/doc/xorg-docs/icccm/icccm.html#Peer_to_Peer_Communication_by_Means_of_Cut_Buffers)
-were introduced that kind of worked like a _clipboard_ as in copied text was
-actually held by X and it was accessible by all ofter applications. This
-mechanism still exists in X, but its use is deprecated now and most software
-doesn't use it anymore.
+Antes, o X10, [cut buffers](http://www.x.org/releases/X11R7.7/doc/xorg-docs/icccm/icccm.html#Peer_to_Peer_Communication_by_Means_of_Cut_Buffers) foram introduzidos e meio que funcionaram como que uma espécie 
+de _área de transferência_ já o texto copiado era na verdade mantido pelo X e
+podia ser acessado a partir de outros aplicativos. Esse mecanismo ainda existe
+no X, mas o seu uso foi discontinuado e a maioria dos programas não mas faz uso
+dele.
 
-Nowadays data is transferred between applications by the means of
-[selections](http://www.x.org/releases/X11R7.7/doc/xorg-docs/icccm/icccm.html#Peer_to_Peer_Communication_by_Means_of_Selections).
-From the 3 _selection atoms_ defined, only 2 are used in practice: PRIMARY and
-CLIPBOARD.
+Hoje em dia o dado é transferido entre aplicativos pelo meio de [seleções][selections](http://www.x.org/releases/X11R7.7/doc/xorg-docs/icccm/icccm.html#Peer_to_Peer_Communication_by_Means_of_Selections).
+Dos 3 _átomos de seleção_ definos, apenas 2 estão em uso na prática: PRIMARY e
+CLIPBOARD ("_primário_" e "_área de transferência_" respectivamente).
 
-Selections work roughly like this:
+Grosseiramente falando, as seleções funcionam mais ou menos assim:
 
 ```
-Program A: <ctrl+c>
-Program A: assert ownership of CLIPBOARD
-Program B: <ctrl+v>
-Program B: note that ownership of CLIPBOARD is hold by Program A
-Program B: request data from Program A
-Program A: respond to request and send data to Program B
-Program B: receives data from Program A and inserts it into the window
+Programa A: <ctrl+c>
+Programa A: assegura a posse da área de transferênci (CLIPBOARD)
+Programa B: <ctrl+v>
+Programa B: nota que a posse da área de transferência é mantida pelo Programa A
+Programa B: pede dado Programa A
+Programa A: responde ao pedido e envia o dado ao Programa B
+Programa B: recebe dado do Programa A e o insere na janela
 ```
 
-| Selection | When used? | How to paste? | How to access from Vim? |
+| Seleção | Quando é usado? | Como colar? | Como acessar pelo Vim? |
 |-----------|------------|---------------|-------------------------|
-| PRIMARY   | Selecting text              | `middle-click`, `shift+insert` | `*` register |
-| CLIPBOARD | Selecting text and `ctrl+c` | `ctrl+v`                       | `+` register |
+| PRIMÁRIA ("_PRIMARY_")   | Selecionando texto              | `Clicando com o botão do meio do mouse`, `shift+insert` | Registrador `*` |
+| Área de transferência ("_CLIPBOARD_") | Selecionando texto e `ctrl+c` | `ctrl+v`                       | Registrador `+` |
 
-**NOTE**: Selections (no, not even the CLIPBOARD selection) are never kept in
-the X server! Thus, you lose the data copied with `ctrl+c` when the application
-closes.
+**NOTA**: Seleções (não, nem mesmo as seleções da Área de Transferência) não são
+nunca mantidas no servidor X! Portanto, você perde o dado copiado com `ctrl+c`
+quando o aplicativo é encerrado.
 
-Use `"*p` to paste the PRIMARY selection or `"+y1G` to yank the entire file to
-the CLIPBOARD selection.
+Use `"*p` para colar a seleção PRIMÁRIA ou `"+y1g" para copiar o arquivo inteiro
+para a seleção da Área de Transferência.
 
-If you happen to access one of the two registers all the time, consider using:
+Caso você se veja tendo que acessar um desses dois registradores o tempo todo,
+considere usar:
 
 ```vim
 set clipboard^=unnamed      " * register
-" or
+" ou
 set clipboard^=unnamedplus  " + register
 ```
 
-(The `^=` is used to prepend to the default value, `:h :set^=`.)
+(O `^=` é usado para antecipar para o valor padrão, `:h :set^=`.)
 
-This will make all yank/delete/put operations use either `*` or `+` instead of
-the unnamed register `"`. Afterwards you can simply use `y` or `p` for accessing
-your chosen X selection.
+Isso irá fazer com que todo e qualquer copiar/deletar/colocar
+("_yank/delete/put_") façam uso do registrador `*` ou do registrador `+`, ao
+invés de usar o registrados não nomeado `"` ("_unamed register_"). Em seguida
+você pode usar simplemente `y` ou `p` para acessar a seleção do X escolhida.
 
-Help:
+Ajuda:
 
 ```vim
 :h clipboard-unnamed
