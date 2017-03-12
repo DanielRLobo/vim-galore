@@ -1555,12 +1555,12 @@ Ajuda:
 :h clipboard-unnamedplus
 ```
 
-## Restore cursor position when opening file
+## Restaurar posição do cursor ao abrir arquivo
 
-Without this, you will always be at line 1 when opening a file. With this, you
-will be at the position where you left off.
+Sem isso, você sempre estará na primeira linha ao abrir um arquivo. Com isso,
+você estará na posição em que você estava quando partiu anteriormente.
 
-Put this in your vimrc:
+Coloque isso no seu vimrc:
 
 ```vim
 autocmd BufReadPost *
@@ -1569,11 +1569,11 @@ autocmd BufReadPost *
     \ endif
 ```
 
-This simply does `` g`" `` (jump to position where you left off without changing
-jumplist) if that position still exists (the file might have fewer lines since
-it was altered by another program).
+Isso simplesmente faz `` g`" `` (pula para a posição em que você estava quando
+você saiu sem alterar a lista de pulos) se a posição ainda existir (o arquivo
+pode ter algumas linhas a menos desde que foi alterado por um outro programa).
 
-This requires the use of a viminfo file: `:h viminfo-'`.
+Isso requer o uso do arquivo vimfile: `:h viminfo-'`.
 
 ## Handling backup, swap, undo, and viminfo files
 
