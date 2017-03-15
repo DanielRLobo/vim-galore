@@ -1579,15 +1579,16 @@ Isso requer o uso do arquivo vimfile: `:h viminfo-'`.
 
 Depending on the options, Vim creates up to 4 kinds of working files.
 
-**Backup files**:
+**Arquivos de backup**:
 
-You can tell Vim to keep a backup of the original file before writing to it. By
-default, Vim keeps a backup but immediately removes it when writing to the file
-was successful (`:set writebackup`). If you always want the latest backup file
-to persist, `:set backup`. Or you disable backups altogether, `:set nobackup
-nowritebackup`.
+Você pode falar pro Vim manter um arquivo de backup do arquivo original antes de
+salvar. Por padrão, Vim o mantém um backup, mas o remove imediatamente, logo
+após o arquivo ser salvo com sucesso (`:set writebackup`). Caso você queira que
+o último backup persista, `:set backup`. Ou você pode desativar todos os backups
+de uma vez, `:set nobackup nowritebackup`.
 
-Let's see what I added last to my vimrc..
+
+Vejamos o quê que eu adicionei ao meu vimrc por último...
 
 ```
 $ diff ~/.vim/vimrc ~/.vim/files/backup/vimrc-vimbackup
@@ -1595,7 +1596,7 @@ $ diff ~/.vim/vimrc ~/.vim/files/backup/vimrc-vimbackup
 < command! -bar -nargs=* -complete=help H helpgrep <args>
 ```
 
-Help: `:h backup`
+Ajuda: `:h backup`
 
 **Swap files**:
 
