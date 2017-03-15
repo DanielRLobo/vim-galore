@@ -2702,14 +2702,13 @@ it.
 
 Help: `:h function-search-undo`
 
-# Technical quirks
+# Caprichos técnicos
 
-## Newline used for NUL
+## Nova linha usada para NUL
 
-NUL characters (`\0`) in a file, are stored as newline (`\n`) in memory and
-displayed in a buffer as `^@`.
+Caractéres NULOS (ou "_NUL characters_", `\0`) em um arquivo, são guardados como uma nova linha (ou "_Newline_", `\n`) na memória e mostrados em um buffer como `^@`.
 
-See `man 7 ascii` and `:h NL-used-for-Nul` for more information.
+Veja `man 7 ascii` e `:h NL-used-for-Nul` para mais informação.
 
 # Lista de esquemas de cores
 
