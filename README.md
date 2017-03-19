@@ -1631,21 +1631,22 @@ Isso irá salvar o arquivo de desfazares para `~/foo.c` em `~/foo.ce.un~`.
 
 Ajuda: `:h 'undofile'` e `:h undo-persistence`
 
-**Viminfo file**:
+**Arquivo Viminfo**:
 
-When backup, swap, and undo files are all about text state, viminfo files are
-used for saving everything else that would otherwise be lost when quitting Vim.
-The viminfo file keeps histories (command line, search, input), registers,
-marks, buffer list, global variables etc.
+Enquanto que os arquivos de backup, de troca, e de desfazer são voltados para o
+estado do texto, os arquivos Viminfo são usados para salvar todo o resto, tudo
+que seria perdido ao encerrar o Vim. O arquivo viminfo mantém as histórias (da
+linha de comando, de buscas, de entrada de dados), registradores, marcadores,
+lista de buffer, variáveis globais, etc.
 
-By default, the viminfo is written to `~/.viminfo`.
+Por padrão, o viminfo é sobreescrito em `~/.viminfo`.
 
-Help: `:h viminfo` and `:h 'viminfo'`
+Ajuda: `:h viminfo` e `:h 'viminfo'`.
 
 ---
 
-If you're anything like me, you prefer keeping all these files in the same
-place, e.g. `~/.vim/files`:
+Se você for um pouco parecido comigo, você vai preferir manter todos esses
+arquivos no mesmo lugar, como em `~/.vim/files`:
 
 ```
 set backup
@@ -1659,8 +1660,9 @@ set undodir     =$HOME/.vim/files/undo/
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 ```
 
-The directory `~/.vim/files` has to be created beforehand, otherwise Vim will
-spew errors. If you often work on new hosts, you might want to automate it:
+O diretório `~/.vim/files` precisa ser criado de antemão, caso contrário o Vim
+vai vomitar erros. Se você trabalha com frequência em novos hospedeiros
+("_hosts_"), você talvez queira automatizar isso:
 
 ```vim
 if exists('*mkdir') && !isdirectory($HOME.'/.vim/files')
@@ -1668,10 +1670,10 @@ if exists('*mkdir') && !isdirectory($HOME.'/.vim/files')
 endif
 ```
 
-NOTE: If you edit a file on a multi-user system and Vim prompts you that a swap
-file already exists, it probably means that someone else is editing the file at
-the moment. You lose this "feature" when you save your swap files in the home
-directory.
+NOTA: Se você editar um arquivo em um sistema com múltiplos usuários e o Vim te
+falar que um arquivo de troca ("_swap file_") já existe, isso provavelmente
+significa que alguém esteja editando o arquivo ao mesmo tempo. Você perde essa
+"característica" quando você salva os arquivos de troca no diretório home (~/).
 
 ## Editing remote files
 
