@@ -1598,29 +1598,30 @@ $ diff ~/.vim/vimrc ~/.vim/files/backup/vimrc-vimbackup
 
 Ajuda: `:h backup`
 
-**Swap files**:
+**Arquivos de troca (swap)**:
 
-You came up with an idea for the best scifi novel ever. After being in the flow
-for hours and writing several thousands of words.. power outage! That's the
-moment you realize that the last time you saved
-`~/wicked_alien_invaders_from_outer_space.txt` was.. well, you never did.
+Você teve uma ideia para o melhor romance de ficção científica de todos os
+tempos. Depois de passar horas em um bom ritmo escrevendo várias centenas de
+milhares de palavras... acaba a bateria! Esse é o momento em que você se dá
+conta que a última vez em que você salvou `~/wicked_alien_invaders_from_outer_space.txt` foi... bem, você nunca tinha salvado.
 
-But not all hope is lost! When editing a file, Vim creates a swap file that
-contains unsaved changes. Try it for yourself, open any file and get the current
-swap file by using `:swapname`. You can also disable swap files by putting `:set
-noswapfile` in your vimrc.
+Mas nem toda a esperança está perdida! Ao editar um arquivo, o Vim cria um
+arquivo de troca que contém mudanças que não foram salvas. Tente você mesmo,
+abra qualquer arquivo e consiga o arquivo de troca atual usando `:swapname`.
+Você também pode desativar arquivos de troca colocando `:set noswapfile` no seu
+vimrc.
 
-By default, the swap file is created in the same directory as the edited file
-and called something like `.file.swp`, updated either all 200 characters or when
-you haven't typed anything for 4 seconds, and deleted when you stop editing the
-file. You can change these numbers with `:h 'updatecount'` and `:h
-'updatetime'`.
+Por padrão, o arquivo de troca é criado no mesmo diretório que o arquivo editado
+e chamado de algo como `.file.swp`, atualizado tanto a cada 200 caractéres ou
+quando você não tenha digitado nada por 4 segundos, e deletado quando você pára
+de editar o arquivo. Você pode mudar esses números com `:h 'updatecount'` e `:h
+updatetime'`.
 
-Due to the power outage, the swap file was never deleted. If you do `vim
-~/wicked_alien_invaders_from_outer_space.txt`, Vim will prompt you to recover
-the file.
+Por causa da queda de bateria, o arquivo de troca nunca foi deletado. Se você
+fizer `vim ~/wicked_alien_invaders_from_outer_space.txt`, o Vim irá te perguntar
+se você quer recuperar o arquivo.
 
-Help: `:h swap-file` and `:h usr_11`
+Ajuda: `:h swap-file` e `:h usr_11`.
 
 **Undo files**:
 
