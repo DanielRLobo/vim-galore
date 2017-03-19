@@ -1623,13 +1623,13 @@ se você quer recuperar o arquivo.
 
 Ajuda: `:h swap-file` e `:h usr_11`.
 
-**Undo files**:
+**Arquivos de desfazares (Undo files)**:
 
-The [undo tree](#undo-tree) is kept in memory and will be lost when Vim quits.
-If you want it to persist, `:set undofile`. This will save the undo file for
-`~/foo.c` in `~/foo.c.un~`.
+A [árvore do desfazer](#árvore-do-desfazer) é mantida em memória e será perdida
+quando o Vim for encerrado. Se você quiser que ela persista, `:set undofile`.
+Isso irá salvar o arquivo de desfazares para `~/foo.c` em `~/foo.ce.un~`.
 
-Help: `:h 'undofile'` and `:h undo-persistence`
+Ajuda: `:h 'undofile'` e `:h undo-persistence`
 
 **Viminfo file**:
 
