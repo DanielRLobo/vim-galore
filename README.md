@@ -1675,43 +1675,46 @@ falar que um arquivo de troca ("_swap file_") já existe, isso provavelmente
 significa que alguém esteja editando o arquivo ao mesmo tempo. Você perde essa
 "característica" quando você salva os arquivos de troca no diretório home (~/).
 
-## Editing remote files
+## Editando arquivos remotos
 
-Vim comes with the netrw plugin that enables editing remote files. Actually it
-transfers the remote file to a local temporary file via scp, opens a buffer
-using that file, and writes the changes back to the remote file on saving.
+O Vim vêm com o plugin netrw que permite a edição de arquivos remotos. Na
+verdade, o plugin transfere o arquivo remoto para um arquivo local temporário
+via scp, abre um buffer usando esse arquivo, e sobreescreve as mudanças de volta
+para o arquivo remoto ao salvar.
 
-This is extremely useful if you want to use your local configuration opposed to
-ssh'ing into a server and use whatever the admins want you to use.
+Isso é extremamente útil caso você queira usar as suas configurações locais ao
+invés de entrar por meio de ssh em um servidor e usar o quer que o administrador
+queira que você use.
 
 ```
 :e scp://bram@awesome.site.com/.vimrc
 ```
 
-If you have a `~/.ssh/config` set up already, this gets used automatically:
+Se você tiver uma `~/.ssh/fig` já configurada, ela será usada automaticamente:
 
 ```
-Host awesome
-    HostName awesome.site.com
+Host maravilhoso
+    HostName maravilhoso.site.com
     Port 1234
     User bram
 ```
 
-Assuming the above content in `~/.ssh/config`, this works just as well:
+Assumindo o conteúdo acima em `~/.ssh/config`, isso também funcionaria do mesmo
+jeito:
 
 ```
-:e scp://awesome/.vimrc
+:e scp://maravilhoso/.vimrc
 ```
 
-Similar can be done with a `~/.netrc`, see `:h netrw-netrc`.
+Algo similar pode ser feito com um `~/.netrc`, veja `:h netrw-netrc`.
 
-Make sure to read `:h netrw-ssh-hack` and `:h g:netrw_ssh_cmd`.
+Certifique-se de ler `:h netrw-ssh-hack` e `:h g:netrw_ssh_cmd`.
 
 ---
 
-Another possibility is using [sshfs](https://wiki.archlinux.org/index.php/Sshfs)
-which uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace) to
-mount a remote filesystem into your local filesystem.
+Uma outra possibilidade é usar [sshfs](https://wiki.archlinux.org/index.php/Sshfs)
+o qual usa [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace) para
+montar um sistema de arquivos remoto no seu sistema de arquivo local.
 
 ## Managing plugins
 
