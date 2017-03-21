@@ -1716,15 +1716,17 @@ Uma outra possibilidade é usar [sshfs](https://wiki.archlinux.org/index.php/Ssh
 o qual usa [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace) para
 montar um sistema de arquivos remoto no seu sistema de arquivo local.
 
-## Managing plugins
+## Gerenciando plugins
 
-[Pathogen](https://github.com/tpope/vim-pathogen) was the first popular tool for
-managing plugins. Actually it just adjusts the _runtimepath_ (`:h 'rtp'`) to
-include all the things put under a certain directory. You have to clone the
-repositories of the plugins there yourself.
+[Pathogen](https://github.com/tpope/vim-pathogen) foi a primeira ferramenta de
+gerenciar plugins que ficou popular. Na verdade, o Pathogen apenas ajusta o
+_runtimepath_ (`:h 'rtp'`) para incluir tudo que for colocado em um certo
+diretório. Você precisa clonar os repositórios dos plugins para lá por conta
+própria.
 
-Real plugin managers expose commands that help you to install and update plugins
-from within Vim. Hereinafter is a list of commonly used plugin managers:
+Os gerenciadores reais de plugins apresentam comandos que te ajudam a instalar e
+atualizar plugins de dentro do Vim. Aqui segue uma lista de gerenciadores de
+plugins comumente usados:
 
 - [dein](https://github.com/Shougo/dein.vim)
 - [plug](https://github.com/junegunn/vim-plug)
