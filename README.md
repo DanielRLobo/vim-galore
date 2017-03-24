@@ -1733,38 +1733,36 @@ plugins comumente usados:
 - [vim-addon-manager](https://github.com/MarcWeber/vim-addon-manager)
 - [vundle](https://github.com/VundleVim/Vundle.vim)
 
-## Block insert
+## Inserção de bloco
 
-This is a technique to insert the same text on multiple consecutive lines at the
-same time. See this
-[demo](https://raw.githubusercontent.com/mhinz/vim-galore/master/contents/images/content-block_insert.gif).
+Essa é uma técnica para inserir o mesmo texto em várias linhas consecutivas ao
+mesmo tempo. Veja essa [demonstração](https://raw.githubusercontent.com/mhinz/vim-galore/master/contents/images/content-block_insert.gif).
 
-Switch to visual block mode with `<c-v>`. Afterwards go down for a few lines.
-Hit `I` or `A` and start entering your text.
+Passe para o modo de seleção visual de bloco com `<c-v>`. Em seguida vá para
+algumas linhas abaixo. Aperte `I` ou `A` e comece a inserir o seu texto.
 
-It might be a bit confusing at first, but text is always entered for the current
-line and only after finishing the current insertion, the same text will be
-applied to all other lines of the prior visual selection.
+Isso pode parecer um pouco confuso à primeira vista, mas o text é sempre
+inserido na linha atual e somente após terminar a inserção é que o mesmo texto
+será aplicado em todas as outras linhas da seleção visual anterior.
 
-So a simple example is `<c-v>3jItext<esc>`.
+Então um exemplo bem simples é `<c-v>3jItext<esc>`.
 
-If you have lines of different length and want to append the same text right
-after the end of each line, do this: `<c-v>3j$Atext<esc>`.
+Se você tiver linhas com larguras diferentes e quiser pendurar o mesmo logo após
+o final de cada uma das linhas, faça assim: `<c-v>3j$Atext<esc>`.
 
-Sometime you need to place the cursor somewhere after the end of the current
-line. You can't do that by default, but you can set the `virtualedit` option:
+Pode acontecer que você precise posicionar o cursor em algum lugar após o final
+da linha atual. Você não pode fazer isso por padrão, mas você pode configurar a
+opção `virtualedit`:
 
 ```vim
 set virtualedit=all
 ```
 
-Afterwards `$10l` or `90|` work even after the end of the line.
+Em seguida `$10l` ou `90|` irão funcionar mesmo após o final da linha.
 
-See `:h blockwise-examples` for more info. It might seem complicated at first,
-but quickly becomes second nature.
+Veja `:h blockwise-examples` para mais informações. Pode parecer complicado à primeira vista, mas fica instintivo rapidamente.
 
-If you want to get real fancy, have a look at
-[multiple-cursors](https://github.com/terryma/vim-multiple-cursors).
+Se você quiser ficar realmente chique, dê uma olhada no [multiple-cursors](https://github.com/terryma/vim-multiple-cursors).
 
 ## Running external programs and using filters
 
