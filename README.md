@@ -1764,46 +1764,41 @@ Veja `:h blockwise-examples` para mais informações. Pode parecer complicado à
 
 Se você quiser ficar realmente chique, dê uma olhada no [multiple-cursors](https://github.com/terryma/vim-multiple-cursors).
 
-## Running external programs and using filters
+## Rodando programas externos e usando filtros
 
-Disclaimer: Vim is single-threaded, so running an external program in the
-foreground will block everything else. Sure, you can use one of Vim's
-programming interfaces, e.g. Lua, and use its thread support, but during that
-time the Vim process is blocked nevertheless. Neovim fixed that by adding a
-proper job API.
+Aviso: O Vim é um programa de linha única - "_single-threaded_", portanto ao rodar um programa externo no plano de fundo irá bloquear tudo o mais. Claro, você pode usar uma das interfaces de programação do Vim, por exemplo Lua, e usar o suporte de linhas dela, mas - mesmo assim - o processo do Vim estará bloqueado enquanto isso. O Neovim consertou isso ao adicionar um API de trabalhos apropriada.
 
-(Apparently Bram is thinking about adding job control to Vim as well. If you
-have a very recent version, see `:helpgrep startjob`.)
+(Aparentemente o Bram está pensando em adicionar controle de trabalhos ("_job
+control_") ao Vim também. Case você tenha uma versão bem recente, veja
+`:helpgrep startjob`).
 
-Use `:!` to start a job. If you want to list the files in the current working
-directory, use `:!ls`. Use `|` for piping in the shell as usual, e.g. `:!ls -1 |
-sort | tail -n5`.
+Use `:!` para começar um trabalho. Se você quiser listar os arquivos no
+diretório de trabalho atual, use `:!ls`. Use `|` para entubar comandos no shell
+como normalmente faria: `:!ls -1 | sort | tail -n5`.
 
-Without a range, the output of `:!` will be shown in a scrollable window. On the
-other hand, if a range is given, these lines will be
-[filtered](https://en.wikipedia.org/wiki/Filter_(software)). This means they
-will be piped to the
-[stdin](https://en.wikipedia.org/wiki/Standard_streams#Standard_input_.28stdin.29)
-of the filter program and after processing be replaced by the
-[stdout](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29)
-of the filter. E.g. for prepending numbers to the next 5 lines, use this:
+Sem um alcance, a saída de `:!` será mostrada em uma janela que pode ser rolada.
+Por outro lado, se um alcance for dado, essas linhas serão
+[filtradas](https://es.wikipedia.org/wiki/Filtro_(programa)). Isso significa que
+elas serão entubadas a entrada padrão
+([stdin](https://pt.wikipedia.org/wiki/Fluxos_padr%C3%A3o#Entrada_padr.C3.A3o_.28stdin.29)) do programa de filtragem e após o processamento serão substituídas pela saída padrão ([stdout](https://pt.wikipedia.org/wiki/Fluxos_padr%C3%A3o#Sa.C3.ADda_padr.C3.A3o_.28stdout.29)) do filtro. Por exemplo, para pendurar números nas próximas 5 linhas, use isto:
 
     :.,+4!nl -ba -w1 -s' '
 
-Since manually adding the range is quite burdensome, Vim also provides some
-helpers for convenience. As always with ranges, you can also select lines in
-visual mode and then hit `:`. There's also an operator `!` that takes a motion.
-E.g. `!ip!sort` will sort the lines of the current paragraph.
+Mas já que custa tanto adicionar o alcance, o Vim também apresenta algumas
+ajudas, só pela conveniência. Com alcances, como sempre, você pode selecionar
+linhas no modo visual e então apertar `:`. Há também um operador `!` que aceita
+um movimento. Por exemplo, `!ip!sort` irá ordenar as linhas do parágrafo atual.
 
-A good use case for filtering is the [Go programming
-language](https://golang.org). The indentation is pretty opinionated, it even
-comes with a filter called `gofmt` for indenting Go source code properly. So
-plugins for Go often provide helper commands called `:Fmt` that basically do
-`:%!gofmt`, so they indent all lines in the file.
+Um bom caso para fazer filtragem é na [língua Go de
+programação](https://lang.org). A indentação é bem arbitrária, tanto que até vem
+com um filtro chamado de `gofmt` para indentar código em Go propriamente. Assim
+sendo, plugins para Go, normalmente oferecem uma ajuda com comandos chamados de
+`:Fmt` que basicamente fazem `:%!gofmt`, e assim indentam todas as linhas no
+arquivo.
 
-People often use `:r !prog` to put the output of prog below the current line,
-which is fine for scripts, but when doing it on the fly, I find it easier to use
-`!!ls` instead, which replaces the current line.
+As pessoas usam com frequência `:r !prog` para colocar a saída do prog abaixo da
+linha atual, o que é sem problemas para scripts, mas quando se está no meio da
+produção, acho mais fácil usar `!!ls` que substitui a linha atual.
 
     :h filter
     :h :read!
