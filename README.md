@@ -1805,23 +1805,23 @@ produção, acho mais fácil usar `!!ls` que substitui a linha atual.
 
 ## Cscope
 
-[Cscope](http://cscope.sourceforge.net/) does more things than
-[ctags](http://ctags.sourceforge.net/), but only supports C (and C++ and Java to
-some extent).
+O [Cscope](http://cscope.sourceforge.net/) faz mais coisas que o 
+[ctags](http://ctags.sourceforge.net/), mas suporta apenas C (a C++ e Java até
+certo ponto).
 
-Whereas a tags file only knows where a symbol was defined, a cscope database
-knows much more about your data:
+Enquanto que um arquivo de tags sabe apenas onde um símbolo foi definido, um
+banco de dados do cscope sabe muito mais sobre os seus dados:
 
-- Where is this symbol defined?
-- Where is this symbol used?
-- What is this global symbol's definition?
-- Where did this variable get its value?
-- Where is this function in the source files?
-- What functions call this function?
-- What functions are called by this function?
-- Where does the message "out of space" come from?
-- Where is this source file in the directory structure?
-- What files include this header file?
+- Onde esse símbolo está definido?
+- Onde esse símbolo é usado?
+- Qual é a definição global desse símbolo?
+- Onde que essa variável conseguiu esse valor?
+- Onde no código fonte essa função está?
+- Quais funções chamam essa função?
+- Quais funções são chamadas por essa função?
+- De onde que ta vindo a mensagem "out of space"?
+- Onde na estrutura de diretório está esse código fonte?
+- Quais arquivos incluem esse arquivo de cabeçalho?
 
 ### 1. Build the database
 
