@@ -1823,19 +1823,20 @@ banco de dados do cscope sabe muito mais sobre os seus dados:
 - Onde na estrutura de diretório está esse código fonte?
 - Quais arquivos incluem esse arquivo de cabeçalho?
 
-### 1. Build the database
+### 1. Construa o banco de dados
 
-Do this in the root of your project:
+Faço isso na raíz do seu projeto:
+
 
 ```sh
 $ cscope -bqR
 ```
 
-This will create 3 files: `cscope{,.in,.po}.out` in the current working
-directory. Think of them as your database.
+Isso irá criar 3 arquivos: `cscope{,.in,.po}.out no diretório de trabalho atual.
+Pense neles como sendo o seu banco de dados.
 
-Unfortunately `cscope` only analyzes `*.[c|h|y|l]` files by default. If you want
-to use cscope for a Java project instead, do this:
+Infelizmente o `cscope` analisa por padrão apenas arquivos `*.[c|h|y|l]`.
+Entretanto, se você quiser usar o cscope para um projeto em Java, faça assim:
 
 ```sh
 $ find . -name "*.java" > cscope.files
