@@ -1843,21 +1843,21 @@ $ find . -name "*.java" > cscope.files
 $ cscope -bq
 ```
 
-### 2. Add the database
+### 2. Adicione o banco de dados
 
-Open a connection to your freshly built database:
+Abra uma conexão ao seu banco de dados que acabou de set construído:
 
 ```vim
 :cs add cscope.out
 ```
 
-Verify that the connection was made:
+Verificar se a conexão foi feita:
 
 ```vim
 :cs show
 ```
 
-(Yes, you can add multiple connections.)
+(Sim, você pode adicionar múltiplas conexões.)
 
 ### 3. Query the database
 
