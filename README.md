@@ -1859,26 +1859,26 @@ Verificar se a conexão foi feita:
 
 (Sim, você pode adicionar múltiplas conexões.)
 
-### 3. Query the database
+### 3. Consulte o banco de dados
 
 ```vim
 :cs find <kind> <query>
 ```
 
-E.g. `:cs find d foo` will list all functions that are called by `foo(...)`.
+Por exemplo `:cs find d foo` irá listar todas as funções que são chamadas por `foo(...)`.
 
-| Kind | Explanation |
-|------|-------------|
-| s    | **s**ymbol: find all references to the token        |
-| g    | **g**lobal: find global definition(s) of the token  |
-| c    | **c**alls: find all calls to the function           |
-| t    | **t**ext: find all instances of the text            |
-| e    | **e**grep: egrep search for the word                |
-| f    | **f**ile: open the filename                         |
-| i    | **i**ncludes: find files that include the filename  |
-| d    | **d**epends: find functions called by this function |
+| Tipo | Explicação |
+|------|------------|
+| s    | **s**ímbolo: encontre todas as referências ao símbolo |
+| g    | **g**lobal: encontre a(s) definição(ões) globais do símbolo. |
+| c    | **c**hamada: encontre todas as chamadas à função |
+| t    | **t**exto: encontre todas as instâncias do texto |
+| e    | **e**grep: pesquisa pela palavra com o egrep |
+| f    | **f**ile ("_arquivo_"): abrir o nome do arquivo |
+| i    | **i**nclui: encontrar arquivos que incluem o nome do arquivo | 
+| d    | **d**epende: encontrar funções chamadas por essa função |
 
-I suggest some convenience mappings e.g.:
+Eu sugiro uns atalhos convenientes, como:
 
 ```vim
 nnoremap <buffer> <leader>cs :cscope find s  <c-r>=expand('<cword>')<cr><cr>
@@ -1891,12 +1891,9 @@ nnoremap <buffer> <leader>ci :cscope find i ^<c-r>=expand('<cfile>')<cr>$<cr>
 nnoremap <buffer> <leader>cd :cscope find d  <c-r>=expand('<cword>')<cr><cr>
 ```
 
-So, when `:tag` (or `<c-]>`) jumps to a definition from the tags file, `:cstag`
-does the same, but also takes connected cscope databases into account. The
-option `'cscopetag'` makes `:tag` act like `:cstag` automatically. This is very
-convenient if you already have tag-related mappings.
+Então, quando `:tag` (ou `<c-]>`) pula para uma definição do arquivo de tags, `:cstag` faz o mesmo, mas também leva em conta banco de dados de cscope que estejam conectados. A opção `cscopetag` faz com que `:tag` aja como `:cstag` automaticamente. Isso é muito conveniente caso você já tenha atalhos relacionados a tags.
 
-Help: `:h cscope`
+Ajuda: `:h cscope`
 
 ## MatchIt
 
