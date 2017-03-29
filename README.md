@@ -9,7 +9,7 @@
 [![badge-translation-japanese](https://img.shields.io/badge/Translation-Japanese-lightgrey.svg)](http://postd.cc/?s=vim-galore)
 [![vim-galore](https://cdn.rawgit.com/mhinz/vim-galore/master/contents/images/badge-awesome.svg)](https://github.com/sindresorhus/awesome)
 
-## [Introdução](#introdução-1)
+### [Introdução](#introdução-1)
 
 - [O que é o Vim?](#o-que-é-o-vim)
 - [A filosofia do Vim](#a-filosofia-do-vim)
@@ -18,7 +18,7 @@
 - [Que tipo de Vim eu estou rodando?](#que-tipo-de-vim-eu-estou-rodando)
 - [Planilhas de cola](#planilhas-de-cola)
 
-## [O básico](#o-básico-1)
+### [O básico](#o-básico-1)
 
 - [Buffers, janelas, abas](#buffers-janelas-abas)
 - [Buffer ativos, carregados, listados e nomeados](#buffer-ativos-carregados-listados-e-nomeado)
@@ -40,7 +40,7 @@
 - [Sessões](#sessões)
 - [Localidade](#localiade)
 
-## [Utilização](#Utilização-1)
+### [Utilização](#Utilização-1)
 
 - [Conseguir ajuda desconectado](#conseguir-ajuda-desconectado)
 - [Conseguir ajuda desconectado (alternativa)](#conseguir-ajuda-desconectado-alternativa)
@@ -60,7 +60,7 @@
 - [Cscope](#cscope)
 - [MatchIt](#matchit)
 
-## [Tips](#tips-1)
+### [Tips](#tips-1)
 
 - [Saner behavior of n and N](#saner-behavior-of-n-and-n)
 - [Saner command-line history](#saner-command-line-history)
@@ -78,13 +78,13 @@
 - [Faster keyword completion](#faster-keyword-completion)
 - [Alterações cosméticas a esquemas de cores](#alterações-cosméticas-a-esquemas-de-cores)
 
-## [Commands](#commands-1)
+### [Comandos](#comandos-1)
 
 - [:global and :vglobal](#global-and-vglobal) - Execute a command on all matching lines.
 - [:normal and :execute](#normal-and-execute) - The scripting dream team.
 - [:redir](#redir) - Redirect messages.
 
-## [Debugging](#debugging-1)
+### [Debugging](#debugging-1)
 
 - [General tips](#general-tips)
 - [Verbosity](#verbosity)
@@ -93,7 +93,7 @@
 - [Debugging Vim scripts](#debugging-vim-scripts)
 - [Debugging syntax files](#debugging-syntax-files)
 
-## [Miscellaneous](#miscellaneous-1)
+### [Miscellaneous](#miscellaneous-1)
 
 - [Additional resources](#additional-resources)
 - [Vim distributions](#vim-distributions)
@@ -102,7 +102,7 @@
 - [Easter eggs](#easter-eggs)
 - [Why hjkl for navigation?](#why-hjkl-for-navigation)
 
-## [Common problems](#common-problems-1)
+### [Common problems](#common-problems-1)
 
 - [Editing small files is slow](#editing-small-files-is-slow)
 - [Editing huge files is slow](#editing-huge-files-is-slow)
@@ -110,15 +110,15 @@
 - [Delays when using escape key in terminal](#delays-when-using-escape-key-in-terminal)
 - [Function search undo](#function-search-undo)
 
-## [Technical quirks](#technical-quirks-1)
+### [Technical quirks](#technical-quirks-1)
 
 - [Newline used for NUL](#newline-used-for-nul)
 
-## [Lista de esquemas de cores](#lista-de-esquemas-de-cores-1)
+### [Lista de esquemas de cores](#lista-de-esquemas-de-cores-1)
 
-## [List of plugins](contents/plugins.md)
+### [List of plugins](contents/plugins.md)
 
----
+<br>
 
 # Introdução
 
