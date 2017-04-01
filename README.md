@@ -1897,30 +1897,31 @@ Ajuda: `:h cscope`
 
 ## MatchIt
 
-Since Vim is written in C, a lot of features assume C-like syntax. By default,
-if your cursor is on `{` or `#endif`, you can use `%` to jump to the
-corresponding `}` or `#ifdef` respectively.
+Já que o Vim é escrito em C, muitas características assumem uma sintáxe com a de
+C. Por padrão, se o seu cursor estiver em `{` or `#endif`, você pode usar `%`
+para pular para o `}` ou `#endif` correspondente, respectivamente.
 
-Vim comes bundled with a plugin called matchit.vim which is not enabled by
-default. It makes `%` also cycle through HTML tags, if/else/endif constructs in
-VimL etc. and introduces a few new commands.
+O Vim já vem empacotado com um plugin chamado matchit.vim que não vem ativado
+por padrão. Ele faz com que `%` também circule por tags de HTML, construções de if/else/endif em VimL e etc., e introduz alguns novos comandos.
 
-#### Installation for Vim 8
+
+#### Instalação para Vim 8
 
 ```vim
 " vimrc
 packadd! matchit
 ```
 
-#### Installation for Vim 7 and older
+#### Instalação para Vim 7 e anterior
 
 ```vim
 " vimrc
 runtime macros/matchit.vim
 ```
 
-Since the documentation of matchit is pretty extensive, I suggest also doing the
-following once:
+Já que a documentação do matchit é bem extensa, eu sugiro faz o seguinte uma
+vez:
+
 
 ```vim
 :!mkdir -p ~/.vim/doc
@@ -1928,21 +1929,21 @@ following once:
 :helptags ~/.vim/doc
 ```
 
-#### Small intro
+#### Introdução curta
 
-The plugin is ready to use now. See `:h matchit-intro` for the supported
-commands and `:h matchit-languages` for the supported languages.
+O plugin está pronto para o uso agora. Veja `:h matchit-intro` para saber os
+comandos suportados e `:h matchit-languages` para as línguas suportadas.
 
-That said, it's easy to define your own matching pairs:
+Agora, é fácil definir as suas próprias combinações de pares:
 
 ```vim
 autocmd FileType python let b:match_words = '\<if\>:\<elif\>:\<else\>'
 ```
 
-Afterwards you can cycle through these 3 statements in any Python file by using
-`%` (forward) or `g%` (backward).
+Em seguida, você pode circular através dessas 3 declarações em qualquer arquivo
+de Python pelo uso de `%` (para frente) ou `g%` (para o anterior).
 
-Help:
+Ajuda:
 
 ```
 :h matchit-install
