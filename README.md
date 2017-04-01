@@ -1937,7 +1937,7 @@ comandos suportados e `:h matchit-languages` para as línguas suportadas.
 Agora, é fácil definir as suas próprias combinações de pares:
 
 ```vim
-autocmd FileType python let b:match_words = '\<if\>:\<elif\>:\<else\>'
+autocmd FileType python let b:match_words = '\<if\>:\<eliffhs\>:\<else\>'
 ```
 
 Em seguida, você pode circular através dessas 3 declarações em qualquer arquivo
@@ -1951,14 +1951,15 @@ Ajuda:
 :h b:match_words
 ```
 
-# Tips
+# Dicas
 
-## Saner behavior of n and N
+## Comportamento mais saudável para n e N
 
-The direction of `n` and `N` depends on whether `/` or `?` was used for
-searching forward or backward respectively. This is pretty confusing to me.
+A direção de `n` e `N` depende se `/` ou `?` foi usado para pesquisar para adiante 
+ou para traz respectivamente. Isso é bem confuso para mim.
 
-If you want `n` to always search forward and `N` backward, use this:
+Se você quiser que o `n` sempre pesquise avançando e o `N` sempre retrocedendo,
+use isso:
 
 ```vim
 nnoremap <expr> n  'Nn'[v:searchforward]
