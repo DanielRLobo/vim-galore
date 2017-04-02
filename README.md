@@ -1990,13 +1990,13 @@ cnoremap <c-p>  <up>
 
 Eu dependo desse comportamento várias vezes ao dia.
 
-## Saner CTRL-L
+## CTRL-L com comportamento mais saudável
 
-By default, `<c-l>` clears and redraws the screen (like `:redraw!`). The
-following mapping does the same, plus de-highlighting the matches found via `/`,
-`?` etc., plus fixing syntax highlighting (sometimes Vim loses highlighting due
-to complex highlighting rules), plus force updating the syntax highlighting in
-diff mode:
+Por padrão, `<c-l>` limpa e redesenha a tela (como em `:redraw!`). O seguinte
+mapa faz o mesmo, mas também deseleciona os itens encontrados via `/`, `?` etc.,
+além de consertar realce de sintáxe (as vezes o Vim perde o realçamento por
+conta de regras complexas de realçamento), e ainda força a atualização do realce
+de sintáxe em modo diff:
 
 ```vim
 nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
