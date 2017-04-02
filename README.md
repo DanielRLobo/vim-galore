@@ -2002,7 +2002,7 @@ de sintáxe em modo diff:
 nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 ```
 
-## Disable audible and visual bells
+## Desativar virulas audiovisuais
 
 ```vim
 set noerrorbells
@@ -2010,7 +2010,7 @@ set novisualbell
 set t_vb=
 ```
 
-See [Vim Wiki: Disable beeping](http://vim.wikia.com/wiki/Disable_beeping).
+Veja [Vim Wiki: Disable beeping](http://vim.wikia.com/wiki/Disable_beeping).
 
 ## Quickly move current line
 
