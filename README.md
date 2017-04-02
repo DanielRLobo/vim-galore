@@ -1968,24 +1968,27 @@ nnoremap <expr> n  'Nn'[v:searchforward]
 nnoremap <expr> N  'nN'[v:searchforward]
 ```
 
-## Saner command-line history
+## Comportamento mais saudável para a história da linha de comando
 
-If you're anything like me, you're used to going to next and previous items via
-`<c-n>` and `<c-p>` respectively. By default, this also works in the
-command-line and recalls older or more recent command-lines from history.
+Se você for um pouco parecido comigo, você tá acostumado a ir para o próximo
+item ou para o anterior via `<c-n>` e `<c-p>` respectivamente. Por padrão, isso
+também funciona na linha de comando e relembra a história anterior ou mais
+recente da linha de comando.
 
-So far, so good. But `<up>` and `<down>` are even smarter! They recall the
-command-line whose beginning matches the current command-line. E.g. `:echo <up>`
-may change to `:echo "Vim rocks!"`.
+Até aí tudo bem. Mas `<up>` (a seta pra cima) e `<down>` (seta pra baixo) são 
+ainda mais inteligentes! Elas lembram da linha comando que combina com a linha
+de comando atual. Por exemplo, `:echo <up>` pode mudar para `:echo "Vim? Uhu!"`.
 
-Of course, I don't want you to reach to the arrow keys, just map it instead:
+Claro que eu não to querendo que você precise alcançar as setas, ao invés disso,
+remapei:
+
 
 ```vim
 cnoremap <c-n>  <down>
 cnoremap <c-p>  <up>
 ```
 
-I depend on this behaviour several times a day.
+Eu dependo desse comportamento várias vezes ao dia.
 
 ## Saner CTRL-L
 
