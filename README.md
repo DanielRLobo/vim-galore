@@ -2012,16 +2012,18 @@ set t_vb=
 
 Veja [Vim Wiki: Disable beeping](http://vim.wikia.com/wiki/Disable_beeping).
 
-## Quickly move current line
+## Mover a linha atual rapidamente
 
-Sometimes I need a quick way to move the current line above or below:
+As vezes eu preciso de um jeito rápido para mover a linha atual para cima ou
+para baixo:
 
 ```vim
 nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
 ```
 
-These mappings also take a count, so `2]e` moves the current line 2 lines below.
+Esses mapas também aceitam uma conta, portanto `2]e` move a linha atual duas
+linhas abaixo.
 
 ## Quickly add empty lines
 
