@@ -2025,14 +2025,14 @@ nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
 Esses mapas também aceitam uma conta, portanto `2]e` move a linha atual duas
 linhas abaixo.
 
-## Quickly add empty lines
+## Adicionar linhas vazias rapidamente
 
 ```vim
 nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 ```
 
-Now `5[<space>` inserts 5 blank lines above the current line.
+Agora `5[<space>` insere 5 linhas vazias acima da linha atual.
 
 ## Quickly edit your macros
 
