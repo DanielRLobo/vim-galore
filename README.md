@@ -2002,7 +2002,7 @@ de sintáxe em modo diff:
 nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 ```
 
-## Desativar virulas audiovisuais
+## Desativar firulas audiovisuais
 
 ```vim
 set noerrorbells
