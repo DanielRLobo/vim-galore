@@ -2034,22 +2034,23 @@ nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 Agora `5[<space>` insere 5 linhas vazias acima da linha atual.
 
-## Quickly edit your macros
+## Edite os seus macros rapidamente
 
-This is a real gem! The mapping takes a register (or `*` by default) and opens
-it in the cmdline-window. Hit `<cr>` when you're done editing for setting the
-register.
+Essa é uma verdadeira gema! O mapa aceita um registrdor (ou `*` por padrão) e o
+abre na janela de linha de comando ("_cmdline-window_"). Para configurar o seu
+registrador, aperte `<cr>` quando você tiver terminado a edição.
 
-I often use this to correct typos I did while recording a macro.
+Eu uso isso com frequência para corrigir erros de digitação feitos durante o
+registro do macro.
 
 ```vim
 nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 ```
 
-Use it like this `<leader>m` or `"q<leader>m`.
+Você pode usar como `<leader>m` ou `"q<leader>m`.
 
-Notice the use of `<c-r><c-r>` to make sure that the `<c-r>` is inserted
-literally. See `:h c_^R^R`.
+Perceba o uso de `<c-r><c-r>` para ter certeza que o `<c-r>` é inserido
+literalmente. Veja `:h c_^R^R`.
 
 ## Quickly jump to header or source file
 
