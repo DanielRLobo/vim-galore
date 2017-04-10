@@ -2052,19 +2052,21 @@ Você pode usar como `<leader>m` ou `"q<leader>m`.
 Perceba o uso de `<c-r><c-r>` para ter certeza que o `<c-r>` é inserido
 literalmente. Veja `:h c_^R^R`.
 
-## Quickly jump to header or source file
+## Pular rapidamente para o arquivo de cabeçalho ou fonte
 
-This technique can probably be applied to many filetypes. It sets _file marks_
-(see `:h marks`) when leaving a source or header file, so you can quickly jump
-back to the last accessed one by using `'C` or `'H` (see `:h 'A`).
+Essa técnica provavelmente pode ser aplicada à vários tipos de arquivos
+("_filetypes_"). Ela cria _marcadores de arquivo_ ("_file marks_", veja `:h
+marks`) ao deixar um arquivo de código fonte ou de cabeçalho ("_header_"), e
+assim permite que você pule rapidamente de volta ao último que foi acessado
+usando `'C` ou `'H` (veja `:h 'A`).
 
 ```vim
 autocmd BufLeave *.{c,cpp} mark C
 autocmd BufLeave *.h       mark H
 ```
 
-**NOTE**: The info is saved in the viminfo file, so make sure that `:set
-viminfo?` includes `:h viminfo-'`.
+**NOTA**: A informação é salva em um arquivo viminfo, então tenha certeza que
+`:set viminfo?` inclui `:h viminfo-'`.
 
 ## Quickly change font size in GUI
 
