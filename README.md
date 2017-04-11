@@ -2068,9 +2068,9 @@ autocmd BufLeave *.h       mark H
 **NOTA**: A informação é salva em um arquivo viminfo, então tenha certeza que
 `:set viminfo?` inclui `:h viminfo-'`.
 
-## Quickly change font size in GUI
+## Mudar tamanho da fonte rapidamente na interface gráfica (GUI)
 
-I think this was taken from tpope's config:
+Creio que isso aqui saiu da configuração do tpope:
 
 ```vim
 command! Bigger  :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)+1', '')
