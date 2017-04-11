@@ -2077,10 +2077,10 @@ command! Bigger  :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)+1'
 command! Smaller :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)-1', '')
 ```
 
-## Change cursor style dependent on mode
+## Mudar o estilo do cursor de acordo com o modo
 
-I like to use a block cursor in normal mode, i-beam cursor in insert mode, and
-underline cursor in replace mode.
+Eu gosto de usar um cursor em formato de bloco para o modo normal, i-beam cursor
+no modo de inserção, e cursor sublinhado quando no modo de substituição.
 
 ```vim
 if empty($TMUX)
@@ -2094,18 +2094,19 @@ else
 endif
 ```
 
-This simply tells Vim to print a certain sequence of characters ([escape
-sequence](https://en.wikipedia.org/wiki/Escape_sequence)) when entering/leaving
-insert mode. The underlying terminal, or programs like
-[tmux](https://tmux.github.io) that sit between Vim and the terminal, will
-process and evaluate it.
+Isso simplemente fala para o Vim imprimir uma certa sequência de caractéres
+([sequência de escape](https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_escape))
+ao entrar/sair do modo de inserção. O terminal subjacente, ou programas como
+[tmux](https://tmux.github.io), que se localizão entre o Vim e o terminal irão
+processar e avaliar.
 
-There's one drawback though: there are many terminal emulator implementations
-and not all use the same sequences for doing the same things. The sequences used
-above might not work with your implementation. Your implementation might not
-even support different cursor styles. Check the documentation.
+Entretanto há uma contrapartida: há muitas implementações de emulação de
+terminal e nem todos usam as mesmas sequências para fazer as mesma coisas. As
+sequências usadas acima podem não funcionar com a sua implementação. A sua
+implementação pode talvez nem sequer suportar diferentes estilos de curso.
+Confira a documentação.
 
-The example above works with iTerm2.
+O exemplo acima funciona com o iTerm2.
 
 ## Don't lose selection when shifting sidewards
 
