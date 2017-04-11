@@ -40,7 +40,7 @@
 - [Esquemas de cores](#esquemas-de-cores)
 - [Dobraduras](#dobraduras)
 - [Sessões](#sessões)
-- [Localidade](#localiade)
+- [Localidade](#localidade)
 
 ### [Utilização](#Utilização-1)
 
@@ -932,7 +932,7 @@ Ajuda:
 
 Toda vez que uma ação precisar retornar uma lista de localizações, a _lista de
 conserto rápido_ ou a _lista de localização_ podem ser usadas. Neste caso, uma
-localição é um arquivo, o número de uma linha e opcionalmente uma coluna.
+localização é um arquivo, o número de uma linha e opcionalmente uma coluna.
 
 Exemplos disso seriam erros de compilador montados em uma lista de conserto
 rápido, ou os resultados correspontes de ferrementa grep externa montados em uma
@@ -2097,7 +2097,7 @@ endif
 Isso simplemente fala para o Vim imprimir uma certa sequência de caractéres
 ([sequência de escape](https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_escape))
 ao entrar/sair do modo de inserção. O terminal subjacente, ou programas como
-[tmux](https://tmux.github.io), que se localizão entre o Vim e o terminal irão
+[tmux](https://tmux.github.io), que se localização entre o Vim e o terminal irão
 processar e avaliar.
 
 Entretanto há uma contrapartida: há muitas implementações de emulação de
