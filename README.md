@@ -2146,12 +2146,12 @@ autocmd InsertLeave,WinEnter * set cursorline
 autocmd InsertEnter,WinLeave * set nocursorline
 ```
 
-## Faster keyword completion
+## Completar palavras chave mais rapidamente
 
-The keyword completion (`<c-n>`/`<c-p>`) tries completing whatever is listed in
-the `'complete'` option. By default, this also includes tags (which can be
-annoying) and scanning all included files (which can be very slow). If you can
-live without these things, disable them:
+A compeplementação de palavras chave (`<c-n>`/`<c-p>`) tenta completar o quê
+quer que esteja listado na opção `'complete'`. Por padrão, isso também inclui
+tags (o que pode ser irritante) e escanear todos os arquivos incluídos ( o que
+pode ser bem lento). Se você pode viver sem essas coisas, desative-as:
 
 ```vim
 set complete-=i   " disable scanning included files
