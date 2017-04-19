@@ -2108,22 +2108,22 @@ Confira a documentação.
 
 O exemplo acima funciona com o iTerm2.
 
-## Don't lose selection when shifting sidewards
+## Não perca a seleção ao se deslocar lateralmente
 
-If you select one or more lines, you can use `<` and `>` for shifting them
-sidewards. Unfortunately you immediately lose the selection afterwards.
+Se você selecionar uma ou mais linhas, você pode usar `<` e `>` para deslocar
+lateralmente. Infelizmente, você perde imediatamente a seleção logo em seguida.
 
-You can use `gv` to reselect the last selection (see `:h gv`), thus you can work
-around it like this:
+Você pode usar `gv` para reselecionar a última seleção (veja `:h gv`), e
+portanto você pode contornar a situação assim:
 
 ```vim
 xnoremap <  <gv
 xnoremap >  >gv
 ```
 
-Now you can use `>>>>>` on your visual selection without any problems.
+Agora você pode usar `>>>>>` na sua seleção visual sem nenhum problema.
 
-**NOTE**: The same can be achieved using `.`, which repeats the last change.
+**NOTA**: O mesmo pode ser atingido usando `.`, que repete a última mudança.
 
 ## Reload a file on saving
 
