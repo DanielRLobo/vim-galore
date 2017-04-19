@@ -2136,10 +2136,10 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 autocmd BufWritePost ~/.Xdefaults call system('xrdb ~/.Xdefaults')
 ```
 
-## Smarter cursorline
+## Linha do cursor mais inteligente
 
-I love the cursorline, but I only want to use it in the current window and not
-when being in insert mode:
+Eu amo a linha do cursor, mas eu só preciso usar ela na janela atual e quando
+não estando em modo de inserção:
 
 ```vim
 autocmd InsertLeave,WinEnter * set cursorline
