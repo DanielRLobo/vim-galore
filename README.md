@@ -2158,16 +2158,17 @@ set complete-=i   " disable scanning included files
 set complete-=t   " disable searching tags
 ```
 
-## Cosmetic changes to colorschemes
+## Mudanças cosméticas a esquemas de cores
 
-Always use a dark gray statusline, no matter what colorscheme is chosen:
+Sempre usar linha de status ("_`statusline`_") cinza escura, independente do
+esquema de cores escolhido:
 
 ```vim
 autocmd ColorScheme * highlight StatusLine ctermbg=darkgray cterm=NONE guibg=darkgray gui=NONE
 ```
 
-The same, but only for the "lucius" colorscheme (check `:echo
-color_name` which should be set by all valid colorschemes):
+O mesmo, mas apenas o esquema de cores "lucius" (confira `:echo color_name` que
+deveria ser configurado por todos os esquemas de cores válidos):
 
 ```vim
 autocmd ColorScheme lucius highlight StatusLine ctermbg=darkgray cterm=NONE guibg=darkgray gui=NONE
