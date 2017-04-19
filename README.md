@@ -2125,11 +2125,11 @@ Agora você pode usar `>>>>>` na sua seleção visual sem nenhum problema.
 
 **NOTA**: O mesmo pode ser atingido usando `.`, que repete a última mudança.
 
-## Reload a file on saving
+## Regarregar um arquivo ao salvar
 
-Using [autocmds](#autocmds) you can do anything on saving a file, e.g. sourcing
-it in case of a dotfile or running a linter to check for syntactical errors in
-your source code.
+Usando [autocmds](#autocmds) você pode fazer qualquer coisa ao salvar um
+arquivo, como recarregar o arquivo em caso de algum arquivo escondido, ou rodar
+um linter para checar se há erros de sintáxe no seu código fonte.
 
 ```vim
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
