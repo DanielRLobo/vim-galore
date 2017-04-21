@@ -2174,31 +2174,34 @@ deveria ser configurado por todos os esquemas de cores válidos):
 autocmd ColorScheme lucius highlight StatusLine ctermbg=darkgray cterm=NONE guibg=darkgray gui=NONE
 ```
 
-# Commands
+# Comandos
 
-Useful commands that are good to know. Use `:h :<command name>` to learn more
-about them, e.g. `:h :global`.
+Comandos úteis que são bons de saber. Use `:h :<command name>` para aprender
+mais sobre eles, por exemplo `:h :global`.
 
-## :global and :vglobal
+## :global e :vglobal
 
-Execute a command on all matching lines. E.g. `:global /regexp/ print` will use
-`:print` on all lines that contain "regexp".
+Execute um comando em todas as linhas que baterem. Por exemplo `:global /regexp/
+print` irá usar `:print` em todas as linhas que conterem "regexp".
 
-Fun fact: You probably all know good old grep, the filter program written by Ken
-Thompson. What does it do? It prints all lines matching a certain regular
-expression! Now guess the short form of `:global /regexp/ print`? That's right!
-It's `:g/re/p`. Ken Thompson was inspired by vi's `:global` when he wrote grep.
+Fato engraçado: vocês todos provavelmente conhecem o bom e velho grep, o
+programa de filtragem escrito por Ken Thompson. O que ele faz? Ele imprime todas
+as linhas que baterem com uma certa expressão regular! Agora tente adivinhar
+qual que é a forma abreviada de `:global /regexp/ print`? Isso mesmo! É
+`:g/re/p`. Ken Thompson foi inspirado pelo comando `:global` do vi quando ele
+escreveu o grep.
 
-Despite its name, `:global` only acts on all lines by default, but it also takes
-a range. Assume you want use `:delete` on all lines from the current line to the
-next blank line (matched by the regular expression `^$`) that contain "foo":
+Apesar do nome, o `:global` age apenas em todas as linhas por padrão, mas ele
+também aceita um alcance. Assumindo que você queira usar `:delete` em todas as
+linhas a partir da linha atual até a próxima linha em branco (que bata com a
+expressão regular `^$`) e que contenha "foo":
 
 ```vim
 :,/^$/g/foo/d
 ```
 
-For executing commands on all lines that do _not_ match a given pattern, use
-`:global!` or its alias `:vglobal` (think _inVerse_) instead.
+Para executar comandos em todas as linhas que _não_ batam com um dado padrão,
+use `:global!` ou o seu alias `:vglobal` (pense ao invés em _inVerso_).
 
 ## :normal and :execute
 
