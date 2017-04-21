@@ -127,7 +127,7 @@
 
 ### [Lista de esquemas de cores](#lista-de-esquemas-de-cores-1)
 
-### [List of plugins](contents/plugins.md)
+### [List of plugins](PLUGINS.md)
 
 <br>
 
