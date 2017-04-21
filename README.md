@@ -1,8 +1,7 @@
 <div align='center'>
-  <br /><br />
-  <img src='https://raw.githubusercontent.com/mhinz/vim-galore/master/contents/images/logo-vim-galore.png' alt='vim-galore logo' />
+  <br /><br /><br />
+  <img src='https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/logo-vim-galore.png' alt='vim-galore logo' />
   <br /><br /><br /><br />
-
   <div>
     <a href='https://github.com/wsdjeg/vim-galore-zh_cn'>
       <img src='https://img.shields.io/badge/Translation:-Chinese-grey.svg' alt='translation: chinese' />
@@ -13,7 +12,12 @@
     <a href='https://github.com/lsrdg/vim-galore'>
       <img src='https://img.shields.io/badge/Translation:-Portuguese-grey.svg' alt='translation: portuguese' />
     </a>
+    <div>
+      <br />
+      <sub>Licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0<a/>.</sub>
+    </div>
   </div>
+  <br /><br />
 </div>
 
 ### [Intro](#intro-1)
@@ -56,7 +60,7 @@
   - [User events](#user-events)
   - [Nested autocmds](#nested-autocmds)
 - [Clipboard](#clipboard)
-  - [Clipboard usage (Windows, OSX)](#clipboard-usage-windows-osx)
+  - [Clipboard usage (Windows, macOS)](#clipboard-usage-windows-macos)
   - [Clipboard usage (Linux, BSD, ...)](#clipboard-usage-linux-bsd-)
 - [Restore cursor position when opening file](#restore-cursor-position-when-opening-file)
 - [Handling backup, swap, undo, and viminfo files](#handling-backup-swap-undo-and-viminfo-files)
@@ -89,7 +93,7 @@
 
 - [:global and :vglobal](#global-and-vglobal) - Execute a command on all matching lines.
 - [:normal and :execute](#normal-and-execute) - The scripting dream team.
-- [:redir](#redir) - Redirect messages.
+- [:redir and execute()](#redir-and-execute) - Capture command output.
 
 ### [Debugging](#debugging-1)
 
@@ -123,7 +127,7 @@
 
 ### [List of colorschemes](#list-of-colorschemes-1)
 
-### [List of plugins](contents/plugins.md)
+### [List of plugins](PLUGINS.md)
 
 <br>
 
@@ -226,7 +230,7 @@ to be useful for starting out.
 Eventually you have to read up on all the mentioned settings anyway and decide
 for yourself. :-)
 
-So here it is: [minimal-vimrc](contents/minimal-vimrc.vim)
+So here it is: [minimal-vimrc](static/minimal-vimrc.vim)
 
 In case you're interested, here's
 [my vimrc][https://github.com/mhinz/dotfiles/blob/master/.vim/vimrc].
@@ -1373,11 +1377,11 @@ Help:
 Also see: [Bracketed paste (or why do I have to set 'paste' all the
 time?)](#bracketed-paste-or-why-do-i-have-to-set-paste-all-the-time)
 
-### Clipboard usage (Windows, OSX)
+### Clipboard usage (Windows, macOS)
 
 Windows comes with a
 [clipboard](https://msdn.microsoft.com/en-us/library/windows/desktop/ms649012(v=vs.85).aspx)
-and OSX comes with a
+and macOS comes with a
 [pasteboard](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PasteboardGuide106/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008100-SW1).
 
 Both work like most users would expect them to work. You copy selected text with
@@ -1659,7 +1663,7 @@ from within Vim. Hereinafter is a list of commonly used plugin managers:
 
 This is a technique to insert the same text on multiple consecutive lines at the
 same time. See this
-[demo](https://raw.githubusercontent.com/mhinz/vim-galore/master/contents/images/content-block_insert.gif).
+[demo](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/content-block_insert.gif).
 
 Switch to visual block mode with `<c-v>`. Afterwards go down for a few lines.
 Hit `I` or `A` and start entering your text.
@@ -2143,21 +2147,32 @@ down "n" lines:
 :execute 'normal!' n . 'j'
 ```
 
-## :redir
+## :redir and execute()
 
 Many commands print messages and `:redir` allows to redirect that output. You
 can redirect to files, [registers](#registers) or variables.
 
 ```vim
-:redir => neatvar
+:redir => var
 :reg
 :redir END
-:echo neatvar
+:echo var
 :" For fun let's also put it onto the current buffer.
-:put =nicevar
+:put =var
 ```
 
-Help: `:h :redir`
+In Vim 8 there is an even shorter way:
+
+```vim
+:put =execute('reg')
+```
+
+Help:
+
+```
+:h :redir
+:h execute()
+```
 
 # Debugging
 
@@ -2423,14 +2438,14 @@ bails out. No further code (mappings, commands, logic) will be processed.
 
 CapsLock belongs to the most useless keys on your keyboard, but it's much easier
 to reach than the Control key, since it lies on your [home
-row](https://raw.githubusercontent.com/mhinz/vim-galore/master/contents/images/content-homerow.png).
+row](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/content-homerow.png).
 Mapping CapsLock to Control is a great way to prevent or at least reduce
 [RSI](https://de.wikipedia.org/wiki/Repetitive-Strain-Injury-Syndrom) if you
 program a lot.
 
 Attention: When you get used to it, you can't live without it anymore.
 
-**OSX**:
+**macOS**:
 
 `System Preferences -> Keyboard -> Keyboard Tab -> Modifier Keys`. Change
 "CapsLock" to "Control".
@@ -2474,7 +2489,7 @@ When [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) created
 [ADM-3A](https://en.wikipedia.org/wiki/ADM-3A) which had no extra cursor buttons
 but used, you might already guessed it, hjkl instead.
 
-Keyboard layout: [click](https://raw.githubusercontent.com/mhinz/vim-galore/master/contents/images/content-adm-3a-layout.jpg)
+Keyboard layout: [click](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/content-adm-3a-layout.jpg)
 
 This also shows why `~` is used to denote the home directory on Unix systems.
 
