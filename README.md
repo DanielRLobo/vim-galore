@@ -1,16 +1,25 @@
-<br>
-
-
+<div align='center'>
+<br /><br /><br />
 ![vim-galore](https://raw.githubusercontent.com/mhinz/vim-galore/master/contents/images/logo-vim-galore.png)
-
-<br>
-
-[![Build Status](https://travis-ci.org/mhinz/vim-galore.svg?branch=master)](https://travis-ci.org/mhinz/vim-galore)
-[![badge-original-version](https://img.shields.io/badge/Version-Original-blue.svg)](https://github.com/mhinz/vim-galore)
-[![badge-translation-japanese](https://img.shields.io/badge/Translation-Japanese-lightgrey.svg)](http://postd.cc/?s=vim-galore)
-[![badge-translation-chinese](https://img.shields.io/badge/Translation-Chinese-lightgrey.svg)](https://github.com/wsdjeg/vim-galore-zh_cn)
-[![vim-galore](https://cdn.rawgit.com/mhinz/vim-galore/master/contents/images/badge-awesome.svg)](https://github.com/sindresorhus/awesome)
-
+<br /><br /><br /><br />
+<div>
+    <a href='https://github.com/mhinz/vim-galore'> 
+        <img src='https://img.shields.io/badge/Version:-Original-blue.svg'
+        alt='version: original' /> 
+    </a> 
+    <a href='https://github.com/wsdjeg/vim-galore-zh_cn'> 
+        <img src='https://img.shields.io/badge/Translation:-Chinese-grey.svg' alt='translation: chinese' /> 
+    </a> 
+    <a href='http://postd.cc/?s=vim-galore'>
+        <img src='https://img.shields.io/badge/Translation:-Japanese-grey.svg' alt='tranlsation: japanese' /> 
+    </a> 
+    <div> 
+        <br /> 
+        <sub>Licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0<a/>.</sub> 
+    </div> 
+  </div> 
+  <br /><br /> 
+</div> 
 ### [Introdução](#introdução-1)
 
 - [O que é o Vim?](#o-que-é-o-vim)
