@@ -2231,8 +2231,9 @@ down "n" lines:
 
 ## :redir e execute()
 
-Many commands print messages and `:redir` allows to redirect that output. You
-can redirect to files, [registers](#registers) or variables.
+Muitos comandos imprimem mensagens e `:redir` permite redirecionar essa saída.
+Você pode redirecionar para arquivos, [registradores](#registradores) ou
+variáveis.
 
 ```vim
 :redir => var
