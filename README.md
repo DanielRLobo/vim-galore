@@ -60,7 +60,7 @@
   - [User events](#user-events)
   - [Nested autocmds](#nested-autocmds)
 - [Clipboard](#clipboard)
-  - [Clipboard usage (Windows, OSX)](#clipboard-usage-windows-osx)
+  - [Clipboard usage (Windows, macOS)](#clipboard-usage-windows-macos)
   - [Clipboard usage (Linux, BSD, ...)](#clipboard-usage-linux-bsd-)
 - [Restore cursor position when opening file](#restore-cursor-position-when-opening-file)
 - [Manipulando os arquivos de backup, swap, undo, e viminfo](#manipulando-os-arquivos-de-backup-swap-undo-e-viminfo)
@@ -1454,10 +1454,10 @@ Veja também: [Colar entre parenteses (ou por que preciso configurar 'paste' o
 tempo
 todo?)](#colar-entre-parenteses-ou-por-que-preciso-configurar-paste-o-tempo-todo)
 
-### Utilização da área de transferência (Windows, OSX)
+### Utilização da área de transferência (Windows, macOS)
 
 O Windows vem com [clipboard](https://msdn.microsoft.com/en-us/library/windows/desktop/ms649012(v=vs.85).aspx)
-e OSX vem com uma [pasteboard](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PasteboardGuide106/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008100-SW1).
+e macOS vem com uma [pasteboard](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PasteboardGuide106/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008100-SW1).
 
 Ambos funcionam mais ou menos como usuários esperariam que funcionassem. Você
 copia o texto selecionado com `ctrl+c`/`cmd+c` e cola em um outro aplicativo com `ctrl+v`/`cmd+v`.  
@@ -2537,7 +2537,7 @@ program a lot.
 
 Attention: When you get used to it, you can't live without it anymore.
 
-**OSX**:
+**macOS**:
 
 `System Preferences -> Keyboard -> Keyboard Tab -> Modifier Keys`. Change
 "CapsLock" to "Control".
