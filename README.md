@@ -84,7 +84,7 @@
 
 - [:global and :vglobal](#global-and-vglobal) - Execute a command on all matching lines.
 - [:normal and :execute](#normal-and-execute) - The scripting dream team.
-- [:redir](#redir) - Redirect messages.
+- [:redir e execute()](#redir-e-execute) - Capturar saída de comando.
 
 ### [Debugging](#debugging-1)
 
@@ -2229,21 +2229,31 @@ down "n" lines:
 :execute 'normal!' n . 'j'
 ```
 
-## :redir
+## :redir e execute()
 
 Many commands print messages and `:redir` allows to redirect that output. You
 can redirect to files, [registers](#registers) or variables.
 
 ```vim
-:redir => neatvar
+:redir => var
 :reg
 :redir END
-:echo neatvar
+:echo var
 :" For fun let's also put it onto the current buffer.
-:put =nicevar
+:put =var
 ```
 
-Help: `:h :redir`
+No Vim 8 existe um jeito ainda mais curto:
+
+```vim
+:put =execute('reg')
+```
+Ajuda:
+
+```vim
+:h :redir
+:h :execute()
+```
 
 # Debugging
 
