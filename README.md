@@ -2213,26 +2213,27 @@ expressão regular `^$`) e que contenha "foo":
 Para executar comandos em todas as linhas que _não_ batam com um dado padrão,
 use `:global!` ou o seu alias `:vglobal` (pense ao invés em _inVerso_).
 
-## :normal and :execute
+## :normal e :execute
 
-These commands are commonly used in Vim scripts.
+Esses são comandos usados com frequência em scripts do Vim.
 
-With `:normal` you can do normal mode mappings from the command-line. E.g.
-`:normal! 4j` will make the cursor go down 4 lines (without using any custom
-mapping for "j" due to the "!").
+Com `:normal` você pode fazer mapeamentos do modo normal a partir da linha de
+comando. Como por exemplo `:normal! 4j` irá fazer com que o cursor vá 4 linhas
+para baixo (sem precisar usar nenhum mapeamento personalizado para o "j" por
+causa da "!").
 
-Mind that `:normal` also takes a count, so `:%norm! Iabc` would prepend "abc" to
-every line.
+Tenha em conte que o `:normal` também aceita um alcance, e portanto `:%norm!
+Iabc` iria pendurar "abc" no início de todas as linhas.
 
-With `:execute` you can mix commands with expressions. Assume you edit a C
-source file and want to switch to its header file:
+Com `:execute` você pode misturar comandos com expressões. Assumindo que você
+esteja editando um arquivo de código em C e queira mudar o arquivo de cabeçalho:
 
 ```vim
 :execute 'edit' fnamemodify(expand('%'), ':r') . '.h'
 ```
 
-Both commands are often used together. Assume you want to make the cursor go
-down "n" lines:
+Ambos os comandos são com frequência utilizados em conjunto. Assumindo que você
+queira fazer com que o cursor vá "n" linhas para baixo:
 
 ```vim
 :let n = 4
