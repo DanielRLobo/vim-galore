@@ -2269,40 +2269,45 @@ Ajuda:
 
 # Debugging
 
-## General tips
+## Dicas gerais 
 
-If you encounter a strange behaviour, try reproducing it like this:
+Se você encontrar um comportamento estranho, tente reproduzir dessa maneira:
 
 ```
 vim -u NONE -N
 ```
 
-This will start Vim without vimrc (thus default settings) and in nocompatible
-mode (which makes it use Vim defaults instead of vi defaults). (See `:h
---noplugin` for other combinations of what to load at start.)
+Isso irá iniciar o vim sem o vimrc (portanto, com as configurações padrões) e no
+modo "nocompatiple" ("_não compatível_", o que faz com que o vim use os seus
+próprios padrões ao invés dos do Vi). (Veja `:h --noplugin` para outras
+combinações do quê carregar ao iniciar.)
 
-If you can still reproduce it now, it's most likely a bug in Vim itself! Report
-it to the [vim_dev](https://groups.google.com/forum/#!forum/vim_dev) mailing
-list. Most of the time the issue won't be resolved at this time and you'll have
-to further investigate.
+Se nesse ponto você ainda puder reproduzir o tal do comportamento estranho, é
+bem provável que seja um bug do Vim mesmo! Relate-o a lista de endereços
+[vim_dev](https://groups.google.com/forum/#!forum/vim_dev). Na maioria dos
+casos, o problema não estará resolvido neste ponto e você terá que avançar na
+investigação.
 
-Plugins often introduce new/changed/faulty behaviour. E.g. if it happens on
-saving, check `:verb au BufWritePost` to get a list of potential culprits.
+Os plugins com frequência introduzem comportamentos novos/alterados/defeituosos.
+Por exemplo, se acontecer na hora de salvar, confira `:verb au BufWritePost`
+para conseguir uma lista dos (possíveis) culpados.
 
-If you're using a plugin manager, comment them out until you find the culprit.
+Se você estiver usando um gerenciador de plugin, comente os plugins até que você
+encontre qual deles é o responsável.
 
-Issue is still not resolved? If it's not a plugin, it must be your other
-settings, so maybe your options or autocmds etc.
+Problema ainda não resolvido? Se não é um plugin, deve ser as suas outras
+configurações, talvez as suas opções ou os autocmds etc.
 
-Time to use binary search. Repeatedly split the search space in two until you
-find the culprit line. Due to the nature of binary division, it won't take many
-steps.
+Hora de usar a pesquisa binária. Divida repetidamente o espaço de pesquisa em
+dois até encontrar a linha culpada. Por causa da natureza da divisão binária,
+isso não ṕrecisará de muitos passos.
 
-In practice, it works like this: Put the `:finish` command in the middle of your
-vimrc. Vim will skip everything after it. If it still happens, the problem is in
-the active upper half. Move the `:finish` to the middle of _that_ half.
-Otherwise, the issue is in the inactive lower half. Move the `:finish` to the
-middle of _that_ half. And so on.
+Na prática, funciona mais ou menos assim: Coloque o comando `:finish` no meio do
+seu vimrc. O Vim irá pular tudo que estiver após ele. Se ainda acontecer, o
+problema está na metade superior que ainda está ativa. Mova o `:finish` para o
+meio _dessa metade ativa_. Caso contrário, o próblema está na metade inativa
+abaixo. Mova o `:finish` para a _metade dessa metade inativa_. E assim por
+diante.
 
 ## Verbosity
 
