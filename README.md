@@ -2309,11 +2309,11 @@ meio _dessa metade ativa_. Caso contrário, o próblema está na metade inativa
 abaixo. Mova o `:finish` para a _metade dessa metade inativa_. E assim por
 diante.
 
-## Verbosity
+## Verbosidade
 
-Another useful way for observing what Vim is currently doing is increasing the
-verbosity level. Currently Vim supports 9 different levels. See `:h 'verbose'`
-for the full list.
+Um outro jeito útil para observar o quê o Vim está atualmente fazendo é aumentar
+o nível de verbosidade. Atualmente o Vim suporta 9 níveis deferentes. Veja `:h
+'verbose'` para conferir a lista completa.
 
 ```vim
 :e /tmp/foo
@@ -2322,12 +2322,12 @@ for the full list.
 :set verbose=0
 ```
 
-This would show all the files that get sourced, e.g. the undo file or various
-plugins that act on saving.
+Isso irá mostrar todos os arquivos são avaliados ("_sourced_"), como por exemplo
+o arquivo com os desfazeres ou vários plugins que agem na hora de salvar.
 
-If you only want increase verbosity for a single command, there's also
-`:verbose`, which simply gets put in front of any other command. It takes the
-verbosity level as count and defaults to 1:
+Se você quiser apenas aumentar a verbosidade para um programa, há também
+`:verbose`, que é simplesmente colocado em frente a qualquer outro programa. Ele
+aceita o nível de verbosidade como um alcance e por padrão refere-se a 1:
 
 ```vim
 :verb set verbose
@@ -2336,23 +2336,24 @@ verbosity level as count and defaults to 1:
 "  verbose=10
 ```
 
-It's very often used with its default verbosity level 1 to show where an option
-was set last:
+Isso com muita frequência usado com o próprio nível de verbosidade (1) que
+mostra onde uma opção foi vista pela última vez:
 
 ```vim
 :verb set ai?
 "      Last set from ~/.vim/vimrc
 ```
 
-Naturally, the higher the verbosity level the more overwhelming the output. But
-fear no more, you can simply redirect the output to a file:
+Naturalmente, quanto maior o nível de verbosidade, mais sobrecarregado será o
+resultado. Mas não precisa ter medo, você pode simplesmente redirecionar o
+resultado para um arquivo:
 
 ```vim
 :set verbosefile=/tmp/foo | 15verbose echo "foo" | vsplit /tmp/foo
 ```
 
-You can also enable verbosity at starting time, with the `-V` option. It
-defaults to verbosity level 10. E.g. `vim -V5`.
+Você também pode ativar a verbosidade na hora de iniciar o Vim com a opção `-V`.
+Ela refere-se por padrão ao nível 10 de verbosidade. Por exemplo, `vim -V5`.
 
 ## Profiling startup time
 
