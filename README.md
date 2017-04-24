@@ -2355,17 +2355,18 @@ resultado para um arquivo:
 Você também pode ativar a verbosidade na hora de iniciar o Vim com a opção `-V`.
 Ela refere-se por padrão ao nível 10 de verbosidade. Por exemplo, `vim -V5`.
 
-## Profiling startup time
+## Analisando o tempo de inicialização
 
-Vim startup feels slow? Time to crunch some numbers:
+O Vim parece estar inicializando devagar? Hora de conferir alguns números:
 
 ```
 vim --startuptime /tmp/startup.log +q && vim /tmp/startup.log
 ```
 
-The first column is the most important as it shows the elapsed absolute time. If
-there is a big jump in time between two lines, the second line is either a very
-big file or a file with faulty VimL code that is worth investigating.
+A primeira coluna é a mais importante já que ela mostra o tempo absoluto
+transcorrido. Se houver um grande salto entre duas linhas, a sengunda linha ou é
+um arquivo grande ou um arquivo com código VimL defeituoso que vale a pena
+investigar.
 
 ## Profiling at runtime
 
