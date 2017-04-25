@@ -2368,37 +2368,41 @@ transcorrido. Se houver um grande salto entre duas linhas, a sengunda linha ou �
 um arquivo grande ou um arquivo com código VimL defeituoso que vale a pena
 investigar.
 
-## Profiling at runtime
+## Analisando o tempo de execução
 
-Required [feature](#what-kind-of-vim-am-i-running): `+profile`
+[Caractéristica requerida](#Que-tipo-de-Vim-eu-estou-rodando): `+profile`
 
-Vim provides a built-in capability for profiling at runtime and is a great way
-to find slow code in your environment.
+O Vim apresenta uma capacidade própria de analisar o próprio tempo de execução e
+essa é uma boa forma de encontrar código lento no seu ambiente.
 
-The `:profile` command takes a bunch of sub-commands for specifying what to
-profile.
+O comando `:profile` aceita um bando de sub-comandos para especificar o quê deve
+ser analisado.
 
-If you want to profile _everything_, do this:
+Se você quiser analisar _tudo_, faça assim:
 
 ```
 :profile start /tmp/profile.log
 :profile file *
 :profile func *
-<do something in Vim>
-<quit Vim>
+<faça alguma coisa no vim>
+<encerre o Vim>
 ```
 
-Vim keeps the profiling information in memory and only writes it out to the
-logfile on exit. (Neovim has fixed this using `:profile dump`).
+O Vim mantém a informação analisada na memória e apenas a escreve para o arquivo
+de log na hora que for encerrado. (O Neovim consertou isso usando `:profile
+dump`).
 
-Have a look at `/tmp/profile.log`. All code that was executed during profiling
-will be shown. Every line, how often it was executed and how much time it took.
+Dê uma olhada em `/tmp/profile.log`. Todo o código que foi executado durante a
+análise será mostrado. Cada linha, com que frequência foi executada e quanto
+tempo levou.
 
-Most of the time that will be plugin code the user isn't familiar with, but if
-you're investigating a certain issue, jump to the bottom of the log. Here are
-two different sections `FUNCTIONS SORTED ON TOTAL TIME` and `FUNCTIONS SORTED ON
-SELF TIME` that are worth gold. At a quick glance you can see, if a certain
-function is taking too long.
+Na maioria das vezes, isso será código de plugin que a usuária não está
+familiarizada com, mas se você está investigando alguma questão específica, pule
+direto para o final do arquivo. Aqui estarão duas sessões diferentes: `FUNCTIONS
+SORTED ON TOTAL TIME` ("_funções classificadas pelo tempo total_") e `FUNCTIONS
+SORTED ON SELF TIME` ("_funções classificadas pelo tempo prórprio_") que são
+puro ouro. Basta bater olho e você poderá ver se uma certa função tá levando
+muito tempo.
 
 ## Debugging Vim scripts
 
