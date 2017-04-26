@@ -2404,33 +2404,34 @@ SORTED ON SELF TIME` ("_funções classificadas pelo tempo prórprio_") que são
 puro ouro. Basta bater olho e você poderá ver se uma certa função tá levando
 muito tempo.
 
-## Debugging Vim scripts
+## Depurando Vim scripts
 
-If you ever used a command-line debugger before, `:debug` will quickly feel
-familiar.
+Se você já usou alguma vez um depurador de linha de comando antes, o `:debug` 
+irá rapidamente lhe parecer familiar.
 
-Simply prepend `:debug` to any other command and you'll be put into debug mode.
-That is, the execution will stop at the first line about to be executed and that
-line will be displayed.
+Simplesmente coloque `:debug` antes de qualquer outro comando e você você
+entrará no modo de depuração. Isso quer dizer que a execução irá parar na
+primeira linha que está para ser executada, e essa linha será mostrada
 
-See `:h >cont` and below for the 6 available debugger commands and note that,
-like in gdb and similar debuggers, you can also use their short forms: `c`, `q`,
-`n`, `s`, `i`, and `f`.
+Veja `:h >cont` e abaixo para ver os 6 comandos de depuração disponíveis e note,
+que assim como no gdb e depuradores similares, você também pode usar a forma
+curta deles: `c`, `q`, `n`, `s`, `i` e `f`.
 
-Apart from that those, you're free to use any Vim command, e.g. `:echo myvar`,
-which gets executed in the context of the current position in the code.
+Tirando esses, você é livre para usar qualquer comando do Vim, por exemplo
+`:echo minhavariavel`, que será executado no context da posição atual no código.
 
-You basically get a
-[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) by
-simply using `:debug 1`.
+Você basicamente obtém um [REPL](https://es.wikipedia.org/wiki/REPL) pelo simple
+uso de `:debug 1`.
 
-It would be a pain if you had to single-step through every single line, so of
-course we can define breakpoints, too. (Breakpoints are called breakpoints,
-because the execution stops when they're hit, thus you can simply skip code
-you're not interested in.) See `:h :breakadd`, `:h :breakdel`, and `:h
-:breaklist` for further details.
+Seria muito sofrido se você tivesse que ir passo após passo através de cada
+linha, então é claro que você pode definir pontos de interrupção também. (Pontos
+de interrupção são chamados de pontos de interrupção - "_breakpoints_" - porque
+a execução é parada quando eles são atingidos, e assim você pode simplesmente
+pular código que não interessa). Veja `:h :breakadd`, `:h :breakdel`, e `:h
+breaklist` para mais detalhes.
 
-Let's assume you want to know what code is run every time you save a file:
+Vamos assumir que você queira saber qual código que é rodado toda vez que você
+salva um arquivo:
 
 ```vim
 :au BufWritePost
@@ -2452,10 +2453,10 @@ Let's assume you want to know what code is run every time you save a file:
 :breakdel *
 ```
 
-As you can see, using `<cr>` will repeat the previous debugger command, `s` in
-this case.
+Como você pode ver, usando `<cr>` irá repetir o comando de depuração anterior,
+`s` nesse caso.
 
-`:debug` can be used in combination with the [verbose](#verbosity) option.
+`:debug` pode ser usado em combinação a opção de [verbosidade](#verbosidade).
 
 ## Debugging syntax files
 
