@@ -2458,11 +2458,12 @@ Como você pode ver, usando `<cr>` irá repetir o comando de depuração anterio
 
 `:debug` pode ser usado em combinação a opção de [verbosidade](#verbosidade).
 
-## Debugging syntax files
+## Depurando arquivos de sintáxe
 
-Syntax files are often the cause for slowdowns due to wrong and/or complex
-regular expressions. If the `+profile` [feature](#what-kind-of-vim-am-i-running)
-is compiled in, Vim provides the super useful `:syntime` command.
+Arquivos de sintáxe são com frequência a causa de lentidões devido a expressões
+regulares erradas e/ou complexas. Se a
+[característica](#que-tipo-de-vim-eu-estou-rodando) `+profile` foi compilada, o
+Vim apresenta o comando `:syntime` que é super útil.
 
 ```vim
 :syntime on
@@ -2471,11 +2472,11 @@ is compiled in, Vim provides the super useful `:syntime` command.
 :syntime report
 ```
 
-The output contains important metrics. E.g. you can see which regexp takes too
-long and should be optimized or which regexps are used all the time but never
-even match.
+A saída desse comando contém medidores importantes. Como por exemplo você pode
+ver qual regexp leva muito tempo e deveria ser optimizada ou quais expressões
+regulares são usadas todo tempo mais que quase nunca batem.
 
-See `:h :syntime`.
+Veja `:h :syntime`.
 
 # Miscellaneous
 
