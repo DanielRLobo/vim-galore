@@ -2529,17 +2529,22 @@ dando uma olhada em algumas distribuições:
 - [spacevim](https://github.com/SpaceVim/SpaceVim)
 - [spf13](https://github.com/spf13/spf13-vim)
 
-## Standard plugins
+## Plugins padrões
 
-Surprising to many people, Vim comes with a handful of plugins on its own that
-all get loaded by default. Check `:scriptnames` after starting Vim to see all
-sourced files.
+Para a surpresa de muitos, o  Vim já vem com uma mão cheia de plugins em si
+mesmo que são todos carregados por padrão. Confira `:scriptnames` depois que
+tiver inicializado o Vim para ver todos os plugins que são carregados por
+padrão.
 
+A maioria deles nunca serão usados, portanto desative-os conforme achar melhor.
+Eles ainda serão mostrados como carregados, mas apenas as primeiras linhas são
+carregadas antes que o Vim comece a resgatar. Nenhum código a mais (mapas,
+comandos, lógica) será processado.
 Most of them will never get used, so disable them as you see fit. They will
 still be shown as sourced, but only the first lines actually get read before Vim
 bails out. No further code (mappings, commands, logic) will be processed.
 
-| Plugin     | Disable it using..                  | Help |
+| Plugin     | Desative usando..                   | Ajuda |
 |------------|-------------------------------------|------|
 | 2html      | `let g:loaded_2html_plugin = 1`     | `:h 2html` |
 | getscript  | `let g:loaded_getscriptPlugin = 1`  | `:h pi_getscript` |
