@@ -2503,23 +2503,26 @@ vi?](http://www.viemu.com/a-why-vi-vim.html) | Equívocos comuns explicados. |
 vi](http://stackoverflow.com/a/1220118) | Conciso, informativo e correto. Uma
 verdadeira gema. |
 
-## Vim distributions
+## Distribuições do Vim 
 
-Vim distributions are bundles of custom settings and plugins for Vim.
+Distribuições do Vim são agrupamentos de configurações personalizadas e plugins
+para o Vim.
 
-More advanced users know how to configure their editor anyway, so distributions
-are mostly targeted at beginners. If you think about that, it's quite
-paradoxical though: Making it easier by adding even more things to learn about?
+Usuários mais avançados sabem como configurar o seu editor, por isso
+distribuições são mais focadas em iniciantes. Se você pensar sobre o assunto, é
+algo paradoxal: fazer ficar ainda mais fácil adicionando ainda mais coisas para
+serem aprendidas?
 
-I know that many people don't want to spend hours and hours on customizing an
-editor (and actually you never stop customizing your vimrc when you finally got
-hooked), but eventually you only get efficient in Vim when you take the time to
-learn it properly.
+Eu sei que muitas pessoas não querem despediçar horas e mais horas para
+personalizar um editor de texto (e na verdade, você nunca pára de customizar o
+seu vimrc depois que tiver pegado o jeito da coisa), mais eventualmente você só
+ficará eficiente no Vim quando você dedicar o tempo para aprender
+apropriadamente.
 
-Repeat after me: "A programmer should know their tools."
+Repita comigo: "Uma programadora deve conhecer suas ferramentas".
 
-Anyway, if you know what you're doing, you might draw some inspiration from
-looking at a few distributions:
+De qualquer forma, se você souber o que você está fazendo, você se inspirar
+dando uma olhada em algumas distribuições:
 
 - [cream](http://cream.sourceforge.net)
 - [janus](https://github.com/carlhuda/janus.git)
