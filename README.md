@@ -2608,17 +2608,19 @@ Veja [superuser.com: Map Caps-Lock to Control in Windows
 | `:help!` | `E478: Don't panic!` (Glitch? When used in a help buffer (`buftype=help`) this works like `:h help.txt` instead.) |
 | `:smile` | Try it out yourself. ;-) Added in 7.4.1005. |
 
-## Why hjkl for navigation?
+## Por que hjkl para navegação?
 
-When [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) created
-[vi](https://en.wikipedia.org/wiki/Vi), a predecessor of Vim, he did it on a
-[ADM-3A](https://en.wikipedia.org/wiki/ADM-3A) which had no extra cursor buttons
-but used, you might already guessed it, hjkl instead.
+Quando [Bill Joy](https://pt.wikipedia.org/wiki/Bill_Joy) criou o 
+[vi](https://pt.wikipedia.org/wiki/Vi), o predecessor do Vim, ele o fez em um 
+[ADM-3A](https://en.wikipedia.org/wiki/ADM-3A) que não tinha nenhuma tecla extra
+para movimentar o cursor, e por isso ele usou hjkl, como você já deve ter
+adivinhado.
 
-Keyboard layout:
-[click](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/content-adm-3a-layout.jpg)
+Layout do teclado:
+[clique](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/content-adm-3a-layout.jpg)
 
-This also shows why `~` is used to denote the home directory on Unix systems.
+Isso também mostra o porque que `~` é usado para denotar o diretório "home" em
+sistemas Unix.
 
 # Common problems
 
@@ -2726,7 +2728,7 @@ Escape sequences pose the same problem:
 
 - `<esc>` is used a lot for returning to normal mode or quitting an action.
 - Cursor keys are encoded using escape sequences.
-- Vim expects <kbd>Alt</kbd> (also called _Meta key_) to send a proper 8-bit
+- Vim expects <kbd>Alt</kbd> (lalso called _Meta key_) to send a proper 8-bit
   encoding with the high bit set, but many terminal emulators don't support it
   (or don't enable it by default) and send an escape sequence instead.
 
