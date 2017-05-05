@@ -2558,38 +2558,40 @@ bails out. No further code (mappings, commands, logic) will be processed.
 | vimball    | `let g:loaded_vimballPlugin = 1`    | `:h pi_vimball` |
 | zip        | `let g:loaded_zipPlugin = 1`        | `:h pi_zip` |
 
-## Map CapsLock to Control
+## Remapear o CapsLock para ser um outro Control
 
-CapsLock belongs to the most useless keys on your keyboard, but it's much easier
-to reach than the Control key, since it lies on your [home
-row](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/content-homerow.png).
-Mapping CapsLock to Control is a great way to prevent or at least reduce
-[RSI](https://de.wikipedia.org/wiki/Repetitive-Strain-Injury-Syndrom) if you
-program a lot.
+O CapsLock faz pare do time das teclas mais inúteis do teclado, por outro lado é
+uma tecla muito mais fácil de ser alcançada que a tecle Control, já que está
+localizada na [linha
+central](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/content-homerow.png)
+do seu teclado. Remapear o CapsLock para Control é um ótimo jeito de prevenir ou
+menos reduzir [lesão por esforço
+repetitivo](https://pt.wikipedia.org/wiki/Les%C3%A3o_por_esfor%C3%A7o_repetitivo)
+se você programar muito.
 
-Attention: When you get used to it, you can't live without it anymore.
+Atenção: Quando você se acostumar a isso, você não poderá mais viver sem.
 
 **macOS**:
 
-`System Preferences -> Keyboard -> Keyboard Tab -> Modifier Keys`. Change
-"CapsLock" to "Control".
+`System Preferences -> Keyboard -> Keyboard Tab -> Modifier Keys`. Mude
+"CapsLock" para "Control".
 
 **Linux**:
 
-To change the keys in X, put this in your `~/.xmodmap`:
+Para mudar as teclas no X, coloque isso no seu `~/.xmodmap`:
 
     remove Lock = Caps_Lock
     keysym Caps_Lock = Control_L
     add Control = Control_L
 
-Afterwards source it via `$ xmodmap ~/.xmodmap`.
+Em seguida avalie com `$ xmodmap ~/.xmodmap`.
 
-An alternative would be using [caps2esc](https://github.com/oblitum/caps2esc) or
-[xcape](https://github.com/alols/xcape).
+Uma alternativa seria usar o [caps2esc](https://github.com/oblitum/caps2esc) ou
+o [xcape](https://github.com/alols/xcape).
 
 **Windows**:
 
-See [superuser.com: Map Caps-Lock to Control in Windows
+Veja [superuser.com: Map Caps-Lock to Control in Windows
 8.1](http://superuser.com/questions/764782/map-caps-lock-to-control-in-windows-8-1).
 
 ## Easter eggs
