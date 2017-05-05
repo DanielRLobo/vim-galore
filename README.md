@@ -2594,9 +2594,9 @@ o [xcape](https://github.com/alols/xcape).
 Veja [superuser.com: Map Caps-Lock to Control in Windows
 8.1](http://superuser.com/questions/764782/map-caps-lock-to-control-in-windows-8-1).
 
-## Easter eggs
+## Ovos de páscoa
 
-| Command   | Message |
+| Comando   | Mensagem |
 |-----------|---------|
 | `:Ni!` | `Do you demand a shrubbery?` |
 | `:h 'sm'` | `NOTE: Use of the short form is rated PG.` |
@@ -2607,8 +2607,6 @@ Veja [superuser.com: Map Caps-Lock to Control in Windows
 | `:h map-modes` | `:nunmap can also be used outside of a monastery.` |
 | `:help!` | `E478: Don't panic!` (Glitch? When used in a help buffer (`buftype=help`) this works like `:h help.txt` instead.) |
 | `:smile` | Try it out yourself. ;-) Added in 7.4.1005. |
-
-## Standard plugins
 
 ## Why hjkl for navigation?
 
