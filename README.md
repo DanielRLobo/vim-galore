@@ -2497,6 +2497,7 @@ editor](http://www.ibm.com/developerworks/views/linux/libraryview.jsp?sort_order
 Edition)](http://www.amazon.com/Practical-Vim-Edit-Speed-Thought/dp/1680501275/)
 | Facilmente o melhor livre sobre o Vim. |
 | [Vimcasts.org](http://vimcasts.org/episodes/archive) | Vim screencasts. |
+| [wincent's screencasts on YouTube](https://www.youtube.com/channel/UCXPHFM88IlFn68OmLwtPmZA) | Vim screencasts. |
 | [Why, oh WHY, do those #?@! nutheads use
 vi?](http://www.viemu.com/a-why-vi-vim.html) | Equívocos comuns explicados. |
 | [Your problem with Vim is that you don't grok
@@ -2622,9 +2623,9 @@ Layout do teclado:
 Isso também mostra o porque que `~` é usado para denotar o diretório "home" em
 sistemas Unix.
 
-# Common problems
+# Problemas comuns
 
-## Editing small files is slow
+## Edição de arquivos pequenos está lenta
 
 There are two things which can have a huge impact on performance:
 
