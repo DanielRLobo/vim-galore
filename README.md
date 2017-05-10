@@ -2627,23 +2627,26 @@ sistemas Unix.
 
 ## Edição de arquivos pequenos está lenta
 
-There are two things which can have a huge impact on performance:
+Há duas coisas que podem ter um grande impacto sobre a performance:
 
-1. Complex **regular expressions**. Particular the Ruby syntax file caused
-   people to have slowdowns in the past. (Also see [Debugging syntax files](#debugging-syntax-files).)
-2. **Screen redraws**. Some features force all lines to redraw.
+1. *Expressões regulares* complexas. Em particular, o arquivo de sintáxe para
+Ruby fez com que pessoas experienciassem lentidões no passado. (Veja também
+[Depurando arquivos de sintáxe](#Depurando-arquivos-de-sintáxe).)
+2. *Redimensionamentos de tela*. Certas características forçam o
+redimensionamento de todas as linhas.
 
-| Typical culprit | Why? | Solution? |
-|-----------------|------|-----------|
-| `:set cursorline`        | Causes all lines to redraw. | `:set nocursorline` |
-| `:set cursorcolumn`      | Causes all lines to redraw. | `:set nocursorcolumn` |
-| `:set relativenumber`    | Causes all lines to redraw. | `:set norelativenumber` |
-| `:set foldmethod=syntax` | If the syntax file is slow already, this makes it even worse. | `:set foldmethod=manual`, `:set foldmethod=marker` or [FastFold](https://github.com/Konfekt/FastFold) |
-| `:set synmaxcol=3000`    | Due to internal representation, Vim has problems with long lines in general. Highlights columns till column 3000. | `:set synmaxcol=200` |
-| matchparen.vim           | Loaded by default. Uses regular expressions to find the accompanying parenthesis. | Disable plugin: `:h matchparen` |
+| Típico culpado             | Por que?                                                                                                          | Solução?                                                                                              |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `:set cursorline`          | Faz com que todas as linhas sejam redimensionadas.                                                                | `:set nocursorline`                                                                                   |
+| `:set cursorcolumn`        | Faz com que todas as linhas sejam redimensionadas.                                                                | `:set nocursorcolumn`                                                                                 |
+| `:set relativenumber`      | Faz com que todas as linhas sejam redimensionadas.                                                                | `:set norelativenumber`                                                                               |
+| `:set foldmethod = syntax` | Se o arquivo de sintáxe já estiver lento, isso fará a coisa ficar ainda pior.                                     | `:set foldmethod=manual`, `:set foldmethod=marker` ou [FastFold](https://github.com/Konfekt/FastFold) |
+| `:set synmaxcol  = 3000`   | Devido à representação interna, o Vim em geral tem problemas com linhas longas. Realça colunas até a coluna 3000. | `:set synmaxcol=200`                                                                                  |
+| matchparen.vim             | Carregado por padrão. Usa expressões regulares para encontrar o parênteses que faz companhia.                     | Desativar o plugin: `:h matchparen`                                                                   |
 
-**NOTE**: You only need to do this if you experience actual performance
-drawbacks. In most cases using the things mentioned above is absolutely fine.
+**NOTA**: Você só precisa agir assim caso esteja experienciando problemas reais
+de performance. Na maioria dos casos, usar alguma das coisas mencionadas acima
+é perfeitamente aceitável.
 
 ## Editing huge files is slow
 
