@@ -2648,30 +2648,30 @@ redimensionamento de todas as linhas.
 de performance. Na maioria dos casos, usar alguma das coisas mencionadas acima
 é perfeitamente aceitável.
 
-## Editing huge files is slow
+## Edição de arquivos grandes está lenta
 
-The biggest issue with big files is, that Vim reads the whole file at once. This
-is done due to how buffers are represented internally.
-([Discussion on vim_dev@](https://groups.google.com/forum/#!topic/vim_dev/oY3i8rqYGD4/discussion))
+O maior problema com arquivos grandes é que o Vim lê o arquivo inteiro de uma
+vez. Isso é feito por conta da maneira em que os buffers são representados
+internalmente. ([Discussão na vim_dev@](https://groups.google.com/forum/#!topic/vim_dev/oY3i8rqYGD4/discussion))
 
-If you only want to read, `tail hugefile | vim -` is a good workaround.
+Se você quer apenas ler, `tail hugefile | vim -`
 
-If you can live without syntax, settings and plugins for the moment:
+Se você pode viver sem a sintáxe, configurações e plugins por um momento:
 
 ```
 $ vim -u NONE -N
 ```
 
-This should make navigation quite a lot faster, especially since no expensive
-regular expressions for syntax highlighting are used. You should also tell Vim
-not to use swapfiles and viminfo files to avoid long delays on writing:
+Isso deveria fazer com que a navegação fique um bocado mais ligeira,
+especialmente já que nenhuma expressão regular (custosa) é usada para o realce
+de sintáxe. Você deveria também falar pro Vim não usar os arquivos de troca
+("_swapfiles_") e os arquivos viminfo para evitar atrados longos ao escrever:
 
 ```
 $ vim -n -u NONE -i NONE -N
 ```
 
-Putting it in a nutshell, try to avoid using Vim when intending to write really
-huge files. :\
+Resumindo, evite usar o Vim quando pretender escrever realmente gigantescos. :\
 
 ## Bracketed paste (or why do I have to set 'paste' all the time?)
 
