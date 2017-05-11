@@ -2673,34 +2673,36 @@ $ vim -n -u NONE -i NONE -N
 
 Resumindo, evite usar o Vim quando pretender escrever realmente gigantescos. :\
 
-## Bracketed paste (or why do I have to set 'paste' all the time?)
+## Colar entre parenteses (ou porque eu tenho que configurar 'paste' o tempo
+todo?)
 
-Bracketed paste mode allows terminal emulators to distinguish between typed text
-and pasted text.
+O modo de colar entre parenteses permite que emuladores de terminal possam
+distinguir entre texto digitado e texto colado.
 
-Did you ever tried pasting code into Vim and afterwards everything seemed messed
-up?
+Você já tentou alguma vez colar código no Vim e em seguida tudo parecia
+bangunçado?
 
-This only happens if you paste via `cmd+v`, `shift-insert`, `middle-click` etc.
-because then you're just throwing text at the terminal emulator. Vim doesn't
-know that you just pasted the text, it thinks you're an extremely fast typist.
-Accordingly, it tries to indent the lines and fails.
+Isso só acontece se você colar via `cmd+v`, `shift-insert`, `middle-click` etc.
+porque você está simplesmente jogando texto no emulador de terminal. O Vim não
+sabe que você acabou de colar o texto, ele pensa que você é uma digitadora
+extremamente veloz. E assim sendo, ele tenta indentar as linhas e acaba
+falhando.
 
-Obviously this is not an issue, if you paste using Vim's registers, e.g. `"+p`,
-because then Vim knows that you're actually pasting.
+Obviamente, isso não é um problema se você colar usando os registradores do Vim,
+como `"+p`, pois nesse caso o Vim sabe que você está na verdade colando texto.
 
-To workaround this, you have to `:set paste`, so it gets pasted as-is. See `:h
-'paste'` and `:h 'pastetoggle'`.
+Para contornar essa situação, você precisa configurar com `:set paste`, e o
+texto será colado como ele é. Veja `:h 'paste'` e `:h 'pastetoggle'`.
 
-If you're fed up with toggling `'paste'` all the time, have a look at this fine
-plugin that does it for you:
+Se você está cansado de ficar ativando `'paste'` o tempo todo, dê uma olhada
+nesse plugin que faz exatamente isso por você:
 [bracketed-paste](https://github.com/ConradIrwin/vim-bracketed-paste).
 
-Additional read from the same author as the plugin:
-[here](http://cirw.in/blog/bracketed-paste).
+Leitura adicional (em _inglês_) do mesmo autor do plugin: [aqui](http://cirw.in/blog/bracketed-paste).
 
-**Neovim**: Neovim tries to make all of this much more seamless and sets
-bracketed paste mode automatically if the terminal emulator supports it.
+**Neovim**: O Neovim tenta fazer tudo isso ficar mais harmonioso e configura a
+colagem entre parenteses automaticamente se o emulador de terminal tiver suporte
+para ela.
 
 ## Delays when using escape key in terminal
 
