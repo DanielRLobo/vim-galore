@@ -2704,64 +2704,69 @@ Leitura adicional (em _inglês_) do mesmo autor do plugin: [aqui](http://cirw.in
 colagem entre parenteses automaticamente se o emulador de terminal tiver suporte
 para ela.
 
-## Delays when using escape key in terminal
+## Atrasos ao usar a tecla de escape no terminal
 
-If you live in the command-line, you probably use a so-called _terminal
-emulator_ like xterm, gnome-terminal, iTerm2, etc. (opposed to a real
-[terminal](https://en.wikipedia.org/wiki/Computer_terminal)).
+Se você vive na linha de comando, você provavelmente usa algo chamado _emulador
+de terminal_ como o xterm, gnome-terminal, iTerm2, etc. (Ao invés de um 
+[terminal real](https://pt.wikipedia.org/wiki/Terminal_(inform%C3%A1tica)).
 
-Like their ancestors, terminal emulators use [escape
-sequences](https://en.wikipedia.org/wiki/Escape_sequence) (or _control
-sequences_) to control things like moving the cursor, changing text colors, etc.
-They're simply strings of ASCII characters starting with an escape character
-(displayed in [caret notation](https://en.wikipedia.org/wiki/Caret_notation) as
-`^[`). When such a string arrives, the terminal emulator looks up the
-accompanying action in the [terminfo](https://en.wikipedia.org/wiki/Terminfo)
-database.
+Assim como os seus ancestrais, emuladores de terminal usam [sequencias de
+escape](https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_escape) para controlar
+coisas como a movimentação do cursor, mudança da cor do texto, etc.
+Elas são simplesmente "_strings_" de caractéres de ASCII começando com um
+caractére de escape (mostradas em [notação com
+circumfléxo](https://pt.wikipedia.org/wiki/Nota%C3%A7%C3%A3o_com_circunflexo)
+como `^[`). Quando esse tipo de string chega, o emulador de terminal confere a
+ação que acompanha no banco de dados
+[terminfo](https://en.wikipedia.org/wiki/Terminfo).
 
-To make the problem clearer, I'll explain mapping timeouts first. They always
-happen when there's ambiguity between mappings:
+Para deixar o problema mais claro, eu irei primeiro explicar como funciona o
+mapeamento do esgotamento de tempo ("_timeouts_"). Eles sempre acontecem quando
+existe alguma ambiguidade entre os mapas:
 
 ```vim
 :nnoremap ,a  :echo 'foo'<cr>
 :nnoremap ,ab :echo 'bar'<cr>
 ```
 
-Both mappings work as expected, but when typing `,a`, there will be a delay of 1
-second, because Vim waits whether the user keys in another `b` or not.
+Ambos os mapas funcionam como esperado, mais ao digitar `,a`, haverá um atraso
+de 1 segundo, porque o Vim espera para saber se a usuária irá pressionar um
+outro `b` ou não.
 
-Escape sequences pose the same problem:
+Sequências de escape apresentam o mesmo problema:
 
-- `<esc>` is used a lot for returning to normal mode or quitting an action.
-- Cursor keys are encoded using escape sequences.
-- Vim expects <kbd>Alt</kbd> (lalso called _Meta key_) to send a proper 8-bit
-  encoding with the high bit set, but many terminal emulators don't support it
-  (or don't enable it by default) and send an escape sequence instead.
+- `<esc>` é muito usado para retornar ao modo normal ou para terminar uma ação.
+- Teclas do cursor são encodificadas usando sequências de escape.
+-O Vim o espera que o <kbd>Alt</kbd> (também chamado de _tecla Meta_) envie uma
+própria encodificação de 8-bit com o bit alto configurado, mas muitos emuladores
+de terminal não suportam isso (ou não ativam isso por padrão) e acabam enviando
+uma sequência de escape ao contrário.
 
-You can test the above like this: `vim -u NONE -N` and type `i<c-v><left>` and
-you'll see a sequence inserted that starts with `^[` which denotes the escape
-character.
+Você pode testar isso assim: `vim -u NONE -N` e digitar `i<c-v><left>` e você
+verá uma sequência inserida que começa com `^[` que denota o caractére de
+escape.
 
-Putting it in a nutshell, Vim has a hard time distinguishing between a typed
-`<esc>` character and a proper escape sequence.
+Colocando de outra forma, o Vim na verdade passa por um grande desafio para
+distinguir entre um `<esc>` que foi digitado e uma sequência de escape.
 
-By default, Vim uses `:set timeout timeoutlen=1000`, so it delays on ambiguity
-of mappings _and_ key codes by 1 second. This is a sane value for mappings, but
-you can define the key code timeout on its own which is the most common
-workaround for this entire issue:
+Por padrão, o Vim usa `:set timeout timeoutlen=1000`, então quando houver
+ambiguidade entre mapas _e_ códigos de tecla ele irá atrasar em 1 segundo. Esse
+é um valão saudável para mapas, mas você pode definir o esgotamento de tempo
+("_timeout_") para códigos de tecla a parte, que acaba sendo o jeito mais comum
+para contornar todo esse problema:
 
 ```vim
-set timeout           " for mappings
-set timeoutlen=1000   " default value
-set ttimeout          " for key codes
-set ttimeoutlen=10    " unnoticeable small value
+set timeout           " para mapas
+set timeoutlen=1000   " valor padrão
+set ttimeout          " para códigos de tecla
+set ttimeoutlen=10    " valor pequeno e imperceptível
 ```
 
-Under `:h ttimeout` you find a small table showing the relationship between
-these options.
+Em `:h ttimeout` você encontrará uma pequena tabela demonstrando a relação entre
+essas opções.
 
-If you're using tmux between Vim and your terminal emulator, also put this in
-your `~/.tmux.conf`:
+Se você estiver usando o tmux entre o Vim e o seu emulador de terminal, coloque
+também isso aqui em seu `~/.tmux.conf`:
 
 ```tmux
 set -sg escape-time 0
