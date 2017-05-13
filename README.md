@@ -71,7 +71,7 @@
 - [Cscope](#cscope)
 - [MatchIt](#matchit)
 
-### [Tips](#tips-1)
+### [Dicas](#dicas-1)
 
 - [Saner behavior of n and N](#saner-behavior-of-n-and-n)
 - [Saner command-line history](#saner-command-line-history)
@@ -95,7 +95,7 @@
 - [:normal and :execute](#normal-and-execute) - The scripting dream team.
 - [:redir e execute()](#redir-e-execute) - Capturar saída de comando.
 
-### [Debugging](#debugging-1)
+### [Depuração](#depuração-1)
 
 - [General tips](#general-tips)
 - [Verbosity](#verbosity)
@@ -104,7 +104,7 @@
 - [Debugging Vim scripts](#debugging-vim-scripts)
 - [Debugging syntax files](#debugging-syntax-files)
 
-### [Miscellaneous](#miscellaneous-1)
+### [Diversos](#diversos-1)
 
 - [Additional resources](#additional-resources)
 - [Vim distributions](#vim-distributions)
@@ -113,7 +113,7 @@
 - [Easter eggs](#easter-eggs)
 - [Why hjkl for navigation?](#why-hjkl-for-navigation)
 
-### [Common problems](#common-problems-1)
+### [Problemas comuns](#problemas-comuns-1)
 
 - [Editing small files is slow](#editing-small-files-is-slow)
 - [Editing huge files is slow](#editing-huge-files-is-slow)
@@ -121,13 +121,13 @@
 - [Delays when using escape key in terminal](#delays-when-using-escape-key-in-terminal)
 - [Function search undo](#function-search-undo)
 
-### [Technical quirks](#technical-quirks-1)
+### [Peculiaridades técnicas](#peculiaridades-técnicas-1)
 
 - [Newline used for NUL](#newline-used-for-nul)
 
 ### [Lista de esquemas de cores](#lista-de-esquemas-de-cores-1)
 
-### [List of plugins](PLUGINS.md)
+### [Lista de plugins](PLUGINS.md)
 
 <br>
 
