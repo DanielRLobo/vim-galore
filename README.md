@@ -1,6 +1,6 @@
 <div align='center'>
 <br /><br /><br />
-![vim-galore](https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/logo-vim-galore.png)
+<img src='https://raw.githubusercontent.com/mhinz/vim-galore/master/static/images/logo-vim-galore.png' alt='vim-galore logo' />
 <br /><br /><br /><br />
 <div>
     <a href='https://github.com/mhinz/vim-galore'> 
@@ -73,9 +73,11 @@
 
 ### [Dicas](#dicas-1)
 
-- [Saner behavior of n and N](#saner-behavior-of-n-and-n)
-- [Saner command-line history](#saner-command-line-history)
-- [Saner CTRL-L](#saner-ctrl-l)
+- [Comportamento mais saudável para n e N](#comportamento-mais-saudável-para-n-e-N)
+- [Comportamento mais saudável para a história da linha de comando](#comportamento-mais-saudável-para-a-história-da-linha-de-comando)
+- [CTRL-L com comportamento mais saudável
+Saner CTRL-L](#CTRL-L com comportamento mais saudável
+saner-ctrl-l)
 - [Disable audible and visual bells](#disable-audible-and-visual-bells)
 - [Quickly move current line](#quickly-move-current-line)
 - [Quickly add empty lines](#quickly-add-empty-lines)
