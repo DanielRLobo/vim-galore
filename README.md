@@ -75,9 +75,7 @@
 
 - [Comportamento mais saudável para n e N](#comportamento-mais-saudável-para-n-e-N)
 - [Comportamento mais saudável para a história da linha de comando](#comportamento-mais-saudável-para-a-história-da-linha-de-comando)
-- [CTRL-L com comportamento mais saudável
-Saner CTRL-L](#CTRL-L com comportamento mais saudável
-saner-ctrl-l)
+- [CTRL-L com comportamento mais saudável](#CTRL-L-com-comportamento-mais-saudável)
 - [Desativar firulas audiovisuais](#desativar-firulas-audiovisuais)
 - [Quickly move current line](#quickly-move-current-line)
 - [Quickly add empty lines](#quickly-add-empty-lines)
