@@ -4,8 +4,7 @@
 <br /><br /><br /><br />
 <div>
     <a href='https://github.com/mhinz/vim-galore'> 
-        <img src='https://img.shields.io/badge/Version:-Original-blue.svg'
-        alt='version: original' /> 
+        <img src='https://img.shields.io/badge/Version:-Original-blue.svg' alt='version: original' /> 
     </a> 
     <a href='https://github.com/wsdjeg/vim-galore-zh_cn'> 
         <img src='https://img.shields.io/badge/Translation:-Chinese-grey.svg' alt='translation: chinese' /> 
@@ -78,7 +77,7 @@
 - [CTRL-L com comportamento mais saudável
 Saner CTRL-L](#CTRL-L com comportamento mais saudável
 saner-ctrl-l)
-- [Disable audible and visual bells](#disable-audible-and-visual-bells)
+- [Desativar firulas audiovisuais](#desativar-firulas-audiovisuais)
 - [Quickly move current line](#quickly-move-current-line)
 - [Quickly add empty lines](#quickly-add-empty-lines)
 - [Edite seus macros rapidamente](#edite-seus-macros-rapidamente)
