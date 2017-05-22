@@ -14,7 +14,7 @@
     </a> 
     <div> 
         <br /> 
-        <sub>Licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0<a/>.</sub> 
+        <sub>Licenciado sob <a href='https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR'>CC BY-SA 4.0<a/>.</sub> 
     </div> 
   </div> 
   <br /><br /> 
