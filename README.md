@@ -19,6 +19,7 @@
   </div> 
   <br /><br /> 
 </div> 
+
 ### [Introdução](#introdução-1)
 
 - [O que é o Vim?](#o-que-é-o-vim)
