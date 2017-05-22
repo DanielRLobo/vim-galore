@@ -67,7 +67,7 @@
 - [Editando arquivos remotos](#editando-arquivos-remotos)
 - [Gerenciando plugins](#gerenciando-plugins)
 - [Inserção de bloco](#inserção-de-bloco)
---[Rodando-programas-externos-e-usando-filtros](#rodando-programas-externos-e-usando-filtros)
+- [Rodando-programas-externos-e-usando-filtros](#rodando-programas-externos-e-usando-filtros)
 - [Cscope](#cscope)
 - [MatchIt](#matchit)
 
