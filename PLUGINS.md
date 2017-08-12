@@ -40,9 +40,9 @@
 - [TeX](#tex)
 - [VimL](#viml)
 
-## Esquema de cores
+## Esquemas de cores
 
-Here's a list of commonly used colorschemes:
+Aque está uma lista de esquemas de cores comumente usados:
 
 - [acme-colors](https://github.com/plan9-for-vimspace/acme-colors)
 - [base16](https://github.com/chriskempson/base16-vim)
@@ -55,7 +55,8 @@ Here's a list of commonly used colorschemes:
 - [oceanic-next](https://github.com/mhartington/oceanic-next)
 - [railscasts](https://github.com/jpo/vim-railscasts-theme)
 - [seoul256](https://github.com/junegunn/seoul256.vim)
-- [solarized](https://github.com/altercation/vim-colors-solarized) (or a lighter variant: [flattened](https://github.com/romainl/flattened))
+- [solarized](https://github.com/altercation/vim-colors-solarized) (ou uma
+  variante mais clara: [flattened](https://github.com/romainl/flattened))
 - [tomorrow](https://github.com/chriskempson/vim-tomorrow-theme)
 - [vividchalk](https://github.com/tpope/vim-vividchalk)
 - [yowish](https://github.com/kabbamine/yowish.vim)

@@ -1084,7 +1084,7 @@ meio do caminho (como o tmux) serem capazes de lidar com cores verdadeiras.  ([E
 Ajuda:
 
 - `:h 'termguicolors'`
-- [Lista de esquemas de cores](#lista-de-esquemas-de-cores)
+- [Lista de esquemas de cores](PLUGINS.md#lista-de-esquemas-de-cores-1)
 - [Alterações cosméticas a esquemas de cores](#alterações-cosméticas-a-esquemas-de-cores)
 
 ## Dobraduras
