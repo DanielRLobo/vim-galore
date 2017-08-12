@@ -1192,8 +1192,8 @@ Algumas regras simples:
 
 - opções são colocadas dentro de aspas curvas simples (`'`, e não ``` ` ```),
   como em `:h 'textwidth'` 
-- funções de VimL terminam em (), como em `:h reverse()`
-- comandos começam com :, como em `:h :echo`
+- funções de VimL terminam em `()`, como em `:h reverse()`
+- comandos começam com `:`, como em `:h :echo`
 
 Você pode usar `<c-d>` (isso quer dizer <kbd>ctrl</kbd>+<kbd>d</kbd>) para
 listar todas as marcas ("_tags_") que correspondem com o termo pesquisado em
