@@ -1739,6 +1739,7 @@ Os gerenciadores reais de plugins apresentam comandos que te ajudam a instalar e
 atualizar plugins de dentro do Vim. Aqui segue uma lista de gerenciadores de
 plugins comumente usados:
 
+[Lista de gerenciadores de plugins](PLUGINS.md#gerenciadores-de-plugins)
 - [dein](https://github.com/Shougo/dein.vim)
 - [plug](https://github.com/junegunn/vim-plug)
 - [vim-addon-manager](https://github.com/MarcWeber/vim-addon-manager)

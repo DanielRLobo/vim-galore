@@ -15,7 +15,7 @@
 - [Indent](#indent)
 - [Misc](#misc)
 - [Navigation](#navigation)
-- [Plugin managers](#plugin-managers)
+- [Gerenciadores de plugins](#gerenciadores-de-plugins)
 - [Snippets](#snippets)
 - [Statusline](#statusline)
 - [Surround](#surround)
