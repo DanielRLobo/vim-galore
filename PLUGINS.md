@@ -62,6 +62,8 @@ Aque está uma lista de esquemas de cores comumente usados:
 - [yowish](https://github.com/kabbamine/yowish.vim)
 - [zenburn](https://github.com/jnurmine/Zenburn)
 
+Alternatively, generate your own colorscheme using [themer](https://github.com/mjswensen/themer).
+
 ## By topic
 
 #### Alignment
