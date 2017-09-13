@@ -77,13 +77,14 @@ Aque está uma lista de esquemas de cores comumente usados:
 
 #### Code completion
 
-- [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
-- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+- [asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim)
 - [completor.vim](https://github.com/maralla/completor.vim)
 - [deoplete.nvim](https://github.com/Shougo/deoplete.nvim)
 - [neocomplete.vim](https://github.com/Shougo/neocomplete.vim)
 - [supertab](https://github.com/ervandew/supertab)
 - [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
+- [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
+- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
 #### Cycle
 
