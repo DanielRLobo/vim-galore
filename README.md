@@ -141,12 +141,13 @@ Moolenaar](https://en.wikipedia.org/wiki/Bram_Moolenaar) lançou o Vim em 1991.
 
 O projeto está hospedado na rede em [vim.org](http://www.vim.org/index.php).
 
-Para o Vim: use o seu gerenciador de pacotes preferido ou visite a [página para baixar](http://www.vim.org/download.php) direto da vim.org.
+Para adquirir o Vim: use o seu gerenciador de pacotes preferido ou visite a 
+[página para baixar](http://www.vim.org/download.php) direto da vim.org.
 
-Discussões e questões da usuária são melhores se feitas na lista de correio
+Discussões e questões de uso são melhores se feitas na lista de correio
 eletrônico [vim_use](https://groups.google.com/forum/#!forum/vim_use) (*em inglês*) ou usando o IRC ([Freenode](https://freenode.net)) no canal `#vim` (*em inglês*).
 
-O desenvolvimento acontece no [Github](https://github.com/vim/vim), discussões
+O desenvolvimento acontece no [Github](https://github.com/vim/vim), e discussões
 na lista de correio eletrônico [vim_dev](https://groups.google.com/forum/#!forum/vim_dev).
 
 Leia [Why, oh WHY, do those #?@! nutheads use
@@ -155,10 +156,10 @@ comuns sobre o Vim explicados.
 
 ## A filosofia do Vim
 
-O Vim adere a filosofia de de edição modal. Isso quer dizer que ele provem
+O Vim adere a filosofia de edição modal. Isso quer dizer que ele provem
 múltiplos modos e a função/significado das teclas muda de acordo com o modo.
 Você navega pelos arquivos no _modo normal_, você insere texto no _modo de
-inserção_, você seleciona linhas no _modo visual_, você acessa comando no _modo
+inserção_, você seleciona linhas no _modo visual_, você acessa comandos no _modo
 de linha de comando_ e assim por diante. Isso pode até parecer complicado à
 primeira vista, mas tem uma grande vantagem: você não precisa entortar os dedos
 segurando várias teclas ao mesmo tempo, na maioria das vezes você
@@ -179,7 +180,7 @@ Se você ver usuárias avançadas do Vim trabalhando, você irá reparar que ela
 falam a _língua do Vim_ da mesma forma que pianistas tratam seus instrumentos.
 Operações complexas são feitas usando apenas alguns pressionamentos de teclas.
 Elas nem sequer pensam mais sobre isso já que a [memória muscular](https://en.wikipedia.org/wiki/Muscle_memory) tomou conta. Isso reduz o [esforço cognitivo
-](https://en.wikipedia.org/wiki/Cognitive_load) e ajuda a focar na tarefa atual.
+](https://en.wikipedia.org/wiki/Cognitive_load) e ajuda a focar na verdadeira tarefa.
 
 ## Primeiros passos
 
