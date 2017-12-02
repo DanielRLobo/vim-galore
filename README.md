@@ -312,7 +312,7 @@ Ou abra rapidamente uma planilha com cola de dentro do Vim: [vim-cheat40](https:
 
 O Vim é um editor de texto. Toda vez que um texto é mostrado, o texto é parte de
 um **buffer**. Cada arquivo será aberto em seu próprio buffer. Plugins mostram
-as coisas também em seus próprios buffers e etc.
+as coisas também em seus próprios buffers e assim por diante.
 
 Os buffers tem muito atributos, por exemplo se o texto que o buffer contém é
 modificável ou se o texto está associado com um outro arquivo e portanto precisa
@@ -330,7 +330,7 @@ Janelas podem ser divididas vertical ou horizontalmente, e as alturas e larguras
 das janelas existentes também podem ser alteradas. E é por isso que você pode
 rearranjar as janelas como preferir.
 
-Uma **tab page** ou (ou simplesmente "aba") é uma coleção/coletânea de janelas.
+Uma **tab page** ou (ou simplesmente "_aba_") é uma coleção/coletânea de janelas.
 Por tanto se você quiser ter múltiplos arranjos de janelas, use as abas.
 
 A propósito, a lista de buffers é global e você pode acessar qualquer buffer a
