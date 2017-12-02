@@ -349,9 +349,9 @@ ativo** ("_active buffer_"). Agora, se você abrir um outro arquivo com
 ("_hidden buffer_") e o `arquivo2` será o buffer ativo.
 
 Ambos buffers estão também **listados** ("_listed_"), portanto eles serão
-listados com a saída do comando `:ls`. Os buffers dos plugins, ou os buffers de
+listados com a saída do comando `:ls`. Os buffers de plugins, ou os buffers de
 ajuda, normalmente são marcados como não-listados ("_unlisted_"), já que eles
-não arquivos regulares, que você normalmente edita com um editor de texto. Tanto
+não são arquivos regulares, que você normalmente edita com um editor de texto. Tanto
 os buffers listados quanto os não-listados são mostrados pelo comando `:ls!`.
 
 **Buffers não-nomeados** ("_unnamed buffers_"), geralmente usados por plugins,
