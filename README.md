@@ -12,6 +12,9 @@
     <a href='http://postd.cc/?s=vim-galore'>
         <img src='https://img.shields.io/badge/Translation:-Japanese-grey.svg' alt='tranlsation: japanese' /> 
     </a> 
+    <a href='http://givi.olnd.ru/vim-galore/vim-galore-ru.html'>
+        <img src='https://img.shields.io/badge/Translation:-Russian-grey.svg' alt='translation: russian' />
+    </a>
     <div> 
         <br /> 
         <sub>Licenciado sob <a href='https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR'>CC BY-SA 4.0<a/>.</sub> 
