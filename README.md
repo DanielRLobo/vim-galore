@@ -70,6 +70,8 @@
 - [Rodando-programas-externos-e-usando-filtros](#rodando-programas-externos-e-usando-filtros)
 - [Cscope](#cscope)
 - [MatchIt](#matchit)
+- [True colors](#true-colors)
+
 
 ### [Dicas](#dicas-1)
 
@@ -1964,6 +1966,25 @@ Ajuda:
 :h matchit
 :h b:match_words
 ```
+
+## True colors
+
+Usar  _true colors_ ("_cores verdadeiras_") em um emulador de terminal que dizer
+ser capaz de usar 24 bits para as cores RGB. Isso significa 16777216 (2^24)
+cores ao invés das 256 cores usuais.
+
+Como é explicado [aqui](#esquemas-de-cores), esquemas de cores podem na verdade
+ser _dois_ esquemas de cores, tendo assim defini;'oes para terminais (xterm) e
+para interfaces gráficas ("_GUIs_", como o Gvim). Isso fazia sentido no tempo em
+que os emuladores de terminais ainda não tinham apredido sobre _true colors_.
+
+Depois de `:set termguicolors`, Vim começa a emitir sequencias de escape
+("_escape sequences_") que só são entendidas por um emulador de terminal com
+suporte a _true colors_. Quando as suas cores parecerem esquisitas, é possível
+que o seu emulador de terminal não suporte _true colors_ ou que o seu esquema
+de cores não tenha cores definidas para interfaces gráficas ("_GUI color_").
+
+Help: `:h 'termguicolors'`
 
 # Dicas
 
