@@ -176,7 +176,7 @@ movimentos.
 _Operadores_ começam uma certa ação, por exemplo mudando, removendo ou
 selecionando texto. Logo em seguida você especifíca a região do texto onde a
 ação deve ocorrer usando um _movimento_. Para mudar tudo entre os parênteses,
-ese `ci(` (leia como "mudar dentro dos parênteses", em inglês: _change inner
+use `ci(` (leia como "mudar dentro dos parênteses", em inglês: _change inner
 parentheses_). Para remover todo um parágrafo de texto de uma vez, use `dap`
 (leia como "deletar em volta do parágrafo", em inglês: _delete around
 paragraph_).
@@ -185,7 +185,7 @@ Se você ver usuárias avançadas do Vim trabalhando, você irá reparar que ela
 falam a _língua do Vim_ da mesma forma que pianistas tratam seus instrumentos.
 Operações complexas são feitas usando apenas alguns pressionamentos de teclas.
 Elas nem sequer pensam mais sobre isso já que a [memória muscular](https://en.wikipedia.org/wiki/Muscle_memory) tomou conta. Isso reduz o [esforço cognitivo
-](https://en.wikipedia.org/wiki/Cognitive_load) e ajuda a focar na verdadeira tarefa.
+](https://pt.wikipedia.org/wiki/Esfor%C3%A7o_cognitivo) e ajuda a focar na verdadeira tarefa.
 
 ## Primeiros passos
 
