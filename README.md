@@ -35,14 +35,14 @@
 ### [O básico](#o-básico-1)
 
 - [Buffers, janelas, abas](#buffers-janelas-abas)
-- [Buffer ativos, carregados, listados e nomeados](#buffer-ativos-carregados-listados-e-nomeado)
+- [Buffers ativos, carregados, listados e nomeados](#buffers-ativos-carregados-listados-e-nomeado)
 - [Lista de argumentos](#lista-de-argumento)
 - [Mapeamentos](#mapeamentos)
 - [A tecla líder](#a-tecla-líder)
 - [Registradores](#registradores)
 - [Alcances](#alcances)
 - [Marcadores](#marcadores)
-- [Autocomplementação](#autocomplementação)
+- [Autocomplemento(#autocomplemento)
 - [Movimentos, operadores, objetos de texto](#Movimentos-operadores-objetos-de-texto)
 - [Autocmds](#autocmds)
 - [Lista de alterações, lista de pulos](#lista-de-alterações-lista-de-pulos)
@@ -66,7 +66,7 @@
   - [Utilização da área de transferência (Windows, macOS))](#utilização-da-área-de-transferência-windows-macos)
   - [Utilização da área de transferência (Linux, BSD, ...)](#utilização-da-área-de-transferência-linux-bsd-)
 - [Restaurar posição do cursor ao abrir arquivo](#restaurar-posição-do-cursor-ao-abrir-arquivo)
-- [Manipulando os arquivos de backup, swap, undo, e viminfo](#manipulando-os-arquivos-de-backup-swap-undo-e-viminfo)
+- [Arquivos temporários](#arquivos-temporários)
 - [Editando arquivos remotos](#editando-arquivos-remotos)
 - [Gerenciando plugins](#gerenciando-plugins)
 - [Inserção de bloco](#inserção-de-bloco)
@@ -129,10 +129,6 @@
 ### [Peculiaridades técnicas](#peculiaridades-técnicas-1)
 
 - [Newline used for NUL](#newline-used-for-nul)
-
-### [Lista de esquemas de cores](#lista-de-esquemas-de-cores-1)
-
-### [Lista de plugins](PLUGINS.md)
 
 <br>
 
@@ -341,7 +337,7 @@ Por tanto se você quiser ter múltiplos arranjos de janelas, use as abas.
 A propósito, a lista de buffers é global e você pode acessar qualquer buffer a
 partir de qualquer aba.
 
-## Buffer ativos, carregados, listados e nomeados
+## Buffers ativos, carregados, listados e nomeados
 
 Inicie o Vim como `vim arquivo1`. O conteúdo do arquivo será carregado dentro do
 buffer. Agora você tem um **buffer carregado** ("_loaded buffer_"). O conteúdo do buffer só será
@@ -674,7 +670,7 @@ encoberto pela seleção visual.
 Use `:marks` para listar todos os marcadores. Leia tudo que puder em `:h
 mark-motions`.
 
-## Autocomplementação
+## Autocomplemento
 
 O Vim possui vários tipos de autocomplemento em modo de inserção. Em caso de
 múltiplas possibilidades, um menu flutuante irá permitir que você navegue até a
@@ -1592,7 +1588,7 @@ pode ter algumas linhas a menos desde que foi alterado por um outro programa).
 
 Isso requer o uso do arquivo vimfile: `:h viminfo-'`.
 
-## Handling backup, swap, undo, and viminfo files
+## Arquivos temporários
 
 Depending on the options, Vim creates up to 4 kinds of working files.
 
@@ -2820,24 +2816,3 @@ Ajuda: `:h function-search-undo`
 Caractéres NULOS (ou "_NUL characters_", `\0`) em um arquivo, são guardados como uma nova linha (ou "_Newline_", `\n`) na memória e mostrados em um buffer como `^@`.
 
 Veja `man 7 ascii` e `:h NL-used-for-Nul` para mais informação.
-
-# Lista de esquemas de cores
-
-Aqui está uma lista de esquemas de cores que são comumente usados:
-
-- [acme-colors](https://github.com/plan9-for-vimspace/acme-colors)
-- [base16](https://github.com/chriskempson/base16-vim)
-- [gotham](https://github.com/whatyouhide/vim-gotham)
-- [gruvbox](https://github.com/morhetz/gruvbox)
-- [janah](https://github.com/mhinz/vim-janah)
-- [jellybeans](https://github.com/nanotech/jellybeans.vim)
-- [lucius](https://github.com/jonathanfilip/vim-lucius)
-- [molokai](https://github.com/tomasr/molokai)
-- [railscasts](https://github.com/jpo/vim-railscasts-theme)
-- [seoul256](https://github.com/junegunn/seoul256.vim)
-- [solarized](https://github.com/altercation/vim-colors-solarized) (ou uma variação mais leve: [flattened](https://github.com/romainl/flattened))
-- [tomorrow](https://github.com/chriskempson/vim-tomorrow-theme)
-- [vividchalk](https://github.com/tpope/vim-vividchalk)
-- [yowish](https://github.com/kabbamine/yowish.vim)
-- [zenburn](https://github.com/jnurmine/Zenburn)
-
