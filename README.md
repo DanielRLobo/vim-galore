@@ -42,7 +42,7 @@
 - [Registradores](#registradores)
 - [Alcances](#alcances)
 - [Marcadores](#marcadores)
-- [Autocomplemento(#autocomplemento)
+- [Completar e concluir](#complementar-e-concluir)
 - [Movimentos, operadores, objetos de texto](#Movimentos-operadores-objetos-de-texto)
 - [Autocmds](#autocmds)
 - [Lista de alterações, lista de pulos](#lista-de-alterações-lista-de-pulos)
@@ -670,9 +670,9 @@ encoberto pela seleção visual.
 Use `:marks` para listar todos os marcadores. Leia tudo que puder em `:h
 mark-motions`.
 
-## Autocomplemento
+## Completar e concluir
 
-O Vim possui vários tipos de autocomplemento em modo de inserção. Em caso de
+O Vim possui vários tipos de complemento em modo de inserção. Em caso de
 múltiplas possibilidades, um menu flutuante irá permitir que você navegue até a
 o complemento de sua escolha.
 
@@ -680,27 +680,27 @@ Tipos típicos de complementos são tags, funções de módulos importados ou
 bibliotecas, nome de arquivos, dicionários ou simplesmente palavras do buffer
 atual.
 
-O Vim também prover um mapeamento de teclado para cada tipo de complementação e
+O Vim também provém um mapeamento de teclado para cada tipo de complementação e
 todos eles começam com `<c-x>` (lembre-se de usá-los em modo de inserção).
 
 | Mapeamento | Tipo | Ajuda         |
 |---------|------|--------------|
-| `<c-x><c-l>` | linhas inteiras | `:h i^x^l` |
+| `<c-x><c-l>` | completa linhas inteiras | `:h i^x^l` |
 | `<c-x><c-n>` | palavras chave do arquivo atual | `:h i^x^n` |
 | `<c-x><c-k>` | palavras chave da opção de `dicionário` | `:h i^x^k` |
-| `<c-x><c-t>` | palavras chave da opção de `'thesaurus'` | `:h i^x^t` |
+| `<c-x><c-t>` | palavras chave da opção de `'thesaurus'` (sinônimos) | `:h i^x^t` |
 | `<c-x><c-i>` | palavras chave do arquivo atual e arquivos incluídos | `:h i^x^i` |
-| `<c-x><c-]>` | tags | `:h i^x^]` |
-| `<c-x><c-f>` | nome de arquivos | `:h i^x^f` |
+| `<c-x><c-]>` | completa tags | `:h i^x^]` |
+| `<c-x><c-f>` | completa nome de arquivos | `:h i^x^f` |
 | `<c-x><c-d>` | definições ou macros | `:h i^x^d` |
-| `<c-x><c-v>` | Comandos do Vim | `:h i^x^v` |
+| `<c-x><c-v>` | comandos do Vim | `:h i^x^v` |
 | `<c-x><c-u>` | definido pela usuária (como especificado em `'completefunc'`) | `:h i^x^u` |
 | `<c-x><c-o>` | omni complementação (como especificado em `'omnifunc'`) | `:h i^x^o` |
 | `<c-x>s`     | sugestões ortográficas | `:h i^Xs` |
 
-As pessoas podem se confundir entre Autocomplementação definida pelo usuário e a
+As pessoas podem se confundir entre Complementação definida pela usuária e a
 omni complementação, mas tecnicamente elas fazem a mesma coisa. Elas pegam uma
-função que inspeciona a posição atual e retornam uma lista de sugestões.
+função que inspeciona a posição atual (do cursor) e retornam uma lista de sugestões.
 Complementações definidas pela usuária são determinadas pela própria pessoa e
 para uso pessoal. (Surpresa!) Pode ser qualqer coisa. A Omni Complementação tem
 o propósito de ser usada para tipos específicos de arquivos, como complementando
@@ -708,7 +708,7 @@ estruturas de membros ou métodos de classes, e é normalmente determinada por
 plugins de tipos de arquivo ("_filetype plugins_").
 
 O Vim também permite a complementação de múltiplos tipos de uma vez só, bastando
-ativas a opção `'complete'`. Por padrão, essa opção já inclui um bocado de
+ativar a opção `'complete'`. Por padrão, essa opção já inclui um bocado de
 coisas por si mesma, então tenha certeza de dar uma polida para que fique ao seu
 gosto. Você pode ativar essa opção de complementação usando tanto `<c-n>`
 (próximo) quanto `<c-p>` (anterior), que por coincidência também são os atalhos
@@ -716,7 +716,7 @@ de teclado usados para navegar pelas opções do menu flutuante. Veja `:h i^n` e
 `:h 'complete'` para saber mais sobre isso.
 
 Aproveite e confira também `:h 'completeopt'` para configurar o comportamento do
-menu flutuante. O padrão até que bem são, mas eu prefiro adicionar também "noselect" ("_nenhuma seleção_").
+menu flutuante. O padrão até que é bem são, mas eu prefiro adicionar também "noselect" ("_nenhuma seleção_").
 
 Ajuda:
 
